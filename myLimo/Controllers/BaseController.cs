@@ -17,7 +17,7 @@ namespace myLimo.Controllers
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
 
-            //Initialize...in baseController
+            //Initialize...
             base.Initialize(requestContext);
         }
 
