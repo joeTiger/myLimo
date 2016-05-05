@@ -1,0 +1,1934 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:2245/admin/Service1.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:2245/admin/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:2245/admin/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BizRef.Web" />
+      <xsd:import schemaLocation="http://localhost:2245/admin/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+      <xsd:import schemaLocation="http://localhost:2245/admin/Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Service1_SaveElt_InputMessage">
+    <wsdl:part name="parameters" element="SaveElt" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveElt_OutputMessage">
+    <wsdl:part name="parameters" element="SaveEltResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveCat_InputMessage">
+    <wsdl:part name="parameters" element="SaveCat" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveCat_OutputMessage">
+    <wsdl:part name="parameters" element="SaveCatResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spAddSave_InputMessage">
+    <wsdl:part name="parameters" element="spAddSave" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spAddSave_OutputMessage">
+    <wsdl:part name="parameters" element="spAddSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveAdd_InputMessage">
+    <wsdl:part name="parameters" element="SaveAdd" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveAdd_OutputMessage">
+    <wsdl:part name="parameters" element="SaveAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveEltCat_InputMessage">
+    <wsdl:part name="parameters" element="SaveEltCat" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveEltCat_OutputMessage">
+    <wsdl:part name="parameters" element="SaveEltCatResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spDicoUpdateAll_InputMessage">
+    <wsdl:part name="parameters" element="spDicoUpdateAll" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spDicoUpdateAll_OutputMessage">
+    <wsdl:part name="parameters" element="spDicoUpdateAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spDicoUpdate_InputMessage">
+    <wsdl:part name="parameters" element="spDicoUpdate" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spDicoUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="spDicoUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spDicoUpdateById_InputMessage">
+    <wsdl:part name="parameters" element="spDicoUpdateById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spDicoUpdateById_OutputMessage">
+    <wsdl:part name="parameters" element="spDicoUpdateByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DicoDelete_InputMessage">
+    <wsdl:part name="parameters" element="DicoDelete" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DicoDelete_OutputMessage">
+    <wsdl:part name="parameters" element="DicoDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveDico_InputMessage">
+    <wsdl:part name="parameters" element="SaveDico" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveDico_OutputMessage">
+    <wsdl:part name="parameters" element="SaveDicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoById_InputMessage">
+    <wsdl:part name="parameters" element="GetDicoById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoById_OutputMessage">
+    <wsdl:part name="parameters" element="GetDicoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoNameById_InputMessage">
+    <wsdl:part name="parameters" element="GetDicoNameById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoNameById_OutputMessage">
+    <wsdl:part name="parameters" element="GetDicoNameByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoIdByNameForWebSite_InputMessage">
+    <wsdl:part name="parameters" element="GetDicoIdByNameForWebSite" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoIdByNameForWebSite_OutputMessage">
+    <wsdl:part name="parameters" element="GetDicoIdByNameForWebSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoIdByName_InputMessage">
+    <wsdl:part name="parameters" element="GetDicoIdByName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoIdByName_OutputMessage">
+    <wsdl:part name="parameters" element="GetDicoIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SavePdtNameId_InputMessage">
+    <wsdl:part name="parameters" element="SavePdtNameId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SavePdtNameId_OutputMessage">
+    <wsdl:part name="parameters" element="SavePdtNameIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SavePdtPrice_InputMessage">
+    <wsdl:part name="parameters" element="SavePdtPrice" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SavePdtPrice_OutputMessage">
+    <wsdl:part name="parameters" element="SavePdtPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SavePdtEmptyName_InputMessage">
+    <wsdl:part name="parameters" element="SavePdtEmptyName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SavePdtEmptyName_OutputMessage">
+    <wsdl:part name="parameters" element="SavePdtEmptyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SavePdtIFN_InputMessage">
+    <wsdl:part name="parameters" element="SavePdtIFN" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SavePdtIFN_OutputMessage">
+    <wsdl:part name="parameters" element="SavePdtIFNResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SavePdt_InputMessage">
+    <wsdl:part name="parameters" element="SavePdt" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SavePdt_OutputMessage">
+    <wsdl:part name="parameters" element="SavePdtResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_doTransHtmlJson_InputMessage">
+    <wsdl:part name="parameters" element="doTransHtmlJson" />
+  </wsdl:message>
+  <wsdl:message name="Service1_doTransHtmlJson_OutputMessage">
+    <wsdl:part name="parameters" element="doTransHtmlJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_doTransJson_InputMessage">
+    <wsdl:part name="parameters" element="doTransJson" />
+  </wsdl:message>
+  <wsdl:message name="Service1_doTransJson_OutputMessage">
+    <wsdl:part name="parameters" element="doTransJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_transFromMymemory_InputMessage">
+    <wsdl:part name="parameters" element="transFromMymemory" />
+  </wsdl:message>
+  <wsdl:message name="Service1_transFromMymemory_OutputMessage">
+    <wsdl:part name="parameters" element="transFromMymemoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckDomainName_InputMessage">
+    <wsdl:part name="parameters" element="CheckDomainName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckDomainName_OutputMessage">
+    <wsdl:part name="parameters" element="CheckDomainNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoIdByNameForWebSiteLg_InputMessage">
+    <wsdl:part name="parameters" element="GetDicoIdByNameForWebSiteLg" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoIdByNameForWebSiteLg_OutputMessage">
+    <wsdl:part name="parameters" element="GetDicoIdByNameForWebSiteLgResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteBiz_InputMessage">
+    <wsdl:part name="parameters" element="DeleteBiz" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteBiz_OutputMessage">
+    <wsdl:part name="parameters" element="DeleteBizResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeletePdt_InputMessage">
+    <wsdl:part name="parameters" element="DeletePdt" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeletePdt_OutputMessage">
+    <wsdl:part name="parameters" element="DeletePdtResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteCat_InputMessage">
+    <wsdl:part name="parameters" element="DeleteCat" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteCat_OutputMessage">
+    <wsdl:part name="parameters" element="DeleteCatResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetForumById_InputMessage">
+    <wsdl:part name="parameters" element="GetForumById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetForumById_OutputMessage">
+    <wsdl:part name="parameters" element="GetForumByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetForumByEltIdParOnly_InputMessage">
+    <wsdl:part name="parameters" element="GetForumByEltIdParOnly" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetForumByEltIdParOnly_OutputMessage">
+    <wsdl:part name="parameters" element="GetForumByEltIdParOnlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetForumByEltId_InputMessage">
+    <wsdl:part name="parameters" element="GetForumByEltId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetForumByEltId_OutputMessage">
+    <wsdl:part name="parameters" element="GetForumByEltIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetForumBySearch_InputMessage">
+    <wsdl:part name="parameters" element="GetForumBySearch" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetForumBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="GetForumBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteForum_InputMessage">
+    <wsdl:part name="parameters" element="DeleteForum" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteForum_OutputMessage">
+    <wsdl:part name="parameters" element="DeleteForumResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveForum_InputMessage">
+    <wsdl:part name="parameters" element="SaveForum" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveForum_OutputMessage">
+    <wsdl:part name="parameters" element="SaveForumResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SendSmsData_InputMessage">
+    <wsdl:part name="parameters" element="SendSmsData" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SendSmsData_OutputMessage">
+    <wsdl:part name="parameters" element="SendSmsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_sendEmail_InputMessage">
+    <wsdl:part name="parameters" element="sendEmail" />
+  </wsdl:message>
+  <wsdl:message name="Service1_sendEmail_OutputMessage">
+    <wsdl:part name="parameters" element="sendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_sendEmail2_InputMessage">
+    <wsdl:part name="parameters" element="sendEmail2" />
+  </wsdl:message>
+  <wsdl:message name="Service1_sendEmail2_OutputMessage">
+    <wsdl:part name="parameters" element="sendEmail2Response" />
+  </wsdl:message>
+  <wsdl:message name="Service1_sendEmailHtml_InputMessage">
+    <wsdl:part name="parameters" element="sendEmailHtml" />
+  </wsdl:message>
+  <wsdl:message name="Service1_sendEmailHtml_OutputMessage">
+    <wsdl:part name="parameters" element="sendEmailHtmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_InsertForum_InputMessage">
+    <wsdl:part name="parameters" element="InsertForum" />
+  </wsdl:message>
+  <wsdl:message name="Service1_InsertForum_OutputMessage">
+    <wsdl:part name="parameters" element="InsertForumResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CatInsertSampleByCategoryNamePdt_InputMessage">
+    <wsdl:part name="parameters" element="CatInsertSampleByCategoryNamePdt" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CatInsertSampleByCategoryNamePdt_OutputMessage">
+    <wsdl:part name="parameters" element="CatInsertSampleByCategoryNamePdtResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatByBizId_InputMessage">
+    <wsdl:part name="parameters" element="GetCatByBizId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatByBizId_OutputMessage">
+    <wsdl:part name="parameters" element="GetCatByBizIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_InsertMenu_InputMessage">
+    <wsdl:part name="parameters" element="InsertMenu" />
+  </wsdl:message>
+  <wsdl:message name="Service1_InsertMenu_OutputMessage">
+    <wsdl:part name="parameters" element="InsertMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_getDescPdt_InputMessage">
+    <wsdl:part name="parameters" element="getDescPdt" />
+  </wsdl:message>
+  <wsdl:message name="Service1_getDescPdt_OutputMessage">
+    <wsdl:part name="parameters" element="getDescPdtResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_getStartIndexBybizCatName_InputMessage">
+    <wsdl:part name="parameters" element="getStartIndexBybizCatName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_getStartIndexBybizCatName_OutputMessage">
+    <wsdl:part name="parameters" element="getStartIndexBybizCatNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatViewByCatIdAll_InputMessage">
+    <wsdl:part name="parameters" element="GetCatViewByCatIdAll" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatViewByCatIdAll_OutputMessage">
+    <wsdl:part name="parameters" element="GetCatViewByCatIdAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatViewByCatId_InputMessage">
+    <wsdl:part name="parameters" element="GetCatViewByCatId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatViewByCatId_OutputMessage">
+    <wsdl:part name="parameters" element="GetCatViewByCatIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltUpdateLastUpdate_InputMessage">
+    <wsdl:part name="parameters" element="EltUpdateLastUpdate" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltUpdateLastUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="EltUpdateLastUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltCatInsert_InputMessage">
+    <wsdl:part name="parameters" element="EltCatInsert" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltCatInsert_OutputMessage">
+    <wsdl:part name="parameters" element="EltCatInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DicoInsert_InputMessage">
+    <wsdl:part name="parameters" element="DicoInsert" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DicoInsert_OutputMessage">
+    <wsdl:part name="parameters" element="DicoInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CatInsert_InputMessage">
+    <wsdl:part name="parameters" element="CatInsert" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CatInsert_OutputMessage">
+    <wsdl:part name="parameters" element="CatInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CatInsertSample_InputMessage">
+    <wsdl:part name="parameters" element="CatInsertSample" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CatInsertSample_OutputMessage">
+    <wsdl:part name="parameters" element="CatInsertSampleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CatInsertSampleNew_InputMessage">
+    <wsdl:part name="parameters" element="CatInsertSampleNew" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CatInsertSampleNew_OutputMessage">
+    <wsdl:part name="parameters" element="CatInsertSampleNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CatInsertByPar_InputMessage">
+    <wsdl:part name="parameters" element="CatInsertByPar" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CatInsertByPar_OutputMessage">
+    <wsdl:part name="parameters" element="CatInsertByParResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageUpdatePosition_InputMessage">
+    <wsdl:part name="parameters" element="EltPageUpdatePosition" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageUpdatePosition_OutputMessage">
+    <wsdl:part name="parameters" element="EltPageUpdatePositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageInsert_InputMessage">
+    <wsdl:part name="parameters" element="EltPageInsert" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageInsert_OutputMessage">
+    <wsdl:part name="parameters" element="EltPageInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageInsertSample_InputMessage">
+    <wsdl:part name="parameters" element="EltPageInsertSample" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageInsertSample_OutputMessage">
+    <wsdl:part name="parameters" element="EltPageInsertSampleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageInsertSampleContactUs_InputMessage">
+    <wsdl:part name="parameters" element="EltPageInsertSampleContactUs" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageInsertSampleContactUs_OutputMessage">
+    <wsdl:part name="parameters" element="EltPageInsertSampleContactUsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddParIdByDicoId_InputMessage">
+    <wsdl:part name="parameters" element="GetAddParIdByDicoId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddParIdByDicoId_OutputMessage">
+    <wsdl:part name="parameters" element="GetAddParIdByDicoIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddParIdByName_InputMessage">
+    <wsdl:part name="parameters" element="GetAddParIdByName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddParIdByName_OutputMessage">
+    <wsdl:part name="parameters" element="GetAddParIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddViewById_InputMessage">
+    <wsdl:part name="parameters" element="GetAddViewById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddViewById_OutputMessage">
+    <wsdl:part name="parameters" element="GetAddViewByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddNameHeById_InputMessage">
+    <wsdl:part name="parameters" element="GetAddNameHeById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddNameHeById_OutputMessage">
+    <wsdl:part name="parameters" element="GetAddNameHeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddByNameByPar_InputMessage">
+    <wsdl:part name="parameters" element="GetAddByNameByPar" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddByNameByPar_OutputMessage">
+    <wsdl:part name="parameters" element="GetAddByNameByParResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddByDicoPar_InputMessage">
+    <wsdl:part name="parameters" element="GetAddByDicoPar" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddByDicoPar_OutputMessage">
+    <wsdl:part name="parameters" element="GetAddByDicoParResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddByPar_InputMessage">
+    <wsdl:part name="parameters" element="GetAddByPar" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddByPar_OutputMessage">
+    <wsdl:part name="parameters" element="GetAddByParResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddByParId_InputMessage">
+    <wsdl:part name="parameters" element="GetAddByParId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddByParId_OutputMessage">
+    <wsdl:part name="parameters" element="GetAddByParIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spTagSave_InputMessage">
+    <wsdl:part name="parameters" element="spTagSave" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spTagSave_OutputMessage">
+    <wsdl:part name="parameters" element="spTagSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spTagOneSave_InputMessage">
+    <wsdl:part name="parameters" element="spTagOneSave" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spTagOneSave_OutputMessage">
+    <wsdl:part name="parameters" element="spTagOneSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spBizSaveForWeb_InputMessage">
+    <wsdl:part name="parameters" element="spBizSaveForWeb" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spBizSaveForWeb_OutputMessage">
+    <wsdl:part name="parameters" element="spBizSaveForWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spBizSave_InputMessage">
+    <wsdl:part name="parameters" element="spBizSave" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spBizSave_OutputMessage">
+    <wsdl:part name="parameters" element="spBizSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizNameById_InputMessage">
+    <wsdl:part name="parameters" element="GetBizNameById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizNameById_OutputMessage">
+    <wsdl:part name="parameters" element="GetBizNameByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByName_InputMessage">
+    <wsdl:part name="parameters" element="GetBizByName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByName_OutputMessage">
+    <wsdl:part name="parameters" element="GetBizByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByNameAddTelMob_InputMessage">
+    <wsdl:part name="parameters" element="GetBizByNameAddTelMob" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByNameAddTelMob_OutputMessage">
+    <wsdl:part name="parameters" element="GetBizByNameAddTelMobResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByNameAdd_InputMessage">
+    <wsdl:part name="parameters" element="GetBizByNameAdd" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByNameAdd_OutputMessage">
+    <wsdl:part name="parameters" element="GetBizByNameAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByTelMob_InputMessage">
+    <wsdl:part name="parameters" element="GetBizByTelMob" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByTelMob_OutputMessage">
+    <wsdl:part name="parameters" element="GetBizByTelMobResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByNameAddTel_InputMessage">
+    <wsdl:part name="parameters" element="GetBizByNameAddTel" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByNameAddTel_OutputMessage">
+    <wsdl:part name="parameters" element="GetBizByNameAddTelResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltCatViewBiz_InputMessage">
+    <wsdl:part name="parameters" element="GetEltCatViewBiz" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltCatViewBiz_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltCatViewBizResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltCatViewBizByEltId_InputMessage">
+    <wsdl:part name="parameters" element="GetEltCatViewBizByEltId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltCatViewBizByEltId_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltCatViewBizByEltIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByEltId_InputMessage">
+    <wsdl:part name="parameters" element="GetBizByEltId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByEltId_OutputMessage">
+    <wsdl:part name="parameters" element="GetBizByEltIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByCustID_InputMessage">
+    <wsdl:part name="parameters" element="GetBizByCustID" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizByCustID_OutputMessage">
+    <wsdl:part name="parameters" element="GetBizByCustIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DicoUpdateById_InputMessage">
+    <wsdl:part name="parameters" element="DicoUpdateById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DicoUpdateById_OutputMessage">
+    <wsdl:part name="parameters" element="DicoUpdateByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizForm_InputMessage">
+    <wsdl:part name="parameters" element="UpdateBizForm" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizForm_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateBizFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizDetails_InputMessage">
+    <wsdl:part name="parameters" element="UpdateBizDetails" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizDetails_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateBizDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_deleteTags_InputMessage">
+    <wsdl:part name="parameters" element="deleteTags" />
+  </wsdl:message>
+  <wsdl:message name="Service1_deleteTags_OutputMessage">
+    <wsdl:part name="parameters" element="deleteTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_saveTags_InputMessage">
+    <wsdl:part name="parameters" element="saveTags" />
+  </wsdl:message>
+  <wsdl:message name="Service1_saveTags_OutputMessage">
+    <wsdl:part name="parameters" element="saveTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizlongAddId_InputMessage">
+    <wsdl:part name="parameters" element="UpdateBizlongAddId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizlongAddId_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateBizlongAddIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizCityId_InputMessage">
+    <wsdl:part name="parameters" element="UpdateBizCityId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizCityId_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateBizCityIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBiz_InputMessage">
+    <wsdl:part name="parameters" element="UpdateBiz" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBiz_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateBizResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBiz2_InputMessage">
+    <wsdl:part name="parameters" element="UpdateBiz2" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBiz2_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateBiz2Response" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizTelMobWWW_InputMessage">
+    <wsdl:part name="parameters" element="UpdateBizTelMobWWW" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizTelMobWWW_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateBizTelMobWWWResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spEltUpdateRefUrl_InputMessage">
+    <wsdl:part name="parameters" element="spEltUpdateRefUrl" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spEltUpdateRefUrl_OutputMessage">
+    <wsdl:part name="parameters" element="spEltUpdateRefUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltUpdateUserName_InputMessage">
+    <wsdl:part name="parameters" element="EltUpdateUserName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltUpdateUserName_OutputMessage">
+    <wsdl:part name="parameters" element="EltUpdateUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spEltUpdate_InputMessage">
+    <wsdl:part name="parameters" element="spEltUpdate" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spEltUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="spEltUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spEltUpdateSmsCounter_InputMessage">
+    <wsdl:part name="parameters" element="spEltUpdateSmsCounter" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spEltUpdateSmsCounter_OutputMessage">
+    <wsdl:part name="parameters" element="spEltUpdateSmsCounterResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spEltUpdateTagTmp_InputMessage">
+    <wsdl:part name="parameters" element="spEltUpdateTagTmp" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spEltUpdateTagTmp_OutputMessage">
+    <wsdl:part name="parameters" element="spEltUpdateTagTmpResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spCarSave_InputMessage">
+    <wsdl:part name="parameters" element="spCarSave" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spCarSave_OutputMessage">
+    <wsdl:part name="parameters" element="spCarSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCarByCarID_InputMessage">
+    <wsdl:part name="parameters" element="GetCarByCarID" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCarByCarID_OutputMessage">
+    <wsdl:part name="parameters" element="GetCarByCarIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatByName_InputMessage">
+    <wsdl:part name="parameters" element="GetCatByName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatByName_OutputMessage">
+    <wsdl:part name="parameters" element="GetCatByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatViewById_InputMessage">
+    <wsdl:part name="parameters" element="GetCatViewById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatViewById_OutputMessage">
+    <wsdl:part name="parameters" element="GetCatViewByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatByNameByPar_InputMessage">
+    <wsdl:part name="parameters" element="GetCatByNameByPar" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatByNameByPar_OutputMessage">
+    <wsdl:part name="parameters" element="GetCatByNameByParResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoByNameLg_InputMessage">
+    <wsdl:part name="parameters" element="GetDicoByNameLg" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoByNameLg_OutputMessage">
+    <wsdl:part name="parameters" element="GetDicoByNameLgResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoByName_InputMessage">
+    <wsdl:part name="parameters" element="GetDicoByName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoByName_OutputMessage">
+    <wsdl:part name="parameters" element="GetDicoByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoIdByNameFunc_InputMessage">
+    <wsdl:part name="parameters" element="GetDicoIdByNameFunc" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoIdByNameFunc_OutputMessage">
+    <wsdl:part name="parameters" element="GetDicoIdByNameFuncResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spGetDicoIdByName_InputMessage">
+    <wsdl:part name="parameters" element="spGetDicoIdByName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spGetDicoIdByName_OutputMessage">
+    <wsdl:part name="parameters" element="spGetDicoIdByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spGetDicoByName_InputMessage">
+    <wsdl:part name="parameters" element="spGetDicoByName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spGetDicoByName_OutputMessage">
+    <wsdl:part name="parameters" element="spGetDicoByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spGetDicoByNameApproximatif_InputMessage">
+    <wsdl:part name="parameters" element="spGetDicoByNameApproximatif" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spGetDicoByNameApproximatif_OutputMessage">
+    <wsdl:part name="parameters" element="spGetDicoByNameApproximatifResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddViewByNameByPar_InputMessage">
+    <wsdl:part name="parameters" element="GetAddViewByNameByPar" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetAddViewByNameByPar_OutputMessage">
+    <wsdl:part name="parameters" element="GetAddViewByNameByParResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoEmpties_InputMessage">
+    <wsdl:part name="parameters" element="GetDicoEmpties" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicoEmpties_OutputMessage">
+    <wsdl:part name="parameters" element="GetDicoEmptiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicos_InputMessage">
+    <wsdl:part name="parameters" element="GetDicos" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetDicos_OutputMessage">
+    <wsdl:part name="parameters" element="GetDicosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltByUserName_InputMessage">
+    <wsdl:part name="parameters" element="GetEltByUserName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltIdByUserName_InputMessage">
+    <wsdl:part name="parameters" element="GetEltIdByUserName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltIdByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltIdByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltById_InputMessage">
+    <wsdl:part name="parameters" element="GetEltById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltById_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="DoWork" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_loadImagePdtMethod_InputMessage">
+    <wsdl:part name="parameters" element="loadImagePdtMethod" />
+  </wsdl:message>
+  <wsdl:message name="Service1_loadImagePdtMethod_OutputMessage">
+    <wsdl:part name="parameters" element="loadImagePdtMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SettingGet_InputMessage">
+    <wsdl:part name="parameters" element="SettingGet" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SettingGet_OutputMessage">
+    <wsdl:part name="parameters" element="SettingGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SettingGetByName_InputMessage">
+    <wsdl:part name="parameters" element="SettingGetByName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SettingGetByName_OutputMessage">
+    <wsdl:part name="parameters" element="SettingGetByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SettingDelete_InputMessage">
+    <wsdl:part name="parameters" element="SettingDelete" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SettingDelete_OutputMessage">
+    <wsdl:part name="parameters" element="SettingDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SettingInsert_InputMessage">
+    <wsdl:part name="parameters" element="SettingInsert" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SettingInsert_OutputMessage">
+    <wsdl:part name="parameters" element="SettingInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SettingUpdate_InputMessage">
+    <wsdl:part name="parameters" element="SettingUpdate" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SettingUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="SettingUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltPageImage_InputMessage">
+    <wsdl:part name="parameters" element="GetEltPageImage" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltPageImage_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltPageImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageImageDelete_InputMessage">
+    <wsdl:part name="parameters" element="EltPageImageDelete" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageImageDelete_OutputMessage">
+    <wsdl:part name="parameters" element="EltPageImageDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageImageInsert_InputMessage">
+    <wsdl:part name="parameters" element="EltPageImageInsert" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageImageInsert_OutputMessage">
+    <wsdl:part name="parameters" element="EltPageImageInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckImageDataHtml_InputMessage">
+    <wsdl:part name="parameters" element="CheckImageDataHtml" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckImageDataHtml_OutputMessage">
+    <wsdl:part name="parameters" element="CheckImageDataHtmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckImageAlertAdmin_InputMessage">
+    <wsdl:part name="parameters" element="CheckImageAlertAdmin" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckImageAlertAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="CheckImageAlertAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckImageInsert_InputMessage">
+    <wsdl:part name="parameters" element="CheckImageInsert" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckImageInsert_OutputMessage">
+    <wsdl:part name="parameters" element="CheckImageInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckImageDelete_InputMessage">
+    <wsdl:part name="parameters" element="CheckImageDelete" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckImageDelete_OutputMessage">
+    <wsdl:part name="parameters" element="CheckImageDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckImageDeleteAll_InputMessage">
+    <wsdl:part name="parameters" element="CheckImageDeleteAll" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckImageDeleteAll_OutputMessage">
+    <wsdl:part name="parameters" element="CheckImageDeleteAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCheckImage_InputMessage">
+    <wsdl:part name="parameters" element="GetCheckImage" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCheckImage_OutputMessage">
+    <wsdl:part name="parameters" element="GetCheckImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCheckout_InputMessage">
+    <wsdl:part name="parameters" element="GetCheckout" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCheckout_OutputMessage">
+    <wsdl:part name="parameters" element="GetCheckoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutDeleteByBizId_InputMessage">
+    <wsdl:part name="parameters" element="CheckoutDeleteByBizId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutDeleteByBizId_OutputMessage">
+    <wsdl:part name="parameters" element="CheckoutDeleteByBizIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutDeleteByEltId_InputMessage">
+    <wsdl:part name="parameters" element="CheckoutDeleteByEltId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutDeleteByEltId_OutputMessage">
+    <wsdl:part name="parameters" element="CheckoutDeleteByEltIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutDelete_InputMessage">
+    <wsdl:part name="parameters" element="CheckoutDelete" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutDelete_OutputMessage">
+    <wsdl:part name="parameters" element="CheckoutDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetPhotobyPdt_InputMessage">
+    <wsdl:part name="parameters" element="GetPhotobyPdt" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetPhotobyPdt_OutputMessage">
+    <wsdl:part name="parameters" element="GetPhotobyPdtResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_PhotoInsert_InputMessage">
+    <wsdl:part name="parameters" element="PhotoInsert" />
+  </wsdl:message>
+  <wsdl:message name="Service1_PhotoInsert_OutputMessage">
+    <wsdl:part name="parameters" element="PhotoInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_PhotoUpdate_InputMessage">
+    <wsdl:part name="parameters" element="PhotoUpdate" />
+  </wsdl:message>
+  <wsdl:message name="Service1_PhotoUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="PhotoUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_PhotoDeleteById_InputMessage">
+    <wsdl:part name="parameters" element="PhotoDeleteById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_PhotoDeleteById_OutputMessage">
+    <wsdl:part name="parameters" element="PhotoDeleteByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_PhotoDelete_InputMessage">
+    <wsdl:part name="parameters" element="PhotoDelete" />
+  </wsdl:message>
+  <wsdl:message name="Service1_PhotoDelete_OutputMessage">
+    <wsdl:part name="parameters" element="PhotoDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutInsert_InputMessage">
+    <wsdl:part name="parameters" element="CheckoutInsert" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutInsert_OutputMessage">
+    <wsdl:part name="parameters" element="CheckoutInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutUpdate_InputMessage">
+    <wsdl:part name="parameters" element="CheckoutUpdate" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="CheckoutUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutDeleteById_InputMessage">
+    <wsdl:part name="parameters" element="CheckoutDeleteById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CheckoutDeleteById_OutputMessage">
+    <wsdl:part name="parameters" element="CheckoutDeleteByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DoUpload_InputMessage">
+    <wsdl:part name="parameters" element="DoUpload" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DoUpload_OutputMessage">
+    <wsdl:part name="parameters" element="DoUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GeneratePassword_InputMessage">
+    <wsdl:part name="parameters" element="GeneratePassword" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GeneratePassword_OutputMessage">
+    <wsdl:part name="parameters" element="GeneratePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="Service1_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetPassword_InputMessage">
+    <wsdl:part name="parameters" element="GetPassword" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="GetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEmail_InputMessage">
+    <wsdl:part name="parameters" element="GetEmail" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEmail_OutputMessage">
+    <wsdl:part name="parameters" element="GetEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="DeleteAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="DeleteAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UserExists_InputMessage">
+    <wsdl:part name="parameters" element="UserExists" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UserExists_OutputMessage">
+    <wsdl:part name="parameters" element="UserExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UserExistsByPwdAnswer_InputMessage">
+    <wsdl:part name="parameters" element="UserExistsByPwdAnswer" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UserExistsByPwdAnswer_OutputMessage">
+    <wsdl:part name="parameters" element="UserExistsByPwdAnswerResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetMenu_InputMessage">
+    <wsdl:part name="parameters" element="GetMenu" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetMenu_OutputMessage">
+    <wsdl:part name="parameters" element="GetMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTreeCat_InputMessage">
+    <wsdl:part name="parameters" element="GetTreeCat" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTreeCat_OutputMessage">
+    <wsdl:part name="parameters" element="GetTreeCatResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridBizWithTags_InputMessage">
+    <wsdl:part name="parameters" element="GetGridBizWithTags" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridBizWithTags_OutputMessage">
+    <wsdl:part name="parameters" element="GetGridBizWithTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridCar_InputMessage">
+    <wsdl:part name="parameters" element="GetGridCar" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridCar_OutputMessage">
+    <wsdl:part name="parameters" element="GetGridCarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridBiz_InputMessage">
+    <wsdl:part name="parameters" element="GetGridBiz" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridBiz_OutputMessage">
+    <wsdl:part name="parameters" element="GetGridBizResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridBizNewEntries_InputMessage">
+    <wsdl:part name="parameters" element="GetGridBizNewEntries" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridBizNewEntries_OutputMessage">
+    <wsdl:part name="parameters" element="GetGridBizNewEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetPdtById_InputMessage">
+    <wsdl:part name="parameters" element="GetPdtById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetPdtById_OutputMessage">
+    <wsdl:part name="parameters" element="GetPdtByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridPdt_InputMessage">
+    <wsdl:part name="parameters" element="GetGridPdt" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridPdt_OutputMessage">
+    <wsdl:part name="parameters" element="GetGridPdtResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTreePdtByBiz_InputMessage">
+    <wsdl:part name="parameters" element="GetTreePdtByBiz" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTreePdtByBiz_OutputMessage">
+    <wsdl:part name="parameters" element="GetTreePdtByBizResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatByPdt_InputMessage">
+    <wsdl:part name="parameters" element="GetCatByPdt" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetCatByPdt_OutputMessage">
+    <wsdl:part name="parameters" element="GetCatByPdtResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizCatOrder_InputMessage">
+    <wsdl:part name="parameters" element="GetBizCatOrder" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetBizCatOrder_OutputMessage">
+    <wsdl:part name="parameters" element="GetBizCatOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteBizCatOrder_InputMessage">
+    <wsdl:part name="parameters" element="DeleteBizCatOrder" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteBizCatOrder_OutputMessage">
+    <wsdl:part name="parameters" element="DeleteBizCatOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteBizCatOrderBybizId_InputMessage">
+    <wsdl:part name="parameters" element="DeleteBizCatOrderBybizId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DeleteBizCatOrderBybizId_OutputMessage">
+    <wsdl:part name="parameters" element="DeleteBizCatOrderBybizIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_InsertUpdateBizCatOrder_InputMessage">
+    <wsdl:part name="parameters" element="InsertUpdateBizCatOrder" />
+  </wsdl:message>
+  <wsdl:message name="Service1_InsertUpdateBizCatOrder_OutputMessage">
+    <wsdl:part name="parameters" element="InsertUpdateBizCatOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveBizCatOrder_InputMessage">
+    <wsdl:part name="parameters" element="SaveBizCatOrder" />
+  </wsdl:message>
+  <wsdl:message name="Service1_SaveBizCatOrder_OutputMessage">
+    <wsdl:part name="parameters" element="SaveBizCatOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizCatOrder_InputMessage">
+    <wsdl:part name="parameters" element="UpdateBizCatOrder" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateBizCatOrder_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateBizCatOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTreePdtByBizCnt_InputMessage">
+    <wsdl:part name="parameters" element="GetTreePdtByBizCnt" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTreePdtByBizCnt_OutputMessage">
+    <wsdl:part name="parameters" element="GetTreePdtByBizCntResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridPdtBySearch_InputMessage">
+    <wsdl:part name="parameters" element="GetGridPdtBySearch" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridPdtBySearch_OutputMessage">
+    <wsdl:part name="parameters" element="GetGridPdtBySearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridPdtByBiz_InputMessage">
+    <wsdl:part name="parameters" element="GetGridPdtByBiz" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridPdtByBiz_OutputMessage">
+    <wsdl:part name="parameters" element="GetGridPdtByBizResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetRootCatPdtByBiz_InputMessage">
+    <wsdl:part name="parameters" element="GetRootCatPdtByBiz" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetRootCatPdtByBiz_OutputMessage">
+    <wsdl:part name="parameters" element="GetRootCatPdtByBizResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridDoublePdtByBizMenu_InputMessage">
+    <wsdl:part name="parameters" element="GetGridDoublePdtByBizMenu" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridDoublePdtByBizMenu_OutputMessage">
+    <wsdl:part name="parameters" element="GetGridDoublePdtByBizMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridPdtByBizMenu_InputMessage">
+    <wsdl:part name="parameters" element="GetGridPdtByBizMenu" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridPdtByBizMenu_OutputMessage">
+    <wsdl:part name="parameters" element="GetGridPdtByBizMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridPdtByBizMenuObs_InputMessage">
+    <wsdl:part name="parameters" element="GetGridPdtByBizMenuObs" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetGridPdtByBizMenuObs_OutputMessage">
+    <wsdl:part name="parameters" element="GetGridPdtByBizMenuObsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTreeAddByCat_InputMessage">
+    <wsdl:part name="parameters" element="GetTreeAddByCat" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTreeAddByCat_OutputMessage">
+    <wsdl:part name="parameters" element="GetTreeAddByCatResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetChildrenAdd_InputMessage">
+    <wsdl:part name="parameters" element="GetChildrenAdd" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetChildrenAdd_OutputMessage">
+    <wsdl:part name="parameters" element="GetChildrenAddResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetChildrenCat_InputMessage">
+    <wsdl:part name="parameters" element="GetChildrenCat" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetChildrenCat_OutputMessage">
+    <wsdl:part name="parameters" element="GetChildrenCatResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTagByEltId_InputMessage">
+    <wsdl:part name="parameters" element="GetTagByEltId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTagByEltId_OutputMessage">
+    <wsdl:part name="parameters" element="GetTagByEltIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTagByBizId_InputMessage">
+    <wsdl:part name="parameters" element="GetTagByBizId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTagByBizId_OutputMessage">
+    <wsdl:part name="parameters" element="GetTagByBizIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTagCntByBizId_InputMessage">
+    <wsdl:part name="parameters" element="GetTagCntByBizId" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTagCntByBizId_OutputMessage">
+    <wsdl:part name="parameters" element="GetTagCntByBizIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltTagViewByBiz_InputMessage">
+    <wsdl:part name="parameters" element="GetEltTagViewByBiz" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltTagViewByBiz_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltTagViewByBizResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetNbTags_InputMessage">
+    <wsdl:part name="parameters" element="GetNbTags" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetNbTags_OutputMessage">
+    <wsdl:part name="parameters" element="GetNbTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltTagViewById_InputMessage">
+    <wsdl:part name="parameters" element="GetEltTagViewById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltTagViewById_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltTagViewByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltByTagObs_InputMessage">
+    <wsdl:part name="parameters" element="GetEltByTagObs" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltByTagObs_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltByTagObsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltByTag_InputMessage">
+    <wsdl:part name="parameters" element="GetEltByTag" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltByTag_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltByTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltByTagOne_InputMessage">
+    <wsdl:part name="parameters" element="GetEltByTagOne" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltByTagOne_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltByTagOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTreeEltPage_InputMessage">
+    <wsdl:part name="parameters" element="GetTreeEltPage" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetTreeEltPage_OutputMessage">
+    <wsdl:part name="parameters" element="GetTreeEltPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageUpdate_InputMessage">
+    <wsdl:part name="parameters" element="EltPageUpdate" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="EltPageUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spGetEltPageDataOnlyById_InputMessage">
+    <wsdl:part name="parameters" element="spGetEltPageDataOnlyById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spGetEltPageDataOnlyById_OutputMessage">
+    <wsdl:part name="parameters" element="spGetEltPageDataOnlyByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spGetEltPageDataById_InputMessage">
+    <wsdl:part name="parameters" element="spGetEltPageDataById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_spGetEltPageDataById_OutputMessage">
+    <wsdl:part name="parameters" element="spGetEltPageDataByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageDeleteMenu_InputMessage">
+    <wsdl:part name="parameters" element="EltPageDeleteMenu" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageDeleteMenu_OutputMessage">
+    <wsdl:part name="parameters" element="EltPageDeleteMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageDelete_InputMessage">
+    <wsdl:part name="parameters" element="EltPageDelete" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageDelete_OutputMessage">
+    <wsdl:part name="parameters" element="EltPageDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_RenameCatPdt_InputMessage">
+    <wsdl:part name="parameters" element="RenameCatPdt" />
+  </wsdl:message>
+  <wsdl:message name="Service1_RenameCatPdt_OutputMessage">
+    <wsdl:part name="parameters" element="RenameCatPdtResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltCatViewPdtByCat_InputMessage">
+    <wsdl:part name="parameters" element="GetEltCatViewPdtByCat" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltCatViewPdtByCat_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltCatViewPdtByCatResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateCatPdt_InputMessage">
+    <wsdl:part name="parameters" element="UpdateCatPdt" />
+  </wsdl:message>
+  <wsdl:message name="Service1_UpdateCatPdt_OutputMessage">
+    <wsdl:part name="parameters" element="UpdateCatPdtResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageUpdateMenuName_InputMessage">
+    <wsdl:part name="parameters" element="EltPageUpdateMenuName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageUpdateMenuName_OutputMessage">
+    <wsdl:part name="parameters" element="EltPageUpdateMenuNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1">
+    <wsdl:operation name="SaveElt">
+      <wsdl:input wsaw:Action="urn:Service1/SaveElt" message="Service1_SaveElt_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SaveEltResponse" message="Service1_SaveElt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCat">
+      <wsdl:input wsaw:Action="urn:Service1/SaveCat" message="Service1_SaveCat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SaveCatResponse" message="Service1_SaveCat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spAddSave">
+      <wsdl:input wsaw:Action="urn:Service1/spAddSave" message="Service1_spAddSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spAddSaveResponse" message="Service1_spAddSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAdd">
+      <wsdl:input wsaw:Action="urn:Service1/SaveAdd" message="Service1_SaveAdd_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SaveAddResponse" message="Service1_SaveAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEltCat">
+      <wsdl:input wsaw:Action="urn:Service1/SaveEltCat" message="Service1_SaveEltCat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SaveEltCatResponse" message="Service1_SaveEltCat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spDicoUpdateAll">
+      <wsdl:input wsaw:Action="urn:Service1/spDicoUpdateAll" message="Service1_spDicoUpdateAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spDicoUpdateAllResponse" message="Service1_spDicoUpdateAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spDicoUpdate">
+      <wsdl:input wsaw:Action="urn:Service1/spDicoUpdate" message="Service1_spDicoUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spDicoUpdateResponse" message="Service1_spDicoUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spDicoUpdateById">
+      <wsdl:input wsaw:Action="urn:Service1/spDicoUpdateById" message="Service1_spDicoUpdateById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spDicoUpdateByIdResponse" message="Service1_spDicoUpdateById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DicoDelete">
+      <wsdl:input wsaw:Action="urn:Service1/DicoDelete" message="Service1_DicoDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DicoDeleteResponse" message="Service1_DicoDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDico">
+      <wsdl:input wsaw:Action="urn:Service1/SaveDico" message="Service1_SaveDico_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SaveDicoResponse" message="Service1_SaveDico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDicoById">
+      <wsdl:input wsaw:Action="urn:Service1/GetDicoById" message="Service1_GetDicoById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetDicoByIdResponse" message="Service1_GetDicoById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDicoNameById">
+      <wsdl:input wsaw:Action="urn:Service1/GetDicoNameById" message="Service1_GetDicoNameById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetDicoNameByIdResponse" message="Service1_GetDicoNameById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDicoIdByNameForWebSite">
+      <wsdl:input wsaw:Action="urn:Service1/GetDicoIdByNameForWebSite" message="Service1_GetDicoIdByNameForWebSite_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetDicoIdByNameForWebSiteResponse" message="Service1_GetDicoIdByNameForWebSite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDicoIdByName">
+      <wsdl:input wsaw:Action="urn:Service1/GetDicoIdByName" message="Service1_GetDicoIdByName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetDicoIdByNameResponse" message="Service1_GetDicoIdByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePdtNameId">
+      <wsdl:input wsaw:Action="urn:Service1/SavePdtNameId" message="Service1_SavePdtNameId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SavePdtNameIdResponse" message="Service1_SavePdtNameId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePdtPrice">
+      <wsdl:input wsaw:Action="urn:Service1/SavePdtPrice" message="Service1_SavePdtPrice_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SavePdtPriceResponse" message="Service1_SavePdtPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePdtEmptyName">
+      <wsdl:input wsaw:Action="urn:Service1/SavePdtEmptyName" message="Service1_SavePdtEmptyName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SavePdtEmptyNameResponse" message="Service1_SavePdtEmptyName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePdtIFN">
+      <wsdl:input wsaw:Action="urn:Service1/SavePdtIFN" message="Service1_SavePdtIFN_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SavePdtIFNResponse" message="Service1_SavePdtIFN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePdt">
+      <wsdl:input wsaw:Action="urn:Service1/SavePdt" message="Service1_SavePdt_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SavePdtResponse" message="Service1_SavePdt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="doTransHtmlJson">
+      <wsdl:input wsaw:Action="urn:Service1/doTransHtmlJson" message="Service1_doTransHtmlJson_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/doTransHtmlJsonResponse" message="Service1_doTransHtmlJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="doTransJson">
+      <wsdl:input wsaw:Action="urn:Service1/doTransJson" message="Service1_doTransJson_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/doTransJsonResponse" message="Service1_doTransJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="transFromMymemory">
+      <wsdl:input wsaw:Action="urn:Service1/transFromMymemory" message="Service1_transFromMymemory_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/transFromMymemoryResponse" message="Service1_transFromMymemory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckDomainName">
+      <wsdl:input wsaw:Action="urn:Service1/CheckDomainName" message="Service1_CheckDomainName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckDomainNameResponse" message="Service1_CheckDomainName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDicoIdByNameForWebSiteLg">
+      <wsdl:input wsaw:Action="urn:Service1/GetDicoIdByNameForWebSiteLg" message="Service1_GetDicoIdByNameForWebSiteLg_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetDicoIdByNameForWebSiteLgResponse" message="Service1_GetDicoIdByNameForWebSiteLg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBiz">
+      <wsdl:input wsaw:Action="urn:Service1/DeleteBiz" message="Service1_DeleteBiz_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DeleteBizResponse" message="Service1_DeleteBiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePdt">
+      <wsdl:input wsaw:Action="urn:Service1/DeletePdt" message="Service1_DeletePdt_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DeletePdtResponse" message="Service1_DeletePdt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCat">
+      <wsdl:input wsaw:Action="urn:Service1/DeleteCat" message="Service1_DeleteCat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DeleteCatResponse" message="Service1_DeleteCat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForumById">
+      <wsdl:input wsaw:Action="urn:Service1/GetForumById" message="Service1_GetForumById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetForumByIdResponse" message="Service1_GetForumById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForumByEltIdParOnly">
+      <wsdl:input wsaw:Action="urn:Service1/GetForumByEltIdParOnly" message="Service1_GetForumByEltIdParOnly_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetForumByEltIdParOnlyResponse" message="Service1_GetForumByEltIdParOnly_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForumByEltId">
+      <wsdl:input wsaw:Action="urn:Service1/GetForumByEltId" message="Service1_GetForumByEltId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetForumByEltIdResponse" message="Service1_GetForumByEltId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForumBySearch">
+      <wsdl:input wsaw:Action="urn:Service1/GetForumBySearch" message="Service1_GetForumBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetForumBySearchResponse" message="Service1_GetForumBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteForum">
+      <wsdl:input wsaw:Action="urn:Service1/DeleteForum" message="Service1_DeleteForum_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DeleteForumResponse" message="Service1_DeleteForum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveForum">
+      <wsdl:input wsaw:Action="urn:Service1/SaveForum" message="Service1_SaveForum_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SaveForumResponse" message="Service1_SaveForum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSmsData">
+      <wsdl:input wsaw:Action="urn:Service1/SendSmsData" message="Service1_SendSmsData_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SendSmsDataResponse" message="Service1_SendSmsData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendEmail">
+      <wsdl:input wsaw:Action="urn:Service1/sendEmail" message="Service1_sendEmail_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/sendEmailResponse" message="Service1_sendEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendEmail2">
+      <wsdl:input wsaw:Action="urn:Service1/sendEmail2" message="Service1_sendEmail2_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/sendEmail2Response" message="Service1_sendEmail2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendEmailHtml">
+      <wsdl:input wsaw:Action="urn:Service1/sendEmailHtml" message="Service1_sendEmailHtml_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/sendEmailHtmlResponse" message="Service1_sendEmailHtml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertForum">
+      <wsdl:input wsaw:Action="urn:Service1/InsertForum" message="Service1_InsertForum_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/InsertForumResponse" message="Service1_InsertForum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CatInsertSampleByCategoryNamePdt">
+      <wsdl:input wsaw:Action="urn:Service1/CatInsertSampleByCategoryNamePdt" message="Service1_CatInsertSampleByCategoryNamePdt_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CatInsertSampleByCategoryNamePdtResponse" message="Service1_CatInsertSampleByCategoryNamePdt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatByBizId">
+      <wsdl:input wsaw:Action="urn:Service1/GetCatByBizId" message="Service1_GetCatByBizId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetCatByBizIdResponse" message="Service1_GetCatByBizId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMenu">
+      <wsdl:input wsaw:Action="urn:Service1/InsertMenu" message="Service1_InsertMenu_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/InsertMenuResponse" message="Service1_InsertMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getDescPdt">
+      <wsdl:input wsaw:Action="urn:Service1/getDescPdt" message="Service1_getDescPdt_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/getDescPdtResponse" message="Service1_getDescPdt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStartIndexBybizCatName">
+      <wsdl:input wsaw:Action="urn:Service1/getStartIndexBybizCatName" message="Service1_getStartIndexBybizCatName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/getStartIndexBybizCatNameResponse" message="Service1_getStartIndexBybizCatName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatViewByCatIdAll">
+      <wsdl:input wsaw:Action="urn:Service1/GetCatViewByCatIdAll" message="Service1_GetCatViewByCatIdAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetCatViewByCatIdAllResponse" message="Service1_GetCatViewByCatIdAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatViewByCatId">
+      <wsdl:input wsaw:Action="urn:Service1/GetCatViewByCatId" message="Service1_GetCatViewByCatId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetCatViewByCatIdResponse" message="Service1_GetCatViewByCatId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltUpdateLastUpdate">
+      <wsdl:input wsaw:Action="urn:Service1/EltUpdateLastUpdate" message="Service1_EltUpdateLastUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltUpdateLastUpdateResponse" message="Service1_EltUpdateLastUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltCatInsert">
+      <wsdl:input wsaw:Action="urn:Service1/EltCatInsert" message="Service1_EltCatInsert_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltCatInsertResponse" message="Service1_EltCatInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DicoInsert">
+      <wsdl:input wsaw:Action="urn:Service1/DicoInsert" message="Service1_DicoInsert_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DicoInsertResponse" message="Service1_DicoInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CatInsert">
+      <wsdl:input wsaw:Action="urn:Service1/CatInsert" message="Service1_CatInsert_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CatInsertResponse" message="Service1_CatInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CatInsertSample">
+      <wsdl:input wsaw:Action="urn:Service1/CatInsertSample" message="Service1_CatInsertSample_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CatInsertSampleResponse" message="Service1_CatInsertSample_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CatInsertSampleNew">
+      <wsdl:input wsaw:Action="urn:Service1/CatInsertSampleNew" message="Service1_CatInsertSampleNew_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CatInsertSampleNewResponse" message="Service1_CatInsertSampleNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CatInsertByPar">
+      <wsdl:input wsaw:Action="urn:Service1/CatInsertByPar" message="Service1_CatInsertByPar_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CatInsertByParResponse" message="Service1_CatInsertByPar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltPageUpdatePosition">
+      <wsdl:input wsaw:Action="urn:Service1/EltPageUpdatePosition" message="Service1_EltPageUpdatePosition_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltPageUpdatePositionResponse" message="Service1_EltPageUpdatePosition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltPageInsert">
+      <wsdl:input wsaw:Action="urn:Service1/EltPageInsert" message="Service1_EltPageInsert_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltPageInsertResponse" message="Service1_EltPageInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltPageInsertSample">
+      <wsdl:input wsaw:Action="urn:Service1/EltPageInsertSample" message="Service1_EltPageInsertSample_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltPageInsertSampleResponse" message="Service1_EltPageInsertSample_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltPageInsertSampleContactUs">
+      <wsdl:input wsaw:Action="urn:Service1/EltPageInsertSampleContactUs" message="Service1_EltPageInsertSampleContactUs_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltPageInsertSampleContactUsResponse" message="Service1_EltPageInsertSampleContactUs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddParIdByDicoId">
+      <wsdl:input wsaw:Action="urn:Service1/GetAddParIdByDicoId" message="Service1_GetAddParIdByDicoId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetAddParIdByDicoIdResponse" message="Service1_GetAddParIdByDicoId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddParIdByName">
+      <wsdl:input wsaw:Action="urn:Service1/GetAddParIdByName" message="Service1_GetAddParIdByName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetAddParIdByNameResponse" message="Service1_GetAddParIdByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddViewById">
+      <wsdl:input wsaw:Action="urn:Service1/GetAddViewById" message="Service1_GetAddViewById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetAddViewByIdResponse" message="Service1_GetAddViewById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddNameHeById">
+      <wsdl:input wsaw:Action="urn:Service1/GetAddNameHeById" message="Service1_GetAddNameHeById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetAddNameHeByIdResponse" message="Service1_GetAddNameHeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddByNameByPar">
+      <wsdl:input wsaw:Action="urn:Service1/GetAddByNameByPar" message="Service1_GetAddByNameByPar_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetAddByNameByParResponse" message="Service1_GetAddByNameByPar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddByDicoPar">
+      <wsdl:input wsaw:Action="urn:Service1/GetAddByDicoPar" message="Service1_GetAddByDicoPar_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetAddByDicoParResponse" message="Service1_GetAddByDicoPar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddByPar">
+      <wsdl:input wsaw:Action="urn:Service1/GetAddByPar" message="Service1_GetAddByPar_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetAddByParResponse" message="Service1_GetAddByPar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddByParId">
+      <wsdl:input wsaw:Action="urn:Service1/GetAddByParId" message="Service1_GetAddByParId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetAddByParIdResponse" message="Service1_GetAddByParId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spTagSave">
+      <wsdl:input wsaw:Action="urn:Service1/spTagSave" message="Service1_spTagSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spTagSaveResponse" message="Service1_spTagSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spTagOneSave">
+      <wsdl:input wsaw:Action="urn:Service1/spTagOneSave" message="Service1_spTagOneSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spTagOneSaveResponse" message="Service1_spTagOneSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spBizSaveForWeb">
+      <wsdl:input wsaw:Action="urn:Service1/spBizSaveForWeb" message="Service1_spBizSaveForWeb_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spBizSaveForWebResponse" message="Service1_spBizSaveForWeb_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spBizSave">
+      <wsdl:input wsaw:Action="urn:Service1/spBizSave" message="Service1_spBizSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spBizSaveResponse" message="Service1_spBizSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBizNameById">
+      <wsdl:input wsaw:Action="urn:Service1/GetBizNameById" message="Service1_GetBizNameById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetBizNameByIdResponse" message="Service1_GetBizNameById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBizByName">
+      <wsdl:input wsaw:Action="urn:Service1/GetBizByName" message="Service1_GetBizByName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetBizByNameResponse" message="Service1_GetBizByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBizByNameAddTelMob">
+      <wsdl:input wsaw:Action="urn:Service1/GetBizByNameAddTelMob" message="Service1_GetBizByNameAddTelMob_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetBizByNameAddTelMobResponse" message="Service1_GetBizByNameAddTelMob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBizByNameAdd">
+      <wsdl:input wsaw:Action="urn:Service1/GetBizByNameAdd" message="Service1_GetBizByNameAdd_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetBizByNameAddResponse" message="Service1_GetBizByNameAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBizByTelMob">
+      <wsdl:input wsaw:Action="urn:Service1/GetBizByTelMob" message="Service1_GetBizByTelMob_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetBizByTelMobResponse" message="Service1_GetBizByTelMob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBizByNameAddTel">
+      <wsdl:input wsaw:Action="urn:Service1/GetBizByNameAddTel" message="Service1_GetBizByNameAddTel_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetBizByNameAddTelResponse" message="Service1_GetBizByNameAddTel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltCatViewBiz">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltCatViewBiz" message="Service1_GetEltCatViewBiz_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltCatViewBizResponse" message="Service1_GetEltCatViewBiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltCatViewBizByEltId">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltCatViewBizByEltId" message="Service1_GetEltCatViewBizByEltId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltCatViewBizByEltIdResponse" message="Service1_GetEltCatViewBizByEltId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBizByEltId">
+      <wsdl:input wsaw:Action="urn:Service1/GetBizByEltId" message="Service1_GetBizByEltId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetBizByEltIdResponse" message="Service1_GetBizByEltId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBizByCustID">
+      <wsdl:input wsaw:Action="urn:Service1/GetBizByCustID" message="Service1_GetBizByCustID_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetBizByCustIDResponse" message="Service1_GetBizByCustID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DicoUpdateById">
+      <wsdl:input wsaw:Action="urn:Service1/DicoUpdateById" message="Service1_DicoUpdateById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DicoUpdateByIdResponse" message="Service1_DicoUpdateById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBizForm">
+      <wsdl:input wsaw:Action="urn:Service1/UpdateBizForm" message="Service1_UpdateBizForm_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/UpdateBizFormResponse" message="Service1_UpdateBizForm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBizDetails">
+      <wsdl:input wsaw:Action="urn:Service1/UpdateBizDetails" message="Service1_UpdateBizDetails_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/UpdateBizDetailsResponse" message="Service1_UpdateBizDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteTags">
+      <wsdl:input wsaw:Action="urn:Service1/deleteTags" message="Service1_deleteTags_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/deleteTagsResponse" message="Service1_deleteTags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="saveTags">
+      <wsdl:input wsaw:Action="urn:Service1/saveTags" message="Service1_saveTags_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/saveTagsResponse" message="Service1_saveTags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBizlongAddId">
+      <wsdl:input wsaw:Action="urn:Service1/UpdateBizlongAddId" message="Service1_UpdateBizlongAddId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/UpdateBizlongAddIdResponse" message="Service1_UpdateBizlongAddId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBizCityId">
+      <wsdl:input wsaw:Action="urn:Service1/UpdateBizCityId" message="Service1_UpdateBizCityId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/UpdateBizCityIdResponse" message="Service1_UpdateBizCityId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBiz">
+      <wsdl:input wsaw:Action="urn:Service1/UpdateBiz" message="Service1_UpdateBiz_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/UpdateBizResponse" message="Service1_UpdateBiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBiz2">
+      <wsdl:input wsaw:Action="urn:Service1/UpdateBiz2" message="Service1_UpdateBiz2_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/UpdateBiz2Response" message="Service1_UpdateBiz2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBizTelMobWWW">
+      <wsdl:input wsaw:Action="urn:Service1/UpdateBizTelMobWWW" message="Service1_UpdateBizTelMobWWW_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/UpdateBizTelMobWWWResponse" message="Service1_UpdateBizTelMobWWW_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spEltUpdateRefUrl">
+      <wsdl:input wsaw:Action="urn:Service1/spEltUpdateRefUrl" message="Service1_spEltUpdateRefUrl_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spEltUpdateRefUrlResponse" message="Service1_spEltUpdateRefUrl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltUpdateUserName">
+      <wsdl:input wsaw:Action="urn:Service1/EltUpdateUserName" message="Service1_EltUpdateUserName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltUpdateUserNameResponse" message="Service1_EltUpdateUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spEltUpdate">
+      <wsdl:input wsaw:Action="urn:Service1/spEltUpdate" message="Service1_spEltUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spEltUpdateResponse" message="Service1_spEltUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spEltUpdateSmsCounter">
+      <wsdl:input wsaw:Action="urn:Service1/spEltUpdateSmsCounter" message="Service1_spEltUpdateSmsCounter_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spEltUpdateSmsCounterResponse" message="Service1_spEltUpdateSmsCounter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spEltUpdateTagTmp">
+      <wsdl:input wsaw:Action="urn:Service1/spEltUpdateTagTmp" message="Service1_spEltUpdateTagTmp_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spEltUpdateTagTmpResponse" message="Service1_spEltUpdateTagTmp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spCarSave">
+      <wsdl:input wsaw:Action="urn:Service1/spCarSave" message="Service1_spCarSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spCarSaveResponse" message="Service1_spCarSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarByCarID">
+      <wsdl:input wsaw:Action="urn:Service1/GetCarByCarID" message="Service1_GetCarByCarID_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetCarByCarIDResponse" message="Service1_GetCarByCarID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatByName">
+      <wsdl:input wsaw:Action="urn:Service1/GetCatByName" message="Service1_GetCatByName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetCatByNameResponse" message="Service1_GetCatByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatViewById">
+      <wsdl:input wsaw:Action="urn:Service1/GetCatViewById" message="Service1_GetCatViewById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetCatViewByIdResponse" message="Service1_GetCatViewById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatByNameByPar">
+      <wsdl:input wsaw:Action="urn:Service1/GetCatByNameByPar" message="Service1_GetCatByNameByPar_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetCatByNameByParResponse" message="Service1_GetCatByNameByPar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDicoByNameLg">
+      <wsdl:input wsaw:Action="urn:Service1/GetDicoByNameLg" message="Service1_GetDicoByNameLg_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetDicoByNameLgResponse" message="Service1_GetDicoByNameLg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDicoByName">
+      <wsdl:input wsaw:Action="urn:Service1/GetDicoByName" message="Service1_GetDicoByName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetDicoByNameResponse" message="Service1_GetDicoByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDicoIdByNameFunc">
+      <wsdl:input wsaw:Action="urn:Service1/GetDicoIdByNameFunc" message="Service1_GetDicoIdByNameFunc_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetDicoIdByNameFuncResponse" message="Service1_GetDicoIdByNameFunc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spGetDicoIdByName">
+      <wsdl:input wsaw:Action="urn:Service1/spGetDicoIdByName" message="Service1_spGetDicoIdByName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spGetDicoIdByNameResponse" message="Service1_spGetDicoIdByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spGetDicoByName">
+      <wsdl:input wsaw:Action="urn:Service1/spGetDicoByName" message="Service1_spGetDicoByName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spGetDicoByNameResponse" message="Service1_spGetDicoByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spGetDicoByNameApproximatif">
+      <wsdl:input wsaw:Action="urn:Service1/spGetDicoByNameApproximatif" message="Service1_spGetDicoByNameApproximatif_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spGetDicoByNameApproximatifResponse" message="Service1_spGetDicoByNameApproximatif_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddViewByNameByPar">
+      <wsdl:input wsaw:Action="urn:Service1/GetAddViewByNameByPar" message="Service1_GetAddViewByNameByPar_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetAddViewByNameByParResponse" message="Service1_GetAddViewByNameByPar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDicoEmpties">
+      <wsdl:input wsaw:Action="urn:Service1/GetDicoEmpties" message="Service1_GetDicoEmpties_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetDicoEmptiesResponse" message="Service1_GetDicoEmpties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDicos">
+      <wsdl:input wsaw:Action="urn:Service1/GetDicos" message="Service1_GetDicos_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetDicosResponse" message="Service1_GetDicos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltByUserName">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltByUserName" message="Service1_GetEltByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltByUserNameResponse" message="Service1_GetEltByUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltIdByUserName">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltIdByUserName" message="Service1_GetEltIdByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltIdByUserNameResponse" message="Service1_GetEltIdByUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltById">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltById" message="Service1_GetEltById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltByIdResponse" message="Service1_GetEltById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="urn:Service1/DoWork" message="Service1_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DoWorkResponse" message="Service1_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="loadImagePdtMethod">
+      <wsdl:input wsaw:Action="urn:Service1/loadImagePdtMethod" message="Service1_loadImagePdtMethod_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/loadImagePdtMethodResponse" message="Service1_loadImagePdtMethod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SettingGet">
+      <wsdl:input wsaw:Action="urn:Service1/SettingGet" message="Service1_SettingGet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SettingGetResponse" message="Service1_SettingGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SettingGetByName">
+      <wsdl:input wsaw:Action="urn:Service1/SettingGetByName" message="Service1_SettingGetByName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SettingGetByNameResponse" message="Service1_SettingGetByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SettingDelete">
+      <wsdl:input wsaw:Action="urn:Service1/SettingDelete" message="Service1_SettingDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SettingDeleteResponse" message="Service1_SettingDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SettingInsert">
+      <wsdl:input wsaw:Action="urn:Service1/SettingInsert" message="Service1_SettingInsert_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SettingInsertResponse" message="Service1_SettingInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SettingUpdate">
+      <wsdl:input wsaw:Action="urn:Service1/SettingUpdate" message="Service1_SettingUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SettingUpdateResponse" message="Service1_SettingUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltPageImage">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltPageImage" message="Service1_GetEltPageImage_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltPageImageResponse" message="Service1_GetEltPageImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltPageImageDelete">
+      <wsdl:input wsaw:Action="urn:Service1/EltPageImageDelete" message="Service1_EltPageImageDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltPageImageDeleteResponse" message="Service1_EltPageImageDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltPageImageInsert">
+      <wsdl:input wsaw:Action="urn:Service1/EltPageImageInsert" message="Service1_EltPageImageInsert_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltPageImageInsertResponse" message="Service1_EltPageImageInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckImageDataHtml">
+      <wsdl:input wsaw:Action="urn:Service1/CheckImageDataHtml" message="Service1_CheckImageDataHtml_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckImageDataHtmlResponse" message="Service1_CheckImageDataHtml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckImageAlertAdmin">
+      <wsdl:input wsaw:Action="urn:Service1/CheckImageAlertAdmin" message="Service1_CheckImageAlertAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckImageAlertAdminResponse" message="Service1_CheckImageAlertAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckImageInsert">
+      <wsdl:input wsaw:Action="urn:Service1/CheckImageInsert" message="Service1_CheckImageInsert_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckImageInsertResponse" message="Service1_CheckImageInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckImageDelete">
+      <wsdl:input wsaw:Action="urn:Service1/CheckImageDelete" message="Service1_CheckImageDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckImageDeleteResponse" message="Service1_CheckImageDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckImageDeleteAll">
+      <wsdl:input wsaw:Action="urn:Service1/CheckImageDeleteAll" message="Service1_CheckImageDeleteAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckImageDeleteAllResponse" message="Service1_CheckImageDeleteAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckImage">
+      <wsdl:input wsaw:Action="urn:Service1/GetCheckImage" message="Service1_GetCheckImage_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetCheckImageResponse" message="Service1_GetCheckImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckout">
+      <wsdl:input wsaw:Action="urn:Service1/GetCheckout" message="Service1_GetCheckout_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetCheckoutResponse" message="Service1_GetCheckout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckoutDeleteByBizId">
+      <wsdl:input wsaw:Action="urn:Service1/CheckoutDeleteByBizId" message="Service1_CheckoutDeleteByBizId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckoutDeleteByBizIdResponse" message="Service1_CheckoutDeleteByBizId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckoutDeleteByEltId">
+      <wsdl:input wsaw:Action="urn:Service1/CheckoutDeleteByEltId" message="Service1_CheckoutDeleteByEltId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckoutDeleteByEltIdResponse" message="Service1_CheckoutDeleteByEltId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckoutDelete">
+      <wsdl:input wsaw:Action="urn:Service1/CheckoutDelete" message="Service1_CheckoutDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckoutDeleteResponse" message="Service1_CheckoutDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotobyPdt">
+      <wsdl:input wsaw:Action="urn:Service1/GetPhotobyPdt" message="Service1_GetPhotobyPdt_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetPhotobyPdtResponse" message="Service1_GetPhotobyPdt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PhotoInsert">
+      <wsdl:input wsaw:Action="urn:Service1/PhotoInsert" message="Service1_PhotoInsert_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/PhotoInsertResponse" message="Service1_PhotoInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PhotoUpdate">
+      <wsdl:input wsaw:Action="urn:Service1/PhotoUpdate" message="Service1_PhotoUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/PhotoUpdateResponse" message="Service1_PhotoUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PhotoDeleteById">
+      <wsdl:input wsaw:Action="urn:Service1/PhotoDeleteById" message="Service1_PhotoDeleteById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/PhotoDeleteByIdResponse" message="Service1_PhotoDeleteById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PhotoDelete">
+      <wsdl:input wsaw:Action="urn:Service1/PhotoDelete" message="Service1_PhotoDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/PhotoDeleteResponse" message="Service1_PhotoDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckoutInsert">
+      <wsdl:input wsaw:Action="urn:Service1/CheckoutInsert" message="Service1_CheckoutInsert_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckoutInsertResponse" message="Service1_CheckoutInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckoutUpdate">
+      <wsdl:input wsaw:Action="urn:Service1/CheckoutUpdate" message="Service1_CheckoutUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckoutUpdateResponse" message="Service1_CheckoutUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckoutDeleteById">
+      <wsdl:input wsaw:Action="urn:Service1/CheckoutDeleteById" message="Service1_CheckoutDeleteById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CheckoutDeleteByIdResponse" message="Service1_CheckoutDeleteById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoUpload">
+      <wsdl:input wsaw:Action="urn:Service1/DoUpload" message="Service1_DoUpload_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DoUploadResponse" message="Service1_DoUpload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneratePassword">
+      <wsdl:input wsaw:Action="urn:Service1/GeneratePassword" message="Service1_GeneratePassword_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GeneratePasswordResponse" message="Service1_GeneratePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="urn:Service1/DeleteUser" message="Service1_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DeleteUserResponse" message="Service1_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="urn:Service1/CreateUser" message="Service1_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/CreateUserResponse" message="Service1_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPassword">
+      <wsdl:input wsaw:Action="urn:Service1/GetPassword" message="Service1_GetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetPasswordResponse" message="Service1_GetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmail">
+      <wsdl:input wsaw:Action="urn:Service1/GetEmail" message="Service1_GetEmail_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEmailResponse" message="Service1_GetEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAllUsers">
+      <wsdl:input wsaw:Action="urn:Service1/DeleteAllUsers" message="Service1_DeleteAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DeleteAllUsersResponse" message="Service1_DeleteAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserExists">
+      <wsdl:input wsaw:Action="urn:Service1/UserExists" message="Service1_UserExists_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/UserExistsResponse" message="Service1_UserExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserExistsByPwdAnswer">
+      <wsdl:input wsaw:Action="urn:Service1/UserExistsByPwdAnswer" message="Service1_UserExistsByPwdAnswer_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/UserExistsByPwdAnswerResponse" message="Service1_UserExistsByPwdAnswer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <wsdl:input wsaw:Action="urn:Service1/GetMenu" message="Service1_GetMenu_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetMenuResponse" message="Service1_GetMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTreeCat">
+      <wsdl:input wsaw:Action="urn:Service1/GetTreeCat" message="Service1_GetTreeCat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetTreeCatResponse" message="Service1_GetTreeCat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridBizWithTags">
+      <wsdl:input wsaw:Action="urn:Service1/GetGridBizWithTags" message="Service1_GetGridBizWithTags_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetGridBizWithTagsResponse" message="Service1_GetGridBizWithTags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridCar">
+      <wsdl:input wsaw:Action="urn:Service1/GetGridCar" message="Service1_GetGridCar_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetGridCarResponse" message="Service1_GetGridCar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridBiz">
+      <wsdl:input wsaw:Action="urn:Service1/GetGridBiz" message="Service1_GetGridBiz_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetGridBizResponse" message="Service1_GetGridBiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridBizNewEntries">
+      <wsdl:input wsaw:Action="urn:Service1/GetGridBizNewEntries" message="Service1_GetGridBizNewEntries_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetGridBizNewEntriesResponse" message="Service1_GetGridBizNewEntries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPdtById">
+      <wsdl:input wsaw:Action="urn:Service1/GetPdtById" message="Service1_GetPdtById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetPdtByIdResponse" message="Service1_GetPdtById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridPdt">
+      <wsdl:input wsaw:Action="urn:Service1/GetGridPdt" message="Service1_GetGridPdt_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetGridPdtResponse" message="Service1_GetGridPdt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTreePdtByBiz">
+      <wsdl:input wsaw:Action="urn:Service1/GetTreePdtByBiz" message="Service1_GetTreePdtByBiz_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetTreePdtByBizResponse" message="Service1_GetTreePdtByBiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatByPdt">
+      <wsdl:input wsaw:Action="urn:Service1/GetCatByPdt" message="Service1_GetCatByPdt_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetCatByPdtResponse" message="Service1_GetCatByPdt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBizCatOrder">
+      <wsdl:input wsaw:Action="urn:Service1/GetBizCatOrder" message="Service1_GetBizCatOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetBizCatOrderResponse" message="Service1_GetBizCatOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBizCatOrder">
+      <wsdl:input wsaw:Action="urn:Service1/DeleteBizCatOrder" message="Service1_DeleteBizCatOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DeleteBizCatOrderResponse" message="Service1_DeleteBizCatOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBizCatOrderBybizId">
+      <wsdl:input wsaw:Action="urn:Service1/DeleteBizCatOrderBybizId" message="Service1_DeleteBizCatOrderBybizId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DeleteBizCatOrderBybizIdResponse" message="Service1_DeleteBizCatOrderBybizId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUpdateBizCatOrder">
+      <wsdl:input wsaw:Action="urn:Service1/InsertUpdateBizCatOrder" message="Service1_InsertUpdateBizCatOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/InsertUpdateBizCatOrderResponse" message="Service1_InsertUpdateBizCatOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBizCatOrder">
+      <wsdl:input wsaw:Action="urn:Service1/SaveBizCatOrder" message="Service1_SaveBizCatOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/SaveBizCatOrderResponse" message="Service1_SaveBizCatOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBizCatOrder">
+      <wsdl:input wsaw:Action="urn:Service1/UpdateBizCatOrder" message="Service1_UpdateBizCatOrder_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/UpdateBizCatOrderResponse" message="Service1_UpdateBizCatOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTreePdtByBizCnt">
+      <wsdl:input wsaw:Action="urn:Service1/GetTreePdtByBizCnt" message="Service1_GetTreePdtByBizCnt_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetTreePdtByBizCntResponse" message="Service1_GetTreePdtByBizCnt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridPdtBySearch">
+      <wsdl:input wsaw:Action="urn:Service1/GetGridPdtBySearch" message="Service1_GetGridPdtBySearch_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetGridPdtBySearchResponse" message="Service1_GetGridPdtBySearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridPdtByBiz">
+      <wsdl:input wsaw:Action="urn:Service1/GetGridPdtByBiz" message="Service1_GetGridPdtByBiz_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetGridPdtByBizResponse" message="Service1_GetGridPdtByBiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRootCatPdtByBiz">
+      <wsdl:input wsaw:Action="urn:Service1/GetRootCatPdtByBiz" message="Service1_GetRootCatPdtByBiz_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetRootCatPdtByBizResponse" message="Service1_GetRootCatPdtByBiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridDoublePdtByBizMenu">
+      <wsdl:input wsaw:Action="urn:Service1/GetGridDoublePdtByBizMenu" message="Service1_GetGridDoublePdtByBizMenu_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetGridDoublePdtByBizMenuResponse" message="Service1_GetGridDoublePdtByBizMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridPdtByBizMenu">
+      <wsdl:input wsaw:Action="urn:Service1/GetGridPdtByBizMenu" message="Service1_GetGridPdtByBizMenu_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetGridPdtByBizMenuResponse" message="Service1_GetGridPdtByBizMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGridPdtByBizMenuObs">
+      <wsdl:input wsaw:Action="urn:Service1/GetGridPdtByBizMenuObs" message="Service1_GetGridPdtByBizMenuObs_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetGridPdtByBizMenuObsResponse" message="Service1_GetGridPdtByBizMenuObs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTreeAddByCat">
+      <wsdl:input wsaw:Action="urn:Service1/GetTreeAddByCat" message="Service1_GetTreeAddByCat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetTreeAddByCatResponse" message="Service1_GetTreeAddByCat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildrenAdd">
+      <wsdl:input wsaw:Action="urn:Service1/GetChildrenAdd" message="Service1_GetChildrenAdd_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetChildrenAddResponse" message="Service1_GetChildrenAdd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildrenCat">
+      <wsdl:input wsaw:Action="urn:Service1/GetChildrenCat" message="Service1_GetChildrenCat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetChildrenCatResponse" message="Service1_GetChildrenCat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTagByEltId">
+      <wsdl:input wsaw:Action="urn:Service1/GetTagByEltId" message="Service1_GetTagByEltId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetTagByEltIdResponse" message="Service1_GetTagByEltId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTagByBizId">
+      <wsdl:input wsaw:Action="urn:Service1/GetTagByBizId" message="Service1_GetTagByBizId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetTagByBizIdResponse" message="Service1_GetTagByBizId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTagCntByBizId">
+      <wsdl:input wsaw:Action="urn:Service1/GetTagCntByBizId" message="Service1_GetTagCntByBizId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetTagCntByBizIdResponse" message="Service1_GetTagCntByBizId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltTagViewByBiz">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltTagViewByBiz" message="Service1_GetEltTagViewByBiz_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltTagViewByBizResponse" message="Service1_GetEltTagViewByBiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNbTags">
+      <wsdl:input wsaw:Action="urn:Service1/GetNbTags" message="Service1_GetNbTags_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetNbTagsResponse" message="Service1_GetNbTags_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltTagViewById">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltTagViewById" message="Service1_GetEltTagViewById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltTagViewByIdResponse" message="Service1_GetEltTagViewById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltByTagObs">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltByTagObs" message="Service1_GetEltByTagObs_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltByTagObsResponse" message="Service1_GetEltByTagObs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltByTag">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltByTag" message="Service1_GetEltByTag_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltByTagResponse" message="Service1_GetEltByTag_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltByTagOne">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltByTagOne" message="Service1_GetEltByTagOne_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltByTagOneResponse" message="Service1_GetEltByTagOne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTreeEltPage">
+      <wsdl:input wsaw:Action="urn:Service1/GetTreeEltPage" message="Service1_GetTreeEltPage_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetTreeEltPageResponse" message="Service1_GetTreeEltPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltPageUpdate">
+      <wsdl:input wsaw:Action="urn:Service1/EltPageUpdate" message="Service1_EltPageUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltPageUpdateResponse" message="Service1_EltPageUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spGetEltPageDataOnlyById">
+      <wsdl:input wsaw:Action="urn:Service1/spGetEltPageDataOnlyById" message="Service1_spGetEltPageDataOnlyById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spGetEltPageDataOnlyByIdResponse" message="Service1_spGetEltPageDataOnlyById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="spGetEltPageDataById">
+      <wsdl:input wsaw:Action="urn:Service1/spGetEltPageDataById" message="Service1_spGetEltPageDataById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/spGetEltPageDataByIdResponse" message="Service1_spGetEltPageDataById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltPageDeleteMenu">
+      <wsdl:input wsaw:Action="urn:Service1/EltPageDeleteMenu" message="Service1_EltPageDeleteMenu_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltPageDeleteMenuResponse" message="Service1_EltPageDeleteMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltPageDelete">
+      <wsdl:input wsaw:Action="urn:Service1/EltPageDelete" message="Service1_EltPageDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltPageDeleteResponse" message="Service1_EltPageDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenameCatPdt">
+      <wsdl:input wsaw:Action="urn:Service1/RenameCatPdt" message="Service1_RenameCatPdt_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/RenameCatPdtResponse" message="Service1_RenameCatPdt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEltCatViewPdtByCat">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltCatViewPdtByCat" message="Service1_GetEltCatViewPdtByCat_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltCatViewPdtByCatResponse" message="Service1_GetEltCatViewPdtByCat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCatPdt">
+      <wsdl:input wsaw:Action="urn:Service1/UpdateCatPdt" message="Service1_UpdateCatPdt_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/UpdateCatPdtResponse" message="Service1_UpdateCatPdt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltPageUpdateMenuName">
+      <wsdl:input wsaw:Action="urn:Service1/EltPageUpdateMenuName" message="Service1_EltPageUpdateMenuName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltPageUpdateMenuNameResponse" message="Service1_EltPageUpdateMenuName_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

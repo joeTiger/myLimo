@@ -1,0 +1,3007 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:2245/admin/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BizRef.Web" />
+  <xs:import schemaLocation="http://localhost:2245/admin/Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="SaveElt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="elt" nillable="true" type="q1:Elt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveEltResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveEltResult" nillable="true" type="q2:Elt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="c" nillable="true" type="q3:Cat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveCatResult" nillable="true" type="q4:Cat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spAddSave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+        <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spAddSaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spAddSaveResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="a" nillable="true" type="q5:Add" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveAddResult" nillable="true" type="q6:Add" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveEltCat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="eltCat" nillable="true" type="q7:EltCat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveEltCatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveEltCatResult" nillable="true" type="q8:EltCat" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spDicoUpdateAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="sEn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sHe" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sFr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sRu" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sCn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spDicoUpdateAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spDicoUpdateAllResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spDicoUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="s" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spDicoUpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spDicoUpdateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spDicoUpdateById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spDicoUpdateByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spDicoUpdateByIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DicoDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DicoDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DicoDeleteResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDico">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="d" nillable="true" type="q9:Dico" />
+        <xs:element minOccurs="0" name="err" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDicoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveDicoResult" nillable="true" type="q10:Dico" />
+        <xs:element minOccurs="0" name="err" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoByIdResult" nillable="true" type="q11:spGetDicoByIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoNameById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoNameByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDicoNameByIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoIdByNameForWebSite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoIdByNameForWebSiteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDicoIdByNameForWebSiteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoIdByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoIdByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDicoIdByNameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePdtNameId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="nameId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="minOrder" type="xs:int" />
+        <xs:element minOccurs="0" name="price" type="xs:decimal" />
+        <xs:element minOccurs="0" name="slider" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pdtPos" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="forceTrans" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePdtNameIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePdtNameIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePdtPrice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="minOrder" type="xs:int" />
+        <xs:element minOccurs="0" name="price" type="xs:decimal" />
+        <xs:element minOccurs="0" name="slider" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pdtPos" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePdtPriceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePdtEmptyName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePdtEmptyNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePdtEmptyNameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePdtIFN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="imgNb" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePdtIFNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePdtIFNResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePdt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="nameId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="desc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="price" type="xs:decimal" />
+        <xs:element minOccurs="0" name="minOrder" type="xs:int" />
+        <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="forceTranslation" type="xs:boolean" />
+        <xs:element minOccurs="0" name="listLg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePdtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePdtResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doTransHtmlJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fromTo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doTransHtmlJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="doTransHtmlJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doTransJson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fromTo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doTransJsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="doTransJsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transFromMymemory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fromTo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transFromMymemoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="transFromMymemoryResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDomainName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="res" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckDomainNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckDomainNameResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="res" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoIdByNameForWebSiteLg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="forceTranslation" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoIdByNameForWebSiteLgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDicoIdByNameForWebSiteLgResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBiz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBizResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePdt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePdtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePdtResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteCatResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetForumById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetForumByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumByIdResult" nillable="true" type="q12:ArrayOfspGetForumByIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetForumByEltIdParOnly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetForumByEltIdParOnlyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumByEltIdParOnlyResult" nillable="true" type="q13:ArrayOfspGetForumByEltIdParOnlyResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetForumByEltId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetForumByEltIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumByEltIdResult" nillable="true" type="q14:ArrayOfspGetForumByEltIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetForumBySearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetForumBySearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumBySearchResult" nillable="true" type="q15:ArrayOfspGetForumBySearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteForum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteForumResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveForum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="created" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="lastUpdate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latestPostBy" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="latestPostWhen" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="views" type="xs:int" />
+        <xs:element minOccurs="0" name="replies" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveForumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveForumResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSmsData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSmsDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendSmsDataResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendEmailResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendEmail2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendEmail2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendEmail2Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendEmailHtml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sendEmailHtmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sendEmailHtmlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertForum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="typeEltPage" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertForumResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatInsertSampleByCategoryNamePdt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="catName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="generalCategory" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="catType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="listLg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatInsertSampleByCategoryNamePdtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatInsertSampleByCategoryNamePdtResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatByBizId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatByBizIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatByBizIdResult" nillable="true" type="q16:ArrayOfspGetCatByBizIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="generalCategory" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertMenuResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDescPdt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="i" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getDescPdtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getDescPdtResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getStartIndexBybizCatName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizCatName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getStartIndexBybizCatNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getStartIndexBybizCatNameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatViewByCatIdAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatViewByCatIdAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatViewByCatIdAllResult" nillable="true" type="q17:ArrayOfspGetCatViewByCatIdAllResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatViewByCatId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatViewByCatIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatViewByCatIdResult" nillable="true" type="q18:ArrayOfspGetCatViewByCatIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltUpdateLastUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="dt" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltUpdateLastUpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltUpdateLastUpdateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltCatInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="parCatId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltCatInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltCatInsertResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DicoInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameFr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameRu" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameCn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DicoInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DicoInsertResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+        <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatInsertResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatInsertSample">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="listLg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatInsertSampleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatInsertSampleResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatInsertSampleNew">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+        <xs:element minOccurs="0" name="newCatId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="listLg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatInsertSampleNewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatInsertSampleNewResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatInsertByPar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CatInsertByParResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CatInsertByParResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageUpdatePosition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="pos" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageUpdatePositionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltPageUpdatePositionResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="typeEltPage" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltPageInsertResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageInsertSample">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="cat1" type="xs:int" />
+        <xs:element minOccurs="0" name="cat2" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageInsertSampleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltPageInsertSampleResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageInsertSampleContactUs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageInsertSampleContactUsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltPageInsertSampleContactUsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddParIdByDicoId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddParIdByDicoIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAddParIdByDicoIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddParIdByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddParIdByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAddParIdByNameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddViewById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddViewByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetAddViewByIdResult" nillable="true" type="q19:spGetAddViewByIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddNameHeById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddNameHeByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAddNameHeByIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddByNameByPar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddByNameByParResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAddByNameByParResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddByDicoPar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddByDicoParResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAddByDicoParResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddByPar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddByParResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAddByParResult" nillable="true" type="q20:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddByParId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddByParIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetAddByParIdResult" nillable="true" type="q21:ArrayOfspGetAddByParResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spTagSave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spTagSaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spTagSaveResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spTagOneSave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spTagOneSaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spTagOneSaveResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spBizSaveForWeb">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="refName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="url1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="datePublish" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="parCatId" type="xs:int" />
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subCategory" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="www" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tel2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="custID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tagTemp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spBizSaveForWebResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spBizSaveForWebResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spBizSave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="refName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="url1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="datePublish" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="parCatId" type="xs:int" />
+        <xs:element minOccurs="0" name="nameBizId" type="xs:int" />
+        <xs:element minOccurs="0" name="longAddId" type="xs:int" />
+        <xs:element minOccurs="0" name="cityId" type="xs:int" />
+        <xs:element minOccurs="0" name="www" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tel2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="custID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tagTemp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spBizSaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spBizSaveResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizNameById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizNameByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBizNameByIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetBizByNameResult" nillable="true" type="q22:ArrayOfspGetBizByNameResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByNameAddTelMob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="add" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByNameAddTelMobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetBizByNameAddTelMobResult" nillable="true" type="q23:ArrayOfspGetBizByNameAddTelMobResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByNameAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nameId" type="xs:int" />
+        <xs:element minOccurs="0" name="longAddId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByNameAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBizByNameAddResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByTelMob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tel2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByTelMobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBizByTelMobResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByNameAddTel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="add" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByNameAddTelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBizByNameAddTelResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltCatViewBiz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltCatViewBizResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltCatViewBizResult" nillable="true" type="q24:ArrayOfspGetEltCatViewBizResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltCatViewBizByEltId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltCatViewBizByEltIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltCatViewBizByEltIdResult" nillable="true" type="q25:spGetEltCatViewBizByEltIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByEltId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByEltIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetBizByEltIdResult" nillable="true" type="q26:spGetBizByEltIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByCustID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="custID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizByCustIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBizByCustIDResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DicoUpdateById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="forceTranslation" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DicoUpdateByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DicoUpdateByIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizForm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltId" type="xs:int" />
+        <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Desc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TelDisplay" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MobDisplay" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Www" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TagList" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizFormResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBizFormResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltId" type="xs:int" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="Desc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TelDisplay" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MobDisplay" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Www2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBizDetailsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteTags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="deleteTagsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveTags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="tags" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saveTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="saveTagsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizlongAddId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="longAddId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizlongAddIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBizlongAddIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizCityId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="cityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizCityIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBizCityIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBiz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="custID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBizResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBiz2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="www" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="url1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ref1" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBiz2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBiz2Result" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizTelMobWWW">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tel2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="www" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="www2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="longAddId" type="xs:int" />
+        <xs:element minOccurs="0" name="descEn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descHe" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descFr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descRu" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descCn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizTelMobWWWResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBizTelMobWWWResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spEltUpdateRefUrl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="r1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="u1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="r2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="u2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="r3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="u3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="lastUpdate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spEltUpdateRefUrlResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltUpdateUserName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltUpdateUserNameResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spEltUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="lastUpdate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spEltUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spEltUpdateSmsCounter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="smsCounter" type="xs:int" />
+        <xs:element minOccurs="0" name="lastUpdate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spEltUpdateSmsCounterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spEltUpdateTagTmp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="tags" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastUpdate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spEltUpdateTagTmpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spEltUpdateTagTmpResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spCarSave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="refName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="parCatId" type="xs:int" />
+        <xs:element minOccurs="0" name="producerId" type="xs:int" />
+        <xs:element minOccurs="0" name="modelId" type="xs:int" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="gearId" type="xs:int" />
+        <xs:element minOccurs="0" name="year" type="xs:int" />
+        <xs:element minOccurs="0" name="motor" type="xs:int" />
+        <xs:element minOccurs="0" name="yad2" type="xs:int" />
+        <xs:element minOccurs="0" name="price" type="xs:decimal" />
+        <xs:element minOccurs="0" name="datePublish" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="carID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spCarSaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spCarSaveResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarByCarID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="carID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCarByCarIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCarByCarIDResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatByNameResult" nillable="true" type="q27:CatView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatViewById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatViewByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatViewByIdResult" nillable="true" type="q28:spGetCatViewByIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatByNameByPar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatByNameByParResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCatByNameByParResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoByNameLg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoByNameLgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoByNameLgResult" nillable="true" type="q29:ArrayOfspGetDicoByNameLgResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="err" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoByNameResult" nillable="true" type="q30:Dico" />
+        <xs:element minOccurs="0" name="err" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoIdByNameFunc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoIdByNameFuncResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetDicoIdByNameFuncResult" type="xs:int" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spGetDicoIdByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spGetDicoIdByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spGetDicoIdByNameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spGetDicoByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spGetDicoByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spGetDicoByNameResult" type="xs:int" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spGetDicoByNameApproximatif">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spGetDicoByNameApproximatifResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spGetDicoByNameApproximatifResult" type="xs:int" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddViewByNameByPar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAddViewByNameByParResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetAddViewByNameByParResult" nillable="true" type="q31:AddView" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoEmpties">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicoEmptiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoEmptiesResult" nillable="true" type="q32:ArrayOfspGetDicoEmptiesResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDicosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicosResult" nillable="true" type="q33:ArrayOfDico" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltByUserName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltByUserNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltByUserNameResult" nillable="true" type="q34:ArrayOfspGetEltByUserNameResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltIdByUserName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltIdByUserNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetEltIdByUserNameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltByIdResult" nillable="true" type="q35:spGetEltByIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWork">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWorkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DoWorkResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadImagePdtMethod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bizId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loadImagePdtMethodResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="loadImagePdtMethodResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SettingGet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SettingGetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SettingGetResult" nillable="true" type="q36:ArrayOfspSettingGetResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SettingGetByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SettingGetByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SettingGetByNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SettingDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SettingDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SettingInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SettingInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SettingInsertResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SettingUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SettingUpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SettingUpdateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltPageImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltPageId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltPageImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltPageImageResult" nillable="true" type="q37:ArrayOfspGetEltPageImageResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageImageDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageImageDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageImageInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltPageId" type="xs:int" />
+        <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageImageInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltPageImageInsertResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckImageDataHtml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="s" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckImageDataHtmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckImageDataHtmlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckImageAlertAdmin">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckImageAlertAdminResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckImageAlertAdminResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckImageInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="fn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckImageInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckImageInsertResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckImageDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckImageDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckImageDeleteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckImageDeleteAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckImageDeleteAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckImageDeleteAllResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCheckImage">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCheckImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCheckImageResult" nillable="true" type="q38:ArrayOfspGetCheckImageResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCheckout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCheckoutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCheckoutResult" nillable="true" type="q39:ArrayOfspGetCheckoutResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutDeleteByBizId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutDeleteByBizIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutDeleteByEltId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutDeleteByEltIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPhotobyPdt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPhotobyPdtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetPhotobyPdtResult" nillable="true" type="q40:ArrayOfspGetPhotoByPdtResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhotoInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="ifn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="desc" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhotoInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhotoInsertResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhotoUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="s" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhotoUpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhotoUpdateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhotoDeleteById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhotoDeleteByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhotoDeleteByIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhotoDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="un" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhotoDeleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PhotoDeleteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="quantity" type="xs:int" />
+        <xs:element minOccurs="0" name="unitPrice" type="xs:decimal" />
+        <xs:element minOccurs="0" name="totalPrice" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutInsertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckoutInsertResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="quantity" type="xs:int" />
+        <xs:element minOccurs="0" name="totalPrice" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutUpdateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckoutUpdateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutDeleteById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutDeleteByIdResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoUpload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filename" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="append" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoUploadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="DoUploadResult" nillable="true" type="q41:UploadFile" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePassword">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeneratePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GeneratePasswordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateUserResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPasswordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetEmailResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAllUsers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAllUsersResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserExistsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserExistsByPwdAnswer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserExistsByPwdAnswerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserExistsByPwdAnswerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lg" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetMenuResult" nillable="true" type="q42:ArrayOfspGetMenuResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreeCat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="orderBy" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreeCatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetTreeCatResult" nillable="true" type="q43:ArrayOfspGetTreeCatResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridBizWithTags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="w" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridBizWithTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetGridBizWithTagsResult" nillable="true" type="q44:ArrayOfspGetGridBizWithTagsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridCar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridCarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetGridCarResult" nillable="true" type="q45:ArrayOfspGetGridCarResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridBiz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="parCatId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="listCatId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="search" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridBizResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetGridBizResult" nillable="true" type="q46:ArrayOfspGetGridBizResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridBizNewEntries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridBizNewEntriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetGridBizNewEntriesResult" nillable="true" type="q47:ArrayOfspGetGridBizNewEntriesResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPdtById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPdtByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetPdtByIdResult" nillable="true" type="q48:spGetPdtByIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridPdt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridPdtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetGridPdtResult" nillable="true" type="q49:ArrayOfspGetGridPdtResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreePdtByBiz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreePdtByBizResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetTreePdtByBizResult" nillable="true" type="q50:ArrayOfspGetTreePdtByBizResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatByPdt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCatByPdtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCatByPdtResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizCatOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBizCatOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetBizCatOrderResult" nillable="true" type="q51:ArrayOfspGetBizCatOrderResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBizCatOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBizCatOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBizCatOrderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBizCatOrderBybizId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBizCatOrderBybizIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBizCatOrderBybizIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateBizCatOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+        <xs:element minOccurs="0" name="catOrder" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertUpdateBizCatOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertUpdateBizCatOrderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBizCatOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+        <xs:element minOccurs="0" name="catOrder" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBizCatOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveBizCatOrderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizCatOrder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="srcIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="destIndex" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBizCatOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBizCatOrderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreePdtByBizCnt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreePdtByBizCntResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTreePdtByBizCntResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridPdtBySearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="search" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridPdtBySearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetGridPdtBySearchResult" nillable="true" type="q52:ArrayOfspGetGridPdtBySearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridPdtByBiz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridPdtByBizResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetGridPdtByBizResult" nillable="true" type="q53:ArrayOfspGetGridPdtByBizResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRootCatPdtByBiz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRootCatPdtByBizResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRootCatPdtByBizResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridDoublePdtByBizMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridDoublePdtByBizMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetGridDoublePdtByBizMenuResult" nillable="true" type="q54:ArrayOfspGetGridPdtByBizResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridPdtByBizMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="subCat" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridPdtByBizMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetGridPdtByBizMenuResult" nillable="true" type="q55:ArrayOfspGetGridPdtByBizResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridPdtByBizMenuObs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGridPdtByBizMenuObsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetGridPdtByBizMenuObsResult" nillable="true" type="q56:ArrayOfspGetGridPdtByBizResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreeAddByCat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="addParId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="withCount" type="xs:int" />
+        <xs:element minOccurs="0" name="orderByName" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreeAddByCatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetTreeAddByCatResult" nillable="true" type="q57:ArrayOfspGetTreeAddByCatResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildrenAdd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildrenAddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetChildrenAddResult" nillable="true" type="q58:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildrenCat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildrenCatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetChildrenCatResult" nillable="true" type="q59:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTagByEltId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTagByEltIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetTagByEltIdResult" nillable="true" type="q60:ArrayOfspGetTagByEltIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTagByBizId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTagByBizIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetTagByBizIdResult" nillable="true" type="q61:ArrayOfspGetTagByBizIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTagCntByBizId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTagCntByBizIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetTagCntByBizIdResult" nillable="true" type="q62:ArrayOfspGetTagCntByBizIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltTagViewByBiz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltTagViewByBizResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltTagViewByBizResult" nillable="true" type="q63:ArrayOfspGetEltTagViewByBizResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNbTags">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="listEltId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="listDicoId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="listCatId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNbTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetNbTagsResult" nillable="true" type="q64:ArrayOfspGetNbTagsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltTagViewById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltTagViewByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltTagViewByIdResult" nillable="true" type="q65:ArrayOfspGetEltTagViewResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltByTagObs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltByTagObsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEltByTagObsResult" nillable="true" type="q66:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltByTag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltByTagResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEltByTagResult" nillable="true" type="q67:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltByTagOne">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltByTagOneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEltByTagOneResult" nillable="true" type="q68:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreeEltPage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltId" type="xs:int" />
+        <xs:element minOccurs="0" name="parId" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTreeEltPageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetTreeEltPageResult" nillable="true" type="q69:ArrayOfspGetTreeEltPageResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageUpdate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+        <xs:element minOccurs="0" name="listLg" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="forceTranslation" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageUpdateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spGetEltPageDataOnlyById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spGetEltPageDataOnlyByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="spGetEltPageDataOnlyByIdResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spGetEltPageDataById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="spGetEltPageDataByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="spGetEltPageDataByIdResult" nillable="true" type="q70:spGetEltPageDataByIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageDeleteMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="typeEltPage" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageDeleteMenuResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageDelete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltPageId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageDeleteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameCatPdt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="oldCatId" type="xs:int" />
+        <xs:element minOccurs="0" name="parCatId" type="xs:int" />
+        <xs:element minOccurs="0" name="newCatName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenameCatPdtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RenameCatPdtResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltCatViewPdtByCat">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltCatViewPdtByCatResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltCatViewPdtByCatResult" nillable="true" type="q71:ArrayOfspGetEltCatViewPdtByCatResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCatPdt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bizId" type="xs:int" />
+        <xs:element minOccurs="0" name="catId" type="xs:int" />
+        <xs:element minOccurs="0" name="parCatId" type="xs:int" />
+        <xs:element minOccurs="0" name="newCatName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCatPdtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCatPdtResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageUpdateMenuName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltPageId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageUpdateMenuNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltPageUpdateMenuNameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

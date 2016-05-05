@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BizRef.Web" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BizRef.Web" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:2245/admin/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Linq" />
+  <xs:complexType name="Elt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EltCats" nillable="true" type="tns:ArrayOfEltCat" />
+      <xs:element minOccurs="0" name="addId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="avRating" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="catDicoId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="refName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tagTmp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Elt" nillable="true" type="tns:Elt" />
+  <xs:complexType name="ArrayOfEltCat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EltCat" nillable="true" type="tns:EltCat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEltCat" nillable="true" type="tns:ArrayOfEltCat" />
+  <xs:complexType name="EltCat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Elt" nillable="true" type="tns:Elt" />
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="eltId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EltCat" nillable="true" type="tns:EltCat" />
+  <xs:complexType name="Cat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dico" nillable="true" type="tns:Dico" />
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cat" nillable="true" type="tns:Cat" />
+  <xs:complexType name="Dico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adds" nillable="true" type="tns:ArrayOfAdd" />
+      <xs:element minOccurs="0" name="Cats" nillable="true" type="tns:ArrayOfCat" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameRu" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="timestamp" nillable="true" type="q1:Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dico" nillable="true" type="tns:Dico" />
+  <xs:complexType name="ArrayOfAdd">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Add" nillable="true" type="tns:Add" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdd" nillable="true" type="tns:ArrayOfAdd" />
+  <xs:complexType name="Add">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dico" nillable="true" type="tns:Dico" />
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Add" nillable="true" type="tns:Add" />
+  <xs:complexType name="ArrayOfCat">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cat" nillable="true" type="tns:Cat" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCat" nillable="true" type="tns:ArrayOfCat" />
+  <xs:complexType name="spGetDicoByIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameCn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameRu" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="timestamp" nillable="true" type="q2:Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetDicoByIdResult" nillable="true" type="tns:spGetDicoByIdResult" />
+  <xs:complexType name="ArrayOfspGetForumByIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetForumByIdResult" nillable="true" type="tns:spGetForumByIdResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetForumByIdResult" nillable="true" type="tns:ArrayOfspGetForumByIdResult" />
+  <xs:complexType name="spGetForumByIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="created" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="eltId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="latestPostBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="latestPostWhen" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="parId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="replies" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetForumByIdResult" nillable="true" type="tns:spGetForumByIdResult" />
+  <xs:complexType name="ArrayOfspGetForumByEltIdParOnlyResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetForumByEltIdParOnlyResult" nillable="true" type="tns:spGetForumByEltIdParOnlyResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetForumByEltIdParOnlyResult" nillable="true" type="tns:ArrayOfspGetForumByEltIdParOnlyResult" />
+  <xs:complexType name="spGetForumByEltIdParOnlyResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="created" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="eltId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="latestPostBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="latestPostWhen" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="parId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="replies" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetForumByEltIdParOnlyResult" nillable="true" type="tns:spGetForumByEltIdParOnlyResult" />
+  <xs:complexType name="ArrayOfspGetForumByEltIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetForumByEltIdResult" nillable="true" type="tns:spGetForumByEltIdResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetForumByEltIdResult" nillable="true" type="tns:ArrayOfspGetForumByEltIdResult" />
+  <xs:complexType name="spGetForumByEltIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="created" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="eltId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="parId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetForumByEltIdResult" nillable="true" type="tns:spGetForumByEltIdResult" />
+  <xs:complexType name="ArrayOfspGetForumBySearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetForumBySearchResult" nillable="true" type="tns:spGetForumBySearchResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetForumBySearchResult" nillable="true" type="tns:ArrayOfspGetForumBySearchResult" />
+  <xs:complexType name="spGetForumBySearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="created" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="eltId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="latestPostBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="latestPostWhen" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="parId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="replies" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetForumBySearchResult" nillable="true" type="tns:spGetForumBySearchResult" />
+  <xs:complexType name="ArrayOfspGetCatByBizIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetCatByBizIdResult" nillable="true" type="tns:spGetCatByBizIdResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetCatByBizIdResult" nillable="true" type="tns:ArrayOfspGetCatByBizIdResult" />
+  <xs:complexType name="spGetCatByBizIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="catId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parCatId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetCatByBizIdResult" nillable="true" type="tns:spGetCatByBizIdResult" />
+  <xs:complexType name="ArrayOfspGetCatViewByCatIdAllResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetCatViewByCatIdAllResult" nillable="true" type="tns:spGetCatViewByCatIdAllResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetCatViewByCatIdAllResult" nillable="true" type="tns:ArrayOfspGetCatViewByCatIdAllResult" />
+  <xs:complexType name="spGetCatViewByCatIdAllResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameRu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetCatViewByCatIdAllResult" nillable="true" type="tns:spGetCatViewByCatIdAllResult" />
+  <xs:complexType name="ArrayOfspGetCatViewByCatIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetCatViewByCatIdResult" nillable="true" type="tns:spGetCatViewByCatIdResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetCatViewByCatIdResult" nillable="true" type="tns:ArrayOfspGetCatViewByCatIdResult" />
+  <xs:complexType name="spGetCatViewByCatIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetCatViewByCatIdResult" nillable="true" type="tns:spGetCatViewByCatIdResult" />
+  <xs:complexType name="spGetAddViewByIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetAddViewByIdResult" nillable="true" type="tns:spGetAddViewByIdResult" />
+  <xs:complexType name="ArrayOfspGetAddByParResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetAddByParResult" nillable="true" type="tns:spGetAddByParResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetAddByParResult" nillable="true" type="tns:ArrayOfspGetAddByParResult" />
+  <xs:complexType name="spGetAddByParResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameRu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetAddByParResult" nillable="true" type="tns:spGetAddByParResult" />
+  <xs:complexType name="ArrayOfspGetBizByNameResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetBizByNameResult" nillable="true" type="tns:spGetBizByNameResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetBizByNameResult" nillable="true" type="tns:ArrayOfspGetBizByNameResult" />
+  <xs:complexType name="spGetBizByNameResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetBizByNameResult" nillable="true" type="tns:spGetBizByNameResult" />
+  <xs:complexType name="ArrayOfspGetBizByNameAddTelMobResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetBizByNameAddTelMobResult" nillable="true" type="tns:spGetBizByNameAddTelMobResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetBizByNameAddTelMobResult" nillable="true" type="tns:ArrayOfspGetBizByNameAddTelMobResult" />
+  <xs:complexType name="spGetBizByNameAddTelMobResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="addId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      <xs:element minOccurs="0" name="longAddId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetBizByNameAddTelMobResult" nillable="true" type="tns:spGetBizByNameAddTelMobResult" />
+  <xs:complexType name="ArrayOfspGetEltCatViewBizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetEltCatViewBizResult" nillable="true" type="tns:spGetEltCatViewBizResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetEltCatViewBizResult" nillable="true" type="tns:ArrayOfspGetEltCatViewBizResult" />
+  <xs:complexType name="spGetEltCatViewBizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="addId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="avRating" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cityId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="descEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="longAddId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobDisplay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="parCatId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="refName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="smsCounter" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tagTmp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telDisplay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="www" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetEltCatViewBizResult" nillable="true" type="tns:spGetEltCatViewBizResult" />
+  <xs:complexType name="spGetEltCatViewBizByEltIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="addId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="avRating" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cityId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="descEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="longAddId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobDisplay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="parCatId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="refName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="smsCounter" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tagTmp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telDisplay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="www" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="www2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetEltCatViewBizByEltIdResult" nillable="true" type="tns:spGetEltCatViewBizByEltIdResult" />
+  <xs:complexType name="spGetBizByEltIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cityId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="custID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descCn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descRu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="longAddId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="mob" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mob2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobDisplay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tel2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telDisplay" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="www" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="www2" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetBizByEltIdResult" nillable="true" type="tns:spGetBizByEltIdResult" />
+  <xs:complexType name="CatView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameRu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CatView" nillable="true" type="tns:CatView" />
+  <xs:complexType name="spGetCatViewByIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameCn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameRu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetCatViewByIdResult" nillable="true" type="tns:spGetCatViewByIdResult" />
+  <xs:complexType name="ArrayOfspGetDicoByNameLgResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetDicoByNameLgResult" nillable="true" type="tns:spGetDicoByNameLgResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetDicoByNameLgResult" nillable="true" type="tns:ArrayOfspGetDicoByNameLgResult" />
+  <xs:complexType name="spGetDicoByNameLgResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameCn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameRu" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="timestamp" nillable="true" type="q3:Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetDicoByNameLgResult" nillable="true" type="tns:spGetDicoByNameLgResult" />
+  <xs:complexType name="AddView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddView" nillable="true" type="tns:AddView" />
+  <xs:complexType name="ArrayOfspGetDicoEmptiesResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetDicoEmptiesResult" nillable="true" type="tns:spGetDicoEmptiesResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetDicoEmptiesResult" nillable="true" type="tns:ArrayOfspGetDicoEmptiesResult" />
+  <xs:complexType name="spGetDicoEmptiesResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameRu" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Linq" minOccurs="0" name="timestamp" nillable="true" type="q4:Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetDicoEmptiesResult" nillable="true" type="tns:spGetDicoEmptiesResult" />
+  <xs:complexType name="ArrayOfDico">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dico" nillable="true" type="tns:Dico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDico" nillable="true" type="tns:ArrayOfDico" />
+  <xs:complexType name="ArrayOfspGetEltByUserNameResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetEltByUserNameResult" nillable="true" type="tns:spGetEltByUserNameResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetEltByUserNameResult" nillable="true" type="tns:ArrayOfspGetEltByUserNameResult" />
+  <xs:complexType name="spGetEltByUserNameResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetEltByUserNameResult" nillable="true" type="tns:spGetEltByUserNameResult" />
+  <xs:complexType name="spGetEltByIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="addId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="avRating" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="catDicoId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="refName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="smsCounter" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tagTmp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetEltByIdResult" nillable="true" type="tns:spGetEltByIdResult" />
+  <xs:complexType name="ArrayOfspSettingGetResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spSettingGetResult" nillable="true" type="tns:spSettingGetResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspSettingGetResult" nillable="true" type="tns:ArrayOfspSettingGetResult" />
+  <xs:complexType name="spSettingGetResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bizId" type="xs:int" />
+      <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spSettingGetResult" nillable="true" type="tns:spSettingGetResult" />
+  <xs:complexType name="ArrayOfspGetEltPageImageResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetEltPageImageResult" nillable="true" type="tns:spGetEltPageImageResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetEltPageImageResult" nillable="true" type="tns:ArrayOfspGetEltPageImageResult" />
+  <xs:complexType name="spGetEltPageImageResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="eltPageId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetEltPageImageResult" nillable="true" type="tns:spGetEltPageImageResult" />
+  <xs:complexType name="ArrayOfspGetCheckImageResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetCheckImageResult" nillable="true" type="tns:spGetCheckImageResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetCheckImageResult" nillable="true" type="tns:ArrayOfspGetCheckImageResult" />
+  <xs:complexType name="spGetCheckImageResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bizId" type="xs:int" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetCheckImageResult" nillable="true" type="tns:spGetCheckImageResult" />
+  <xs:complexType name="ArrayOfspGetCheckoutResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetCheckoutResult" nillable="true" type="tns:spGetCheckoutResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetCheckoutResult" nillable="true" type="tns:ArrayOfspGetCheckoutResult" />
+  <xs:complexType name="spGetCheckoutResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bizId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="eltId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="quantity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="totalPrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="unitPrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetCheckoutResult" nillable="true" type="tns:spGetCheckoutResult" />
+  <xs:complexType name="ArrayOfspGetPhotoByPdtResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetPhotoByPdtResult" nillable="true" type="tns:spGetPhotoByPdtResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetPhotoByPdtResult" nillable="true" type="tns:ArrayOfspGetPhotoByPdtResult" />
+  <xs:complexType name="spGetPhotoByPdtResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bizId" type="xs:int" />
+      <xs:element minOccurs="0" name="descImg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="ifn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetPhotoByPdtResult" nillable="true" type="tns:spGetPhotoByPdtResult" />
+  <xs:complexType name="UploadFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileStoreUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UploadFile" nillable="true" type="tns:UploadFile" />
+  <xs:complexType name="ArrayOfspGetMenuResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetMenuResult" nillable="true" type="tns:spGetMenuResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetMenuResult" nillable="true" type="tns:ArrayOfspGetMenuResult" />
+  <xs:complexType name="spGetMenuResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="eltCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetMenuResult" nillable="true" type="tns:spGetMenuResult" />
+  <xs:complexType name="ArrayOfspGetTreeCatResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetTreeCatResult" nillable="true" type="tns:spGetTreeCatResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetTreeCatResult" nillable="true" type="tns:ArrayOfspGetTreeCatResult" />
+  <xs:complexType name="spGetTreeCatResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="eltCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetTreeCatResult" nillable="true" type="tns:spGetTreeCatResult" />
+  <xs:complexType name="ArrayOfspGetGridBizWithTagsResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetGridBizWithTagsResult" nillable="true" type="tns:spGetGridBizWithTagsResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetGridBizWithTagsResult" nillable="true" type="tns:ArrayOfspGetGridBizWithTagsResult" />
+  <xs:complexType name="spGetGridBizWithTagsResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Column1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="addId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="avRating" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="refName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tagTmp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="www" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetGridBizWithTagsResult" nillable="true" type="tns:spGetGridBizWithTagsResult" />
+  <xs:complexType name="ArrayOfspGetGridCarResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetGridCarResult" nillable="true" type="tns:spGetGridCarResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetGridCarResult" nillable="true" type="tns:ArrayOfspGetGridCarResult" />
+  <xs:complexType name="spGetGridCarResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="addId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      <xs:element minOccurs="0" name="gear" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="motor" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="parCatId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="price" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="producer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="yad2" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="year" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetGridCarResult" nillable="true" type="tns:spGetGridCarResult" />
+  <xs:complexType name="ArrayOfspGetGridBizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetGridBizResult" nillable="true" type="tns:spGetGridBizResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetGridBizResult" nillable="true" type="tns:ArrayOfspGetGridBizResult" />
+  <xs:complexType name="spGetGridBizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="addId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetGridBizResult" nillable="true" type="tns:spGetGridBizResult" />
+  <xs:complexType name="ArrayOfspGetGridBizNewEntriesResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetGridBizNewEntriesResult" nillable="true" type="tns:spGetGridBizNewEntriesResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetGridBizNewEntriesResult" nillable="true" type="tns:ArrayOfspGetGridBizNewEntriesResult" />
+  <xs:complexType name="spGetGridBizNewEntriesResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="addId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="avRating" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="eltId" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="refName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refName3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refUrl3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tagTmp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="views" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="www" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetGridBizNewEntriesResult" nillable="true" type="tns:spGetGridBizNewEntriesResult" />
+  <xs:complexType name="spGetPdtByIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bizId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descPdt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="imageFileName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="imageFileName3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="imageFileName4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="minOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+      <xs:element minOccurs="0" name="price" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetPdtByIdResult" nillable="true" type="tns:spGetPdtByIdResult" />
+  <xs:complexType name="ArrayOfspGetGridPdtResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetGridPdtResult" nillable="true" type="tns:spGetGridPdtResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetGridPdtResult" nillable="true" type="tns:ArrayOfspGetGridPdtResult" />
+  <xs:complexType name="spGetGridPdtResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bizId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="price" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetGridPdtResult" nillable="true" type="tns:spGetGridPdtResult" />
+  <xs:complexType name="ArrayOfspGetTreePdtByBizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetTreePdtByBizResult" nillable="true" type="tns:spGetTreePdtByBizResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetTreePdtByBizResult" nillable="true" type="tns:ArrayOfspGetTreePdtByBizResult" />
+  <xs:complexType name="spGetTreePdtByBizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="catOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="eltCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetTreePdtByBizResult" nillable="true" type="tns:spGetTreePdtByBizResult" />
+  <xs:complexType name="ArrayOfspGetBizCatOrderResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetBizCatOrderResult" nillable="true" type="tns:spGetBizCatOrderResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetBizCatOrderResult" nillable="true" type="tns:ArrayOfspGetBizCatOrderResult" />
+  <xs:complexType name="spGetBizCatOrderResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bizId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="catId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="catOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="parCatId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetBizCatOrderResult" nillable="true" type="tns:spGetBizCatOrderResult" />
+  <xs:complexType name="ArrayOfspGetGridPdtBySearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetGridPdtBySearchResult" nillable="true" type="tns:spGetGridPdtBySearchResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetGridPdtBySearchResult" nillable="true" type="tns:ArrayOfspGetGridPdtBySearchResult" />
+  <xs:complexType name="spGetGridPdtBySearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bizId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descPdt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="minOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+      <xs:element minOccurs="0" name="pdtPos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="price" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="slider" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetGridPdtBySearchResult" nillable="true" type="tns:spGetGridPdtBySearchResult" />
+  <xs:complexType name="ArrayOfspGetGridPdtByBizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetGridPdtByBizResult" nillable="true" type="tns:spGetGridPdtByBizResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetGridPdtByBizResult" nillable="true" type="tns:ArrayOfspGetGridPdtByBizResult" />
+  <xs:complexType name="spGetGridPdtByBizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bizId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descPdt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="imageFileName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="minOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+      <xs:element minOccurs="0" name="pdtPos" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="price" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="slider" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetGridPdtByBizResult" nillable="true" type="tns:spGetGridPdtByBizResult" />
+  <xs:complexType name="ArrayOfspGetTreeAddByCatResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetTreeAddByCatResult" nillable="true" type="tns:spGetTreeAddByCatResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetTreeAddByCatResult" nillable="true" type="tns:ArrayOfspGetTreeAddByCatResult" />
+  <xs:complexType name="spGetTreeAddByCatResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="eltCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetTreeAddByCatResult" nillable="true" type="tns:spGetTreeAddByCatResult" />
+  <xs:complexType name="ArrayOfspGetTagByEltIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetTagByEltIdResult" nillable="true" type="tns:spGetTagByEltIdResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetTagByEltIdResult" nillable="true" type="tns:ArrayOfspGetTagByEltIdResult" />
+  <xs:complexType name="spGetTagByEltIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetTagByEltIdResult" nillable="true" type="tns:spGetTagByEltIdResult" />
+  <xs:complexType name="ArrayOfspGetTagByBizIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetTagByBizIdResult" nillable="true" type="tns:spGetTagByBizIdResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetTagByBizIdResult" nillable="true" type="tns:ArrayOfspGetTagByBizIdResult" />
+  <xs:complexType name="spGetTagByBizIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nbTags" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetTagByBizIdResult" nillable="true" type="tns:spGetTagByBizIdResult" />
+  <xs:complexType name="ArrayOfspGetTagCntByBizIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetTagCntByBizIdResult" nillable="true" type="tns:spGetTagCntByBizIdResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetTagCntByBizIdResult" nillable="true" type="tns:ArrayOfspGetTagCntByBizIdResult" />
+  <xs:complexType name="spGetTagCntByBizIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nbTags" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetTagCntByBizIdResult" nillable="true" type="tns:spGetTagCntByBizIdResult" />
+  <xs:complexType name="ArrayOfspGetEltTagViewByBizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetEltTagViewByBizResult" nillable="true" type="tns:spGetEltTagViewByBizResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetEltTagViewByBizResult" nillable="true" type="tns:ArrayOfspGetEltTagViewByBizResult" />
+  <xs:complexType name="spGetEltTagViewByBizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameCn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameRu" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetEltTagViewByBizResult" nillable="true" type="tns:spGetEltTagViewByBizResult" />
+  <xs:complexType name="ArrayOfspGetNbTagsResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetNbTagsResult" nillable="true" type="tns:spGetNbTagsResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetNbTagsResult" nillable="true" type="tns:ArrayOfspGetNbTagsResult" />
+  <xs:complexType name="spGetNbTagsResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dicoId" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nbTags" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetNbTagsResult" nillable="true" type="tns:spGetNbTagsResult" />
+  <xs:complexType name="ArrayOfspGetEltTagViewResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetEltTagViewResult" nillable="true" type="tns:spGetEltTagViewResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetEltTagViewResult" nillable="true" type="tns:ArrayOfspGetEltTagViewResult" />
+  <xs:complexType name="spGetEltTagViewResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetEltTagViewResult" nillable="true" type="tns:spGetEltTagViewResult" />
+  <xs:complexType name="ArrayOfspGetTreeEltPageResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetTreeEltPageResult" nillable="true" type="tns:spGetTreeEltPageResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetTreeEltPageResult" nillable="true" type="tns:ArrayOfspGetTreeEltPageResult" />
+  <xs:complexType name="spGetTreeEltPageResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+      <xs:element minOccurs="0" name="position" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="typeEltPage" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetTreeEltPageResult" nillable="true" type="tns:spGetTreeEltPageResult" />
+  <xs:complexType name="spGetEltPageDataByIdResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lastUpdate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetEltPageDataByIdResult" nillable="true" type="tns:spGetEltPageDataByIdResult" />
+  <xs:complexType name="ArrayOfspGetEltCatViewPdtByCatResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="spGetEltCatViewPdtByCatResult" nillable="true" type="tns:spGetEltCatViewPdtByCatResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfspGetEltCatViewPdtByCatResult" nillable="true" type="tns:ArrayOfspGetEltCatViewPdtByCatResult" />
+  <xs:complexType name="spGetEltCatViewPdtByCatResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bizId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="bizName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bizNameFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bizNameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bizNameRu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="catId" type="xs:int" />
+      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="categoryFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="categoryHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="categoryRu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descEn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="descRu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="minOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameFr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameHe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nameId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="nameRu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="parId" type="xs:int" />
+      <xs:element minOccurs="0" name="price" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="spGetEltCatViewPdtByCatResult" nillable="true" type="tns:spGetEltCatViewPdtByCatResult" />
+</xs:schema>

@@ -1,0 +1,365 @@
+﻿@{
+    ViewBag.Title = "Portfolio";
+}
+
+ <!--Filters Modal-->
+<div class="modal fade" id="filterModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button></div>
+        <div class="modal-body">
+        <!--Here goes filters dynamically pasted by jQuery-->
+        </div>
+    </div>
+    </div>
+</div>
+    
+<!--Filters Toggle-->
+<div class="filter-toggle" data-toggle="modal" data-target="#filterModal"><i class="fa fa-filter"></i></div>
+    
+<!--Page Content-->
+<div class="page-content">
+
+    <!-- Shop - filters left 3 cols -->
+    <!--Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li>
+        @Html.ActionLink((string)ViewBag.MenuModel[0].name, "Index", "Home",
+        new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId = 0, subId = 0, id = @ViewBag.firstPageId }, null)
+        </li>
+        @if (@ViewBag.subId > 0)
+        {
+            <li>
+                @Html.ActionLink((string)ViewBag.Cat[0].category, "Index", "Portfolio",
+                    new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId = ViewBag.Cat[0].catId }, null)
+            </li>
+        }
+        <li class="active">@ViewBag.Pdt[0].category</li>
+    </ol><!--Breadcrumbs Close-->
+    <!--Catalog Grid-->
+    <section class="catalog-grid">
+        <div class="container">
+            <h2 class="with-sorting">@ViewBag.CatName</h2>
+            <div class="sorting">
+                <a href="#">Sort by name</a>
+                <a href="#">Sort by price</a>
+            </div>
+            <div class="row">
+
+                <!--Filters-->
+                <div class="filters-mobile col-lg-3 col-md-3 col-sm-4">
+                    <div class="shop-filters">
+
+                        <!--Price Section-->
+                        <!--data-min-val represent minimal price and data-max-val maximum price respectively in pricing slider range; value="" - default values-->
+                        @*<section class="filter-section">
+                            <h3>Filter by price</h3>
+                            <form method="get" name="price-filters">
+                                <span class="clear" id="clearPrice">Clear price</span>
+                                <div class="price-btns">
+                                    <button class="btn btn-black btn-sm" value="below 50$">below 50$</button><br />
+                                    <button class="btn btn-black btn-sm disabled" value="50$-100$">from 50$ to 100$</button><br />
+                                    <button class="btn btn-black btn-sm" value="100$-300$">from 100$ to 300$</button><br />
+                                    <button class="btn btn-black btn-sm" value="300$-1000$">from 300$ to 1000$</button>
+                                </div>
+                                <div class="price-slider">
+                                    <div id="price-range"></div>
+                                    <div class="values group">
+                                        <input class="form-control" name="minVal" id="minVal" type="text" data-min-val="10" value="180">
+                                        <span class="labels">$ - </span>
+                                        <input class="form-control" name="maxVal" id="maxVal" type="text" data-max-val="2500" value="1400">
+                                        <span class="labels">$</span>
+                                    </div>
+                                    <input class="btn btn-primary btn-sm" type="submit" value="Filter">
+                                </div>
+                            </form>
+                        </section>*@
+
+                        <!--Colors Section-->
+                        @*<section class="filter-section">
+                            <h3>Filter by color</h3>
+                            <span class="clear clearChecks">Clear colors</span>
+                            <label>
+                                <input type="checkbox" name="colors" value="black" id="color_0" checked>
+                                Black (12)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="colors" value="white" id="color_1">
+                                White (1)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="colors" value="green" id="color_2">
+                                Green  (34)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="colors" value="blue" id="color_3">
+                                Blue (23)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="colors" value="red" id="color_4">
+                                Red (12)
+                            </label>
+                        </section>*@
+
+                        <!--Colors Section-->
+                        @*<section class="filter-section">
+                            <h3>Filter by size</h3>
+                            <span class="clear clearChecks">Clear size</span>
+                            <label>
+                                <input type="checkbox" name="sizes" value="small" id="size_0" checked>
+                                Small (12)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="sizes" value="white" id="size_1">
+                                Medium (34)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="sizes" value="green" id="size_2">
+                                Large (11)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="sizes" value="blue" id="size_3">
+                                Extra large (1)
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="sizes" value="red" id="size_4">
+                                Superman (0)
+                            </label>
+                        </section>*@
+
+                        <!--Categories Section-->
+                            @if (ViewBag.Cat.Count > 1)
+                            {
+                            <section class="filter-section">
+                                <h3>Categories</h3>
+                                <ul class="categories">
+                                    @foreach (var c in ViewBag.Cat)
+                                    {
+                                        if (@c.catId == ViewBag.Cat[0].catId)
+                                        {
+                                            <li>
+                                                <a href='@Url.Action("Index", "Portfolio",
+                        new { bizId = @c.bizId, lg = @ViewBag.lg, catId = @c.catId })'>
+                                                    @c.category
+                                                </a>
+                                            </li>
+                                        }
+                                        else
+                                        {
+
+                                            <li>
+                                                <a href='@Url.Action("Index", "Portfolio",
+                            new { bizId = @c.bizId, lg = @ViewBag.lg, catId = @c.parId, subId = @c.catId })'>
+                                                    @c.category
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </section>
+                            }
+                    </div>
+                </div>
+
+                <!--Tiles-->
+                <div class="col-lg-9 col-md-9 col-sm-8">
+                    <div class="row">
+                        @foreach (var e in ViewBag.Pdt)
+                        {
+                            //if sub-cat not display pdt of cat
+                            if (ViewBag.Cat.Count > 1 && @e.catId == ViewBag.catId) { continue; }
+                            //change link according to cat or sub-cat
+                            var mycatId = (ViewBag.Cat.Count == 1 || ViewBag.subId > 0) ?
+                                ViewBag.catId : e.parId;
+                            var mysubId = (ViewBag.Cat.Count == 1 || ViewBag.subId > 0) ?
+                                ViewBag.subId : e.catId;
+
+                        <!--Tile-->
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="tile">
+                                    <div class="badges">
+                                        <span class="sale">Sale</span>
+                                    </div>
+                                    <div class="price-label">@e.price</div>
+                                    <a href='@Url.Action("Index","SingleItem", 
+                            new{bizId=@e.bizId, lg=@ViewBag.lg, catId=mycatId , subId=mysubId,id=@e.id})'>
+                                        <img src="http://localhost:2245/admin/FileStore/@e.imageFileName" alt="1" />
+                                        <span class="tile-overlay"></span>
+                                    </a>
+                                    <div class="footer">
+                                        <a href="#">@e.name</a>
+                                        <span>by Pirate3d</span>
+                                        <button class="btn btn-primary">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        <!--Tile-->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="tile">
+                                <a href="#">
+                                    <img src="~/img/catalog/1.png" alt="1" />
+                                    <span class="tile-overlay"></span>
+                                </a>
+                                <div class="badges">
+                                    <span class="sale">Sale</span>
+                                </div>
+                                <div class="price-label">715,00 $</div>
+                                <div class="footer">
+                                    <a href="#">The Buccaneer</a>
+                                    <span>by Pirate3d</span>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Tile-->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="tile">
+                                <div class="badges">
+                                    <span class="best-seller">Best Seller</span>
+                                </div>
+                                <div class="price-label">715,00 $</div>
+                                <a href="#">
+                                    <img src="~/img/catalog/1.png" alt="1" />
+                                    <span class="tile-overlay"></span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#">The Buccaneer</a>
+                                    <span>by Pirate3d</span>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Tile-->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="tile">
+                                <div class="price-label">715,00 $</div>
+                                <a href="#">
+                                    <img src="~/img/catalog/1.png" alt="1" />
+                                    <span class="tile-overlay"></span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#">The Buccaneer</a>
+                                    <span>by Pirate3d</span>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Tile-->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="tile">
+                                <div class="price-label">715,00 $</div>
+                                <a href="#">
+                                    <img src="~/img/catalog/1.png" alt="1" />
+                                    <span class="tile-overlay"></span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#">The Buccaneer</a>
+                                    <span>by Pirate3d</span>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Tile-->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="tile">
+                                <div class="price-label">715,00 $</div>
+                                <div class="price-label old-price">920,00 $</div>
+                                <a href="#">
+                                    <img src="~/img/catalog/1.png" alt="1" />
+                                    <span class="tile-overlay"></span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#">The Buccaneer</a>
+                                    <span>by Pirate3d</span>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Tile-->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="tile">
+                                <div class="price-label">715,00 $</div>
+                                <div class="price-label old-price">920,00 $</div>
+                                <a href="#">
+                                    <img src="~/img/catalog/1.png" alt="1" />
+                                    <span class="tile-overlay"></span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#">The Buccaneer</a>
+                                    <span>by Pirate3d</span>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Tile-->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="tile">
+                                <div class="price-label">715,00 $</div>
+                                <div class="price-label old-price">920,00 $</div>
+                                <a href="#">
+                                    <img src="~/img/catalog/1.png" alt="1" />
+                                    <span class="tile-overlay"></span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#">The Buccaneer</a>
+                                    <span>by Pirate3d</span>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Tile-->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="tile">
+                                <div class="price-label">715,00 $</div>
+                                <div class="price-label old-price">920,00 $</div>
+                                <a href="#">
+                                    <img src="~/img/catalog/1.png" alt="1" />
+                                    <span class="tile-overlay"></span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#">The Buccaneer</a>
+                                    <span>by Pirate3d</span>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Pagination-->
+                    <ul class="pagination">
+                        <li class="prev-page"><a class="icon-arrow-left" href="#"></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li class="next-page"><a class="icon-arrow-right" href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!--Catalog Grid Close-->
+    <!--Brands Carousel Widget-->
+    <section class="brand-carousel">
+        <div class="container">
+            <h2>Brands in our shop</h2>
+            <div class="inner">
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+            </div>
+        </div>
+    </section><!--Brands Carousel Close-->
+
+</div><!--Page Content Close-->

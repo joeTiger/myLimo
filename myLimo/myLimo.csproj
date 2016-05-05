@@ -1,0 +1,753 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7F88E760-CFA0-4D95-ACD2-3CB76C9E4AE2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>myLimo</RootNamespace>
+    <AssemblyName>myLimo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Context\ApplicationDataContext.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OtherController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Controllers\SingleItemController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\UtilModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AccountViewModels.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="color-switcher\color-switcher.css" />
+    <Content Include="color-switcher\color-switcher.js" />
+    <Content Include="color-switcher\img\default.png" />
+    <Content Include="color-switcher\img\scheme2.png" />
+    <Content Include="color-switcher\img\scheme3.png" />
+    <Content Include="color-switcher\img\scheme4.png" />
+    <Content Include="css\bootstrap\theme.css" />
+    <Content Include="css\colors\color-default.css" />
+    <Content Include="css\colors\color-scheme2.css" />
+    <Content Include="css\colors\color-scheme3.css" />
+    <Content Include="css\colors\color-scheme4.css" />
+    <Content Include="css\colors\color-scheme5.css" />
+    <Content Include="css\colors\color-scheme6.css" />
+    <Content Include="css\styles.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\outlined-iconset.svg" />
+    <Content Include="fonts\Slide-icons.dev.svg" />
+    <Content Include="fonts\Slide-icons.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="img\about\about_bg.jpg" />
+    <Content Include="img\about\team\1.png" />
+    <Content Include="img\arrow-down.png" />
+    <Content Include="img\blog\blog_01.png" />
+    <Content Include="img\brands\1.png" />
+    <Content Include="img\catalog\1.png" />
+    <Content Include="img\catalog\product-gallery\1.jpg" />
+    <Content Include="img\catalog\product-gallery\th_1.jpg" />
+    <Content Include="img\catalog\shopping-cart-thumb.jpg" />
+    <Content Include="img\categories\1.png" />
+    <Content Include="img\categories\slides\bg_1.png" />
+    <Content Include="img\categories\slides\bg_2.png" />
+    <Content Include="img\categories\slides\bg_3.png" />
+    <Content Include="img\categories\slides\slide_1.png" />
+    <Content Include="img\categories\slides\slide_2.png" />
+    <Content Include="img\categories\slides\slide_3.png" />
+    <Content Include="img\categories\slides\slide_4.png" />
+    <Content Include="img\categories\slides\slide_5.png" />
+    <Content Include="img\categories\thumbs\th_1.png" />
+    <Content Include="img\cs-page\image.jpg" />
+    <Content Include="img\features\lens.jpg" />
+    <Content Include="img\forms\checkbox-light.png" />
+    <Content Include="img\forms\checkbox.png" />
+    <Content Include="img\forms\delete.png" />
+    <Content Include="img\forms\paypal-label.png" />
+    <Content Include="img\forms\radio-light.png" />
+    <Content Include="img\forms\radio.png" />
+    <Content Include="img\gallery-widget\1.jpg" />
+    <Content Include="img\gallery-widget\2.jpg" />
+    <Content Include="img\gallery-widget\3.jpg" />
+    <Content Include="img\gallery-widget\4.jpg" />
+    <Content Include="img\gallery-widget\5.jpg" />
+    <Content Include="img\gallery-widget\th_1.jpg" />
+    <Content Include="img\hero\banner_1.jpg" />
+    <Content Include="img\hero\slideshow\slide_1.jpg" />
+    <Content Include="img\hero\slideshow\slide_2.jpg" />
+    <Content Include="img\info-blocks\1.jpg" />
+    <Content Include="img\info-blocks\parallax-bg-img1.jpg" />
+    <Content Include="img\info-blocks\parallax-bg-img2.jpg" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\logo-dark.png" />
+    <Content Include="img\logo-default.png" />
+    <Content Include="img\logo-footer.png" />
+    <Content Include="img\logo-scheme2.png" />
+    <Content Include="img\logo-scheme3.png" />
+    <Content Include="img\logo-scheme4.png" />
+    <Content Include="img\logo-scheme5.png" />
+    <Content Include="img\logo-scheme6.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\media\1.jpg" />
+    <Content Include="img\media\2.jpg" />
+    <Content Include="img\media\3.jpg" />
+    <Content Include="img\media\4.jpg" />
+    <Content Include="img\media\5.jpg" />
+    <Content Include="img\media\6.jpg" />
+    <Content Include="img\noise.gif" />
+    <Content Include="img\offers\menu-drodown-offer.jpg" />
+    <Content Include="img\offers\offer_1.png" />
+    <Content Include="img\offers\offer_2.png" />
+    <Content Include="img\offers\offer_3.png" />
+    <Content Include="img\offers\special-offer-bg.png" />
+    <Content Include="img\offers\special-offer.png" />
+    <Content Include="img\offers\th_1.png" />
+    <Content Include="img\overlays\overlay-primary-color2.png" />
+    <Content Include="img\overlays\overlay-primary-color3.png" />
+    <Content Include="img\overlays\overlay-primary-color4.png" />
+    <Content Include="img\overlays\overlay-primary.png" />
+    <Content Include="img\overlays\overlay-success-color2.png" />
+    <Content Include="img\overlays\overlay-success-color3.png" />
+    <Content Include="img\overlays\overlay-success-color4.png" />
+    <Content Include="img\overlays\overlay-success.png" />
+    <Content Include="img\payment\amazon.png" />
+    <Content Include="img\payment\discover.png" />
+    <Content Include="img\payment\master.png" />
+    <Content Include="img\payment\paypal.png" />
+    <Content Include="img\payment\visa.png" />
+    <Content Include="img\people\1.png" />
+    <Content Include="img\posts-widget\1.jpg" />
+    <Content Include="js\404.js" />
+    <Content Include="js\coming-soon.js" />
+    <Content Include="js\libs\jquery-1.11.1.min.js" />
+    <Content Include="js\libs\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="js\libs\jquery.easing.min.js" />
+    <Content Include="js\libs\modernizr.custom.js" />
+    <Content Include="js\min\404.min.js" />
+    <Content Include="js\plugins\bootstrap.min.js" />
+    <Content Include="js\plugins\icheck.min.js" />
+    <Content Include="js\plugins\jquery.countdown.min.js" />
+    <Content Include="js\plugins\jquery.nouislider.min.js" />
+    <Content Include="js\plugins\jquery.placeholder.js" />
+    <Content Include="js\plugins\jquery.shuffle.min.js" />
+    <Content Include="js\plugins\jquery.stellar.min.js" />
+    <Content Include="js\plugins\jquery.touchSwipe.min.js" />
+    <Content Include="js\plugins\jquery.validate.min.js" />
+    <Content Include="js\plugins\lightGallery.min.js" />
+    <Content Include="js\plugins\masterslider.js" />
+    <Content Include="js\plugins\masterslider.min.js" />
+    <Content Include="js\plugins\masterslider.min1.js" />
+    <Content Include="js\plugins\owl.carousel.min.js" />
+    <Content Include="js\plugins\respond.js" />
+    <Content Include="js\plugins\smoothscroll.js" />
+    <Content Include="js\scripts.js" />
+    <Content Include="mailer\mailer.js" />
+    <Content Include="masterslider\blank.gif" />
+    <Content Include="masterslider\skins\black-1\black-skin-1-retina.png" />
+    <Content Include="masterslider\skins\black-1\black-skin-1.png" />
+    <Content Include="masterslider\skins\black-1\style.css" />
+    <Content Include="masterslider\skins\black-2\black-skin-2-retina.png" />
+    <Content Include="masterslider\skins\black-2\black-skin-2.png" />
+    <Content Include="masterslider\skins\black-2\style.css" />
+    <Content Include="masterslider\skins\contrast\contrast-skin-retina.png" />
+    <Content Include="masterslider\skins\contrast\contrast-skin.png" />
+    <Content Include="masterslider\skins\contrast\style.css" />
+    <Content Include="masterslider\skins\default\light-skin-1-retina.png" />
+    <Content Include="masterslider\skins\default\light-skin-1.png" />
+    <Content Include="masterslider\skins\default\style.css" />
+    <Content Include="masterslider\skins\light-2\light-skin-2-retina.png" />
+    <Content Include="masterslider\skins\light-2\light-skin-2.png" />
+    <Content Include="masterslider\skins\light-2\style.css" />
+    <Content Include="masterslider\skins\light-3\light-skin-3-retina.png" />
+    <Content Include="masterslider\skins\light-3\light-skin-3.png" />
+    <Content Include="masterslider\skins\light-3\style.css" />
+    <Content Include="masterslider\skins\light-4\light-skin-4-retina.png" />
+    <Content Include="masterslider\skins\light-4\light-skin-4.png" />
+    <Content Include="masterslider\skins\light-4\style.css" />
+    <Content Include="masterslider\skins\light-5\light-skin-5-retina.png" />
+    <Content Include="masterslider\skins\light-5\light-skin-5.png" />
+    <Content Include="masterslider\skins\light-5\style.css" />
+    <Content Include="masterslider\skins\light-6\light-skin-6-retina.png" />
+    <Content Include="masterslider\skins\light-6\light-skin-6.png" />
+    <Content Include="masterslider\skins\light-6\style.css" />
+    <Content Include="masterslider\skins\metro\metro-skin-retina.png" />
+    <Content Include="masterslider\skins\metro\metro-skin.png" />
+    <Content Include="masterslider\skins\metro\style.css" />
+    <Content Include="masterslider\style\arrow.png" />
+    <Content Include="masterslider\style\grab.cur" />
+    <Content Include="masterslider\style\grab.png" />
+    <Content Include="masterslider\style\grabbing.cur" />
+    <Content Include="masterslider\style\grabbing.png" />
+    <Content Include="masterslider\style\loading-1-dark.gif" />
+    <Content Include="masterslider\style\loading-1-light.gif" />
+    <Content Include="masterslider\style\loading-1.gif" />
+    <Content Include="masterslider\style\loading-2-dark.gif" />
+    <Content Include="masterslider\style\loading-2-light.gif" />
+    <Content Include="masterslider\style\loading-2.gif" />
+    <Content Include="masterslider\style\masterslider.css" />
+    <Content Include="masterslider\style\video-close-btn.png" />
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.Add.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.AddView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.Cat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.CatView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.CheckDomainNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.Dico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.Elt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.EltCat.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.GetDicoByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.GetDicoIdByNameFuncResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.SaveDicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetAddByParResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetAddViewByIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetBizByEltIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetBizByNameAddTelMobResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetBizByNameResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetBizCatOrderResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetCatByBizIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetCatViewByCatIdAllResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetCatViewByCatIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetCatViewByIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetCheckImageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetCheckoutResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetDicoByIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetDicoByNameApproximatifResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetDicoByNameLgResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetDicoByNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetDicoEmptiesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetEltByIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetEltByUserNameResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetEltCatViewBizByEltIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetEltCatViewBizResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetEltCatViewPdtByCatResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetEltPageDataByIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetEltPageImageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetEltTagViewByBizResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetEltTagViewResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetForumByEltIdParOnlyResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetForumByEltIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetForumByIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetForumBySearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetGridBizNewEntriesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetGridBizResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetGridBizWithTagsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetGridCarResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetGridPdtByBizResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetGridPdtBySearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetGridPdtResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetMenuResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetNbTagsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetPdtByIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetPhotoByPdtResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetTagByBizIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetTagByEltIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetTagCntByBizIdResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetTreeAddByCatResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetTreeCatResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetTreeEltPageResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spGetTreePdtByBizResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.spSettingGetResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\ServiceReference1\myLimo.ServiceReference1.UploadFile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\myLimo.pubxml" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReference1\Service1.disco" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Portfolio\Index.cshtml" />
+    <Content Include="Views\SingleItem\Index.cshtml" />
+    <None Include="Service References\ServiceReference1\Service1.wsdl" />
+    <None Include="Service References\ServiceReference1\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service11.wsdl" />
+    <None Include="Service References\ServiceReference1\Service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\About\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\colors\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\outlined-iconset.eot" />
+    <Content Include="fonts\outlined-iconset.ttf" />
+    <Content Include="fonts\outlined-iconset.woff" />
+    <Content Include="fonts\Slide-icons.eot" />
+    <Content Include="fonts\Slide-icons.ttf" />
+    <Content Include="fonts\Slide-icons.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="less\blog.less" />
+    <Content Include="less\bootstrap\alerts.less" />
+    <Content Include="less\bootstrap\badges.less" />
+    <Content Include="less\bootstrap\bootstrap.less" />
+    <Content Include="less\bootstrap\breadcrumbs.less" />
+    <Content Include="less\bootstrap\button-groups.less" />
+    <Content Include="less\bootstrap\buttons.less" />
+    <Content Include="less\bootstrap\carousel.less" />
+    <Content Include="less\bootstrap\close.less" />
+    <Content Include="less\bootstrap\code.less" />
+    <Content Include="less\bootstrap\component-animations.less" />
+    <Content Include="less\bootstrap\dropdowns.less" />
+    <Content Include="less\bootstrap\forms.less" />
+    <Content Include="less\bootstrap\glyphicons.less" />
+    <Content Include="less\bootstrap\grid.less" />
+    <Content Include="less\bootstrap\input-groups.less" />
+    <Content Include="less\bootstrap\jumbotron.less" />
+    <Content Include="less\bootstrap\labels.less" />
+    <Content Include="less\bootstrap\list-group.less" />
+    <Content Include="less\bootstrap\media.less" />
+    <Content Include="less\bootstrap\mixins.less" />
+    <Content Include="less\bootstrap\mixins\alerts.less" />
+    <Content Include="less\bootstrap\mixins\background-variant.less" />
+    <Content Include="less\bootstrap\mixins\border-radius.less" />
+    <Content Include="less\bootstrap\mixins\buttons.less" />
+    <Content Include="less\bootstrap\mixins\center-block.less" />
+    <Content Include="less\bootstrap\mixins\clearfix.less" />
+    <Content Include="less\bootstrap\mixins\forms.less" />
+    <Content Include="less\bootstrap\mixins\gradients.less" />
+    <Content Include="less\bootstrap\mixins\grid-framework.less" />
+    <Content Include="less\bootstrap\mixins\grid.less" />
+    <Content Include="less\bootstrap\mixins\hide-text.less" />
+    <Content Include="less\bootstrap\mixins\image.less" />
+    <Content Include="less\bootstrap\mixins\labels.less" />
+    <Content Include="less\bootstrap\mixins\list-group.less" />
+    <Content Include="less\bootstrap\mixins\nav-divider.less" />
+    <Content Include="less\bootstrap\mixins\nav-vertical-align.less" />
+    <Content Include="less\bootstrap\mixins\opacity.less" />
+    <Content Include="less\bootstrap\mixins\pagination.less" />
+    <Content Include="less\bootstrap\mixins\panels.less" />
+    <Content Include="less\bootstrap\mixins\progress-bar.less" />
+    <Content Include="less\bootstrap\mixins\reset-filter.less" />
+    <Content Include="less\bootstrap\mixins\reset-text.less" />
+    <Content Include="less\bootstrap\mixins\resize.less" />
+    <Content Include="less\bootstrap\mixins\responsive-visibility.less" />
+    <Content Include="less\bootstrap\mixins\size.less" />
+    <Content Include="less\bootstrap\mixins\tab-focus.less" />
+    <Content Include="less\bootstrap\mixins\table-row.less" />
+    <Content Include="less\bootstrap\mixins\text-emphasis.less" />
+    <Content Include="less\bootstrap\mixins\text-overflow.less" />
+    <Content Include="less\bootstrap\mixins\vendor-prefixes.less" />
+    <Content Include="less\bootstrap\modals.less" />
+    <Content Include="less\bootstrap\navbar.less" />
+    <Content Include="less\bootstrap\navs.less" />
+    <Content Include="less\bootstrap\normalize.less" />
+    <Content Include="less\bootstrap\pager.less" />
+    <Content Include="less\bootstrap\pagination.less" />
+    <Content Include="less\bootstrap\panels.less" />
+    <Content Include="less\bootstrap\popovers.less" />
+    <Content Include="less\bootstrap\print.less" />
+    <Content Include="less\bootstrap\progress-bars.less" />
+    <Content Include="less\bootstrap\responsive-embed.less" />
+    <Content Include="less\bootstrap\responsive-utilities.less" />
+    <Content Include="less\bootstrap\scaffolding.less" />
+    <Content Include="less\bootstrap\tables.less" />
+    <Content Include="less\bootstrap\theme.less" />
+    <Content Include="less\bootstrap\thumbnails.less" />
+    <Content Include="less\bootstrap\tooltip.less" />
+    <Content Include="less\bootstrap\type.less" />
+    <Content Include="less\bootstrap\utilities.less" />
+    <Content Include="less\bootstrap\variables.less" />
+    <Content Include="less\bootstrap\wells.less" />
+    <Content Include="less\buttons.less" />
+    <Content Include="less\colors\color.less" />
+    <Content Include="less\font-awesome\animated.less" />
+    <Content Include="less\font-awesome\bordered-pulled.less" />
+    <Content Include="less\font-awesome\core.less" />
+    <Content Include="less\font-awesome\fixed-width.less" />
+    <Content Include="less\font-awesome\font-awesome.less" />
+    <Content Include="less\font-awesome\icons.less" />
+    <Content Include="less\font-awesome\larger.less" />
+    <Content Include="less\font-awesome\list.less" />
+    <Content Include="less\font-awesome\mixins.less" />
+    <Content Include="less\font-awesome\path.less" />
+    <Content Include="less\font-awesome\rotated-flipped.less" />
+    <Content Include="less\font-awesome\spinning.less" />
+    <Content Include="less\font-awesome\stacked.less" />
+    <Content Include="less\font-awesome\variables.less" />
+    <Content Include="less\footer.less" />
+    <Content Include="less\forms.less" />
+    <Content Include="less\header.less" />
+    <Content Include="less\home.less" />
+    <Content Include="less\lightGallery\lightGallery.less" />
+    <Content Include="less\mixins.less" />
+    <Content Include="less\modals.less" />
+    <Content Include="less\navi.less" />
+    <Content Include="less\nouislider\nouislider.less" />
+    <Content Include="less\outlined-iconset\outlined-iconset.less" />
+    <Content Include="less\pages.less" />
+    <Content Include="less\scaffolding.less" />
+    <Content Include="less\shop.less" />
+    <Content Include="less\styles.less" />
+    <Content Include="less\type.less" />
+    <Content Include="less\variables.less" />
+    <Content Include="less\widgets.less" />
+    <Content Include="mailer\config.ini" />
+    <Content Include="mailer\mailer.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
