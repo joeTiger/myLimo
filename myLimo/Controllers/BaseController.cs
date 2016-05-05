@@ -14,12 +14,12 @@ namespace myLimo.Controllers
     {
         ServiceReference1.Service1Client objService = new Service1Client();
 
-        //protected override void Initialize(System.Web.Routing.RequestContext requestContext)
-        //{
-        //    base.Initialize(requestContext);
-        //}
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+        }
 
-       
+
         public void setViewBagVariables(string cn, int bizId, int lg, int catId, int subId, int id)
         {
             ViewBag.controllerName  = cn;
