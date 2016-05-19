@@ -835,8 +835,11 @@
       <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="descPdt" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="ifnsmall" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="imageFileName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="imageFileName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="imageFileName3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="imageFileName4" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="minOrder" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="nameId" nillable="true" type="xs:int" />

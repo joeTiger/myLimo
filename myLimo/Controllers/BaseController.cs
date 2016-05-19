@@ -24,16 +24,16 @@ namespace myLimo.Controllers
 
         public void setViewBagVariables(string cn, int bizId, int lg, int catId, int subId, int id)
         {
-            ViewBag.controllerName  = cn;
-            ViewBag.bizId           = bizId;
-            ViewBag.lg              = lg;
-            ViewBag.catId           = catId;
-            ViewBag.subId           = subId;
-            ViewBag.id              = id;
-            ViewBag.Dir             = (lg == 1) ? "rtl": "ltr";
-            ViewBag.Lang            = (lg == 1) ? "he" : "en";
+            ViewBag.controllerName = cn;
+            ViewBag.bizId = bizId;
+            ViewBag.lg = lg;
+            ViewBag.catId = catId;
+            ViewBag.subId = subId;
+            ViewBag.id = id;
+            ViewBag.Dir = (lg == 1) ? "rtl" : "ltr";
+            ViewBag.Lang = (lg == 1) ? "he" : "en";
 
-            string s = @"firstPageId_" +bizId;
+            string s = @"firstPageId_" + bizId;
             if (Session[s] == null)
             {
                 mylog(s + " is NULL !!!!!!!!!!!!!!!");
@@ -44,25 +44,34 @@ namespace myLimo.Controllers
 
             setViewBagSettingModel(bizId, lg);
             setViewBagSettingLgModel(bizId, lg);
-            if (bizId == 72751 || bizId== 79357)
+            setViewBagColorScheme(bizId);
+
+            mylog("ViewBag.controllerName   =" + ViewBag.controllerName);
+            mylog("ViewBag.bizId            =" + ViewBag.bizId);
+            mylog("ViewBag.lg               =" + ViewBag.lg);
+            mylog("ViewBag.catId            =" + ViewBag.catId);
+            mylog("ViewBag.subId            =" + ViewBag.subId);
+            mylog("ViewBag.id               =" + ViewBag.id);
+            mylog("ViewBag.Dir              =" + ViewBag.Dir);
+            mylog("ViewBag.Lang             =" + ViewBag.Lang);
+            mylog("ViewBag.firstPageId      =" + ViewBag.firstPageId);
+            mylog("ViewBag.FirstLgName      =" + ViewBag.FirstLgName);
+
+        }
+
+        private void setViewBagColorScheme(int bizId)
+        {
+            if (bizId == 72751 || bizId == 79357)
             {
                 ViewBag.colorScheme = "~/css/colors/color-scheme5.css";
             }
-            else if (bizId== 75318)
+            //kazablan
+            else if (bizId == 75318 || bizId == 79472 || bizId == 73294)
             {
-                ViewBag.colorScheme = "~/css/colors/color-scheme3.css";
+                //ViewBag.colorScheme = "~/css/colors/color-scheme3.css";
+                //orange
+                ViewBag.colorScheme = "~/css/colors/color-default.css";
             }
-            mylog("ViewBag.controllerName   =" + ViewBag.controllerName );
-            mylog("ViewBag.bizId            =" + ViewBag.bizId          );
-            mylog("ViewBag.lg               =" + ViewBag.lg             );
-            mylog("ViewBag.catId            =" + ViewBag.catId          );
-            mylog("ViewBag.subId            =" + ViewBag.subId          );
-            mylog("ViewBag.id               =" + ViewBag.id             );
-            mylog("ViewBag.Dir              =" + ViewBag.Dir            );
-            mylog("ViewBag.Lang             =" + ViewBag.Lang           );
-            mylog("ViewBag.firstPageId      =" + ViewBag.firstPageId    );
-            mylog("ViewBag.FirstLgName      =" + ViewBag.FirstLgName    );
-            
         }
 
         public void setViewBagPageDataModel(int id, int lg)
@@ -354,7 +363,7 @@ namespace myLimo.Controllers
 
         private string trunc(object value)
         {
-            int maxLength = 10;
+            int maxLength = 30;
             if (value == null) return string.Empty;
             string str = value.ToString();
             return str.Substring(0, Math.Min(str.Length, maxLength));
@@ -373,13 +382,17 @@ namespace myLimo.Controllers
             //    ((IEnumerable<spGetTreeEltPageResult>) Session["MenuModel"]).ToList().Count);
         }
 
+
         
 
         private void writeToLogfile(string s)
         {
+            string path = getLogPath();
+
+            if (!Directory.Exists(path)) return;
             try
             {
-                FileStream fs = new FileStream("C:\\log\\logFileLimo.txt", FileMode.Append, FileAccess.Write);
+                FileStream fs = new FileStream(path + "\\logFileLimo.txt", FileMode.Append, FileAccess.Write);
                 StreamWriter sw = new StreamWriter(fs);
                 s = DateTime.Now + " " + s;
                 sw.WriteLine(s);
@@ -388,49 +401,43 @@ namespace myLimo.Controllers
             catch (Exception)
             {
             }
-        }
 
-        public IEnumerable<LgSetting> GenerateLgSetting()
-        {
-            return new List<LgSetting>
-            {
-                new LgSetting
-                {
-                    Name  = "En",
-                    Value = "0"
-                },
-                new LgSetting
-                {
-                    Name  = "Hb",
-                    Value = "1"
-                },
-                new LgSetting
-                {
-                    Name  = "Fr",
-                    Value = "2"
-                },
-                new LgSetting
-                {
-                    Name  = "Ru",
-                    Value = "3"
-                },
-                new LgSetting
-                {
-                    Name  = "Cn",
-                    Value = "4"
-                }
-            };
+            //try
+            //{
+            //    //FileStream fs = new FileStream("C:\\log\\logFileLimo.txt", FileMode.Append, FileAccess.Write);
+            //    FileStream fs = new FileStream("E:\\web\\yelotagc\\myLimo\\logFileLimo.txt", FileMode.Append, FileAccess.Write);
+            //    StreamWriter sw = new StreamWriter(fs);
+            //    s = DateTime.Now + " " + s;
+            //    sw.WriteLine(s);
+            //    sw.Close();
+            //}
+            //catch (Exception)
+            //{
+            //}
         }
-
+                
         public void mylog(string s)
         {
-            //return;
+            return;
             //if (Trace.IsEnabled)
             {
                 System.Diagnostics.Debug.WriteLine(s);
                 //Trace.Write(s);
                 writeToLogfile(s);
             }
+        }
+
+        public string getLogPath()
+        {
+            string host = System.Web.HttpContext.Current.Request.Url.Host;
+            
+            string path;
+            if (host.Contains("localhost"))
+                path = @"C:\log";
+            else
+                path = @"E:\web\yelotagc\myLimo";
+
+            return path;
         }
     }
 }

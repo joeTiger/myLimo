@@ -7794,10 +7794,19 @@ namespace myLimo.ServiceReference1 {
         private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ifnsmallField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string imageFileNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string imageFileName2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imageFileName3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string imageFileName4Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> minOrderField;
@@ -7909,6 +7918,19 @@ namespace myLimo.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ifnsmall {
+            get {
+                return this.ifnsmallField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ifnsmallField, value) != true)) {
+                    this.ifnsmallField = value;
+                    this.RaisePropertyChanged("ifnsmall");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string imageFileName {
             get {
                 return this.imageFileNameField;
@@ -7930,6 +7952,32 @@ namespace myLimo.ServiceReference1 {
                 if ((object.ReferenceEquals(this.imageFileName2Field, value) != true)) {
                     this.imageFileName2Field = value;
                     this.RaisePropertyChanged("imageFileName2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string imageFileName3 {
+            get {
+                return this.imageFileName3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imageFileName3Field, value) != true)) {
+                    this.imageFileName3Field = value;
+                    this.RaisePropertyChanged("imageFileName3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string imageFileName4 {
+            get {
+                return this.imageFileName4Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.imageFileName4Field, value) != true)) {
+                    this.imageFileName4Field = value;
+                    this.RaisePropertyChanged("imageFileName4");
                 }
             }
         }
