@@ -14,7 +14,7 @@
             <!--Slide -->
             <div class="ms-slide" data-delay="7" >
                 <div class="overlay"></div>
-                <img src="http://localhost:2245/admin/FileStore/@e.imageFileName" alt=""/>
+                <img src="/admin/FileStore/@e.imageFileName" alt=""/>
                 <h2 style="width: 456px; left: 110px; top: 110px;" class="white-color ms-layer" data-effect="top(50,true)" data-duration="700" data-delay="250" data-ease="easeOutQuad">@e.name</h2>
                 <p style="width: 456px; left: 110px; top: 210px;" class="white-color ms-layer" data-effect="back(500)" data-duration="700" data-delay="500" data-ease="easeOutQuad">@e.category</p>
                 @*<div style="left: 110px; top: 300px;" class="ms-layer button" data-effect="left(50,true)" data-duration="500" data-delay="750" data-ease="easeOutQuad"><a class="btn btn-black" href="#">Go to catalog</a></div>
@@ -33,8 +33,10 @@
                 {
                     <!--Category-->
                     <div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <a href='@Url.Action("Index","Portfolio", new{bizId=@e.bizId, lg=@ViewBag.lg, catId=@e.catId})'>
-                            <img src="http://localhost:2245/admin/FileStore/@e.ifnsmall" alt="1" />
+                        <a href='@Url.Action("Index",
+                                (string)ViewBag.PortfolioController, 
+                                new{bizId=@e.bizId, lg=@ViewBag.lg, catId=@e.catId})'>
+                            <img src="/admin/FileStore/@e.ifnsmall" alt="1" />
                             <p>@e.category</p>
                         </a>
                     </div>
@@ -49,8 +51,8 @@
             </div>
         </div>
     </section><!--Categories Close-->
-    <!--Catalog Grid-->
-    <section class="catalog-grid">
+    <!--Catalog Picks Grid-->
+    @*<section class="catalog-grid">
         <div class="container">
             <h2 class="dark-color">Catalog picks</h2>
             <div class="row">
@@ -187,7 +189,7 @@
                 </div>
             </div>
         </div>
-    </section><!--Catalog Grid Close-->
+    </section>*@<!--Catalog Picks Grid Close-->
     <!--Tabs Widget-->
     <section class="tabs-widget">
         <!-- Nav tabs -->

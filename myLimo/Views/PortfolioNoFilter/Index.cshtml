@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "PortfolioNoFilter";
+}
+
+ <!--Filters Modal-->
+<div class="modal fade" id="filterModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button></div>
+        <div class="modal-body">
+        <!--Here goes filters dynamically pasted by jQuery-->
+        </div>
+    </div>
+    </div>
+</div>
+    
+
+<!--Page Content-->
+<div class="page-content">
+
+    <!-- Shop - no filters 4 cols -->
+    <!--Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li>
+        @Html.ActionLink((string)ViewBag.MenuModel[0].name, "Index", "Home",
+        new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId = 0, subId = 0, id = @ViewBag.firstPageId }, null)
+        </li>
+        @if (@ViewBag.subId > 0)
+        {
+            <li>
+                @Html.ActionLink((string)ViewBag.Cat[0].category, "Index", "PortfolioNoFilter",
+                    new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId = ViewBag.Cat[0].catId }, null)
+            </li>
+        }
+        <li class="active">@ViewBag.Pdt[0].category</li>
+    </ol><!--Breadcrumbs Close-->
+    <!--Catalog Grid-->
+    <section class="catalog-grid" >
+        <div class="container" >
+            <h2 class="with-sorting">@ViewBag.CatName</h2>
+            @*<div class="sorting">
+                <a href="#">Sort by name</a>
+                <a href="#">Sort by price</a>
+            </div>*@
+            <div class="row">
+                @foreach (var e in ViewBag.Pdt)
+                {
+                    //if sub-cat not display pdt of cat
+                    if (ViewBag.Cat.Count > 1 && @e.catId == ViewBag.catId) { continue; }
+                    //change link according to cat or sub-cat
+                    var mycatId = (ViewBag.Cat.Count == 1 || ViewBag.subId > 0) ?
+                        ViewBag.catId : e.parId;
+                    var mysubId = (ViewBag.Cat.Count == 1 || ViewBag.subId > 0) ?
+                        ViewBag.subId : e.catId;
+
+                    <!--Tile-->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="tile">
+                            @*<div class="badges">
+                                <span class="sale">Sale</span>
+                            </div>*@
+                            @*<div class="price-label">@e.price</div>*@
+                            <a href='@Url.Action("Index","SingleItem", 
+                    new{bizId=@e.bizId, lg=@ViewBag.lg, catId=mycatId , subId=mysubId,id=@e.id})'>
+                                <img src="/admin/FileStore/@e.ifnsmall" alt="1" />
+                                <span class="tile-overlay"></span>
+                            </a>
+                            <div class="footer">
+                                <a href="#">@e.name</a>
+                                <span>by Pirate3d</span>
+                                <button class="btn btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <!--Pagination-->
+            <ul class="pagination">
+                        <li class="prev-page"><a class="icon-arrow-left" href="#"></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li class="next-page"><a class="icon-arrow-right" href="#"></a></li>
+                    </ul>
+        </div>
+    </section><!--Catalog Grid Close-->
+    <!--Brands Carousel Widget-->
+    <section class="brand-carousel">
+        <div class="container">
+            <h2>Brands in our shop</h2>
+            <div class="inner">
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+                <a class="item" href="#"><img src="~/img/brands/1.png" alt="1" /></a>
+            </div>
+        </div>
+    </section><!--Brands Carousel Close-->
+
+</div><!--Page Content Close-->

@@ -44,7 +44,7 @@ namespace myLimo.Controllers
 
             setViewBagSettingModel(bizId, lg);
             setViewBagSettingLgModel(bizId, lg);
-            setViewBagColorScheme(bizId);
+            setViewBagByBizId(bizId);
 
             mylog("ViewBag.controllerName   =" + ViewBag.controllerName);
             mylog("ViewBag.bizId            =" + ViewBag.bizId);
@@ -59,17 +59,19 @@ namespace myLimo.Controllers
 
         }
 
-        private void setViewBagColorScheme(int bizId)
+        private void setViewBagByBizId(int bizId)
         {
             if (bizId == 72751 || bizId == 79357)
             {
+                ViewBag.PortfolioController = "Portfolio";
                 ViewBag.colorScheme = "~/css/colors/color-scheme5.css";
             }
             //kazablan
             else if (bizId == 75318 || bizId == 79472 || bizId == 73294)
             {
                 //ViewBag.colorScheme = "~/css/colors/color-scheme3.css";
-                //orange
+                //gray
+                ViewBag.PortfolioController = "PortfolioNoFilter";
                 ViewBag.colorScheme = "~/css/colors/color-default.css";
             }
         }
@@ -98,7 +100,7 @@ namespace myLimo.Controllers
                     //id, parId, typeEltPage, name, data, lastUpdate, pos
                     //Session["MenuModel"] = objService.GetTreeEltPage(bizId, 0, lg);
                     IEnumerable<spGetTreeEltPageResult> list = objService.GetTreeEltPage(ViewBag.bizId, 0, ViewBag.lg);
-                    Session[s] = list;
+                    Session[s] = list.Where(x=>x.typeEltPage==0).ToList();
                     CheckListTreeEltPage(list);
                 }
                 ViewBag.MenuModel = Session[s];
@@ -155,11 +157,11 @@ namespace myLimo.Controllers
                 string v = string.Empty;
                 switch (c)
                 {
-                    case '0': n = "En"; v = "0"; break;
-                    case '1': n = "Hb"; v = "1"; break;
-                    case '2': n = "Fr"; v = "2"; break;
-                    case '3': n = "Ru"; v = "3"; break;
-                    case '4': n = "Cn"; v = "4"; break;
+                    case '0': n = "English";    v = "0"; break;
+                    case '1': n = "עברית";      v = "1"; break;
+                    case '2': n = "français";   v = "2"; break;
+                    case '3': n = "Russe";      v = "3"; break;
+                    case '4': n = "Chinese";    v = "4"; break;
                 }
                 list.Add(new LgSetting { Name = n, Value = v });
             }

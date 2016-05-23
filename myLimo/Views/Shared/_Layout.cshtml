@@ -91,6 +91,20 @@
             <div class="container">
 
                 <ul class="main">
+
+                    @foreach (var e in @ViewBag.MenuModel)
+                    {
+                        var controllerName = (e.position == 1) ? "Home" : "Page";
+                        {
+                            <li>
+                                @Html.ActionLink((string)e.name, "Index",
+                                controllerName,
+                                new { bizId = @ViewBag.bizId,
+                                    lg = @ViewBag.lg, catId = 0,
+                                    subId = 0, id = e.id }, null)
+                            </li>
+                        }
+                    }
                     
                     <li id="lgSetting" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">@ViewBag.FirstLgName<b class="caret"></b></a>
@@ -98,7 +112,8 @@
                             @foreach (var e in ViewBag.SettingLgModel)
                             {
                                 <li>
-                                    @Html.ActionLink((string)e.Name, "Index", (string)@ViewBag.controllerName,
+                                    @Html.ActionLink((string)e.Name, "Index", 
+                                    (string)@ViewBag.controllerName,
                                     new
                                     {
                                         bizId   = @ViewBag.bizId,
@@ -123,8 +138,14 @@
                         {
                             @*<li><a href="shop-filters-left-3cols.html">@e.category</a></li>*@
                             <li>
-                                @Html.ActionLink((string)e.category, "Index", "Portfolio",
-                                    new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId = @e.catId }, null)
+                            <h3>
+                                @Html.ActionLink((string)e.category,
+                                    "Index",
+                                    (string)@ViewBag.PortfolioController,
+                                    new {   bizId   = @ViewBag.bizId,
+                                            lg      = @ViewBag.lg,
+                                            catId   = @e.catId }, null)
+                            </h3>
                             </li>
                         }
                         @*<li><a href="shop-filters-left-3cols.html">Shoulder Bag</a></li>*@

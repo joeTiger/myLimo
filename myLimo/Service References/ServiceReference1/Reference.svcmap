@@ -19,17 +19,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:2245/admin/Service1.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://yelotag.com/admin/Service1.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="e2f96de0-9feb-4849-88a8-ba4463194c00" SourceId="1" SourceUrl="http://localhost:2245/admin/Service1.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="Service11.wsdl" MetadataType="Wsdl" ID="45a42999-f76c-45a4-a27a-39b10d2cd801" SourceId="1" SourceUrl="http://localhost:2245/admin/Service1.svc?wsdl" />
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="a2767e4d-c0b8-4e6a-b2fc-b88bd2c42fbd" SourceId="1" SourceUrl="http://localhost:2245/admin/Service1.svc?xsd=xsd0" />
-    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="9b61940a-57d4-4a51-81e4-ce6fe2d3bea7" SourceId="1" SourceUrl="http://localhost:2245/admin/Service1.svc?xsd=xsd1" />
-    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="0179e5e4-49ca-49fe-9257-1016f799125f" SourceId="1" SourceUrl="http://localhost:2245/admin/Service1.svc?xsd=xsd2" />
-    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="4abc315d-f791-4faa-a317-21ea4ae7ab5a" SourceId="1" SourceUrl="http://localhost:2245/admin/Service1.svc?xsd=xsd3" />
-    <MetadataFile FileName="Service14.xsd" MetadataType="Schema" ID="9fa1e533-364b-42a9-8998-45f12593f176" SourceId="1" SourceUrl="http://localhost:2245/admin/Service1.svc?xsd=xsd4" />
-    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="62c5d528-2ccc-4ced-8dcb-9c9e01cddd01" SourceId="1" SourceUrl="http://localhost:2245/admin/Service1.svc?disco" />
+    <MetadataFile FileName="Service15.xsd" MetadataType="Schema" ID="100d14ae-24b5-4bc5-852d-447cfc8a0711" SourceId="1" SourceUrl="http://yelotag.com/admin/Service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service151.xsd" MetadataType="Schema" ID="7cbfae4e-5d25-4374-a2a6-245cb488ec73" SourceId="1" SourceUrl="http://yelotag.com/admin/Service1.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service152.xsd" MetadataType="Schema" ID="6cd61448-82fb-40a4-bf89-8608b7400bbf" SourceId="1" SourceUrl="http://yelotag.com/admin/Service1.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service153.xsd" MetadataType="Schema" ID="e523e122-a7e9-4ff5-b736-62808f7bb460" SourceId="1" SourceUrl="http://yelotag.com/admin/Service1.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service12.wsdl" MetadataType="Wsdl" ID="72a9b2c8-e6de-460d-bd4f-4e4101679526" SourceId="1" SourceUrl="http://yelotag.com/admin/Service1.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Service11.disco" MetadataType="Disco" ID="ba73a82f-4fe5-4ce3-82ab-9533d5574513" SourceId="1" SourceUrl="http://yelotag.com/admin/Service1.svc?disco" />
+    <MetadataFile FileName="Service121.wsdl" MetadataType="Wsdl" ID="42f3e348-ec15-458e-ba9a-08aafdf8e38b" SourceId="1" SourceUrl="http://yelotag.com/admin/Service1.svc?wsdl" />
+    <MetadataFile FileName="Service154.xsd" MetadataType="Schema" ID="4b079c38-8a94-4511-be88-f01ac6e64731" SourceId="1" SourceUrl="http://yelotag.com/admin/Service1.svc?xsd=xsd4" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
