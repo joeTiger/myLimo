@@ -8,7 +8,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="" location="http://yelotag.com/admin/Service1.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="" location="http://localhost:2245/admin/Service1.svc?wsdl=wsdl0" />
   <wsdl:types />
   <wsdl:binding name="CustomBinding_Service1" type="Service1">
     <wsp:PolicyReference URI="#CustomBinding_Service1_policy" />
@@ -1744,9 +1744,9 @@
   </wsdl:binding>
   <wsdl:service name="Service1">
     <wsdl:port name="CustomBinding_Service1" binding="tns:CustomBinding_Service1">
-      <soap12:address location="http://yelotag.com/admin/Service1.svc" />
+      <soap12:address location="http://localhost:2245/admin/Service1.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://yelotag.com/admin/Service1.svc</wsa10:Address>
+        <wsa10:Address>http://localhost:2245/admin/Service1.svc</wsa10:Address>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

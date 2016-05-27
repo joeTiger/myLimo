@@ -420,7 +420,7 @@ namespace myLimo.Controllers
                 
         public void mylog(string s)
         {
-            return;
+            //return;
             //if (Trace.IsEnabled)
             {
                 System.Diagnostics.Debug.WriteLine(s);
