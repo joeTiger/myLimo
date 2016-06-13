@@ -6913,6 +6913,9 @@ namespace myLimo.ServiceReference1 {
         private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ifnsmallField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string imageFileNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7023,6 +7026,19 @@ namespace myLimo.ServiceReference1 {
                 if ((this.idField.Equals(value) != true)) {
                     this.idField = value;
                     this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ifnsmall {
+            get {
+                return this.ifnsmallField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ifnsmallField, value) != true)) {
+                    this.ifnsmallField = value;
+                    this.RaisePropertyChanged("ifnsmall");
                 }
             }
         }

@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Limo - HTML5 E-Commerce Template</title>
     <!--SEO Meta Tags-->
-    <meta name="description" content="Responsive HTML5 E-Commerce Template" />
-    <meta name="keywords" content="responsive html5 template, e-commerce, shop, bootstrap 3.0, css, jquery, flat, modern" />
+    <meta name="description" content="כשר למהדרין" />
+    <meta name="keywords" content="כשר למהדרין" />
     <meta name="author" content="8Guild" />
     <!--Mobile Specific Meta Tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -83,7 +83,10 @@
         <div class="menu-toggle"><i class="fa fa-list"></i></div>
 
         <div class="container" dir="ltr">
-            <a class="logo" href='@Url.Action("Index","Home",new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId=0, subId=0, id = @ViewBag.id })'><img src="~/img/logo-scheme5.png" alt="Limo" /></a>
+            <a class="logo" href='@Url.Action("Index","Home",new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId=0, subId=0, id = @ViewBag.id })'>
+                <img src=@ViewBag.SettingLogo alt="Limo" />
+                @*<img src="~/img/logo-scheme5.png" alt="Limo" />*@
+            </a>
         </div>
 
         <!--Main Menu-->
@@ -91,21 +94,7 @@
             <div class="container">
 
                 <ul class="main">
-
-                    @foreach (var e in @ViewBag.MenuModel)
-                    {
-                        var controllerName = (e.position == 1) ? "Home" : "Page";
-                        {
-                            <li>
-                                @Html.ActionLink((string)e.name, "Index",
-                                controllerName,
-                                new { bizId = @ViewBag.bizId,
-                                    lg = @ViewBag.lg, catId = 0,
-                                    subId = 0, id = e.id }, null)
-                            </li>
-                        }
-                    }
-                    
+                   
                     <li id="lgSetting" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">@ViewBag.FirstLgName<b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -126,6 +115,25 @@
                             }
                         </ul>
                     </li>
+                    
+                    @foreach (var e in @ViewBag.MenuModel)
+                    {
+                        var controllerName = (e.position == 1) ? "Home" : "Page";
+                        {
+                            <li>
+                                @Html.ActionLink((string)e.name, "Index",
+                                controllerName,
+                                new
+                                {
+                                    bizId = @ViewBag.bizId,
+                                    lg = @ViewBag.lg,
+                                    catId = 0,
+                                    subId = 0,
+                                    id = e.id
+                                }, null)
+                            </li>
+                        }
+                    }
 
                 </ul>
 
@@ -138,14 +146,14 @@
                         {
                             @*<li><a href="shop-filters-left-3cols.html">@e.category</a></li>*@
                             <li>
-                            <h3>
+                            <h5>
                                 @Html.ActionLink((string)e.category,
                                     "Index",
                                     (string)@ViewBag.PortfolioController,
                                     new {   bizId   = @ViewBag.bizId,
                                             lg      = @ViewBag.lg,
                                             catId   = @e.catId }, null)
-                            </h3>
+                            </h5>
                             </li>
                         }
                         @*<li><a href="shop-filters-left-3cols.html">Shoulder Bag</a></li>*@
@@ -158,9 +166,9 @@
             <div class="container">
                 <!--Toolbar-->
                 <div class="toolbar group">
-                    <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span><b>L</b>ogin</span></a>
+                    @*<a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span><b>L</b>ogin</span></a>*@
 
-                    <a class="btn-outlined-invert" href="wishlist.html"><i class="icon-heart"></i> <span><b>W</b>ishlist</span></a>
+                    @*<a class="btn-outlined-invert" href="wishlist.html"><i class="icon-heart"></i> <span><b>W</b>ishlist</span></a>*@
 
                     <div class="cart-btn">
                         <a class="btn btn-outlined-invert" href="shopping-cart.html"><i class="icon-shopping-cart-content"></i><span>3</span><b>36 5654</b></a>

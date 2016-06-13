@@ -44,7 +44,9 @@ namespace myLimo.Controllers
 
             setViewBagSettingModel(bizId, lg);
             setViewBagSettingLgModel(bizId, lg);
+            setViewBagSettingLogo(bizId, lg);
             setViewBagByBizId(bizId);
+
 
             mylog("ViewBag.controllerName   =" + ViewBag.controllerName);
             mylog("ViewBag.bizId            =" + ViewBag.bizId);
@@ -56,7 +58,7 @@ namespace myLimo.Controllers
             mylog("ViewBag.Lang             =" + ViewBag.Lang);
             mylog("ViewBag.firstPageId      =" + ViewBag.firstPageId);
             mylog("ViewBag.FirstLgName      =" + ViewBag.FirstLgName);
-
+            mylog("ViewBag.FirstLgName      =" + ViewBag.SettingLogo);
         }
 
         private void setViewBagByBizId(int bizId)
@@ -66,14 +68,23 @@ namespace myLimo.Controllers
                 ViewBag.PortfolioController = "Portfolio";
                 ViewBag.colorScheme = "~/css/colors/color-scheme5.css";
             }
-            //kazablan
-            else if (bizId == 75318 || bizId == 79472 || bizId == 73294)
+            //kazablan //79625 doubonbalon //79630 AhiTahi //79587 shomshom
+            else if (bizId == 75318 || bizId == 79472 || 
+                bizId == 73294 || bizId== 79625 )
             {
                 //ViewBag.colorScheme = "~/css/colors/color-scheme3.css";
                 //gray
                 ViewBag.PortfolioController = "PortfolioNoFilter";
                 ViewBag.colorScheme = "~/css/colors/color-default.css";
             }
+            //#e91e63 color-schme3
+            else if ( bizId == 79630 || bizId == 79587)
+            {
+                //red
+                ViewBag.colorScheme = "~/css/colors/color-scheme3.css";
+                ViewBag.PortfolioController = "PortfolioNoFilter";
+            }
+
         }
 
         public void setViewBagPageDataModel(int id, int lg)
@@ -123,6 +134,17 @@ namespace myLimo.Controllers
             }
         }
 
+        public void setViewBagSettingLogo(int bizId, int lg)
+        {
+            string s = "MenuSettingLogo_" + bizId;
+            if (Session[s] == null)
+            {
+                mylog(s + " is NULL !!!!!!!!!!!!!!!");
+                Session[s] = getSettingLogo();
+            }
+            ViewBag.SettingLogo = getAspPath(bizId) + Session[s];
+        }
+        
         public void setViewBagSettingLgModel(int bizId, int lg)
         {
             string s = "MenuSettingLgModel_" + bizId;
@@ -135,11 +157,39 @@ namespace myLimo.Controllers
             ViewBag.SettingLgModel  = ((IEnumerable<LgSetting>)Session[s]).ToList().Where(x => x.Value != lg.ToString()).ToList();
         }
 
+        private string getSettingLogo()
+        {
+            try
+            {
+                return ((IEnumerable<spSettingGetResult>)ViewBag.MenuSettingModel).ToList().
+                 Where(x => x.name == "Logo").First().value;
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
+            
+
+            //foreach (spSettingGetResult e in ViewBag.MenuSettingModel)
+            //{
+            //    mylog("e.name =" + e.name + " e.value =" + e.value);
+
+            //    if (e.name == "Logo")
+            //    {
+            //        values = e.value;
+            //        break;
+            //    }
+            //}
+        }
+
         private object getSettingLgList()
         {
             string values = string.Empty;
+
             foreach (spSettingGetResult e in ViewBag.MenuSettingModel)
             {
+                mylog("e.name =" + e.name + " e.value =" + e.value);
+
                 if (e.name == "LanguageValues")
                 {
                     values = e.value;
@@ -208,7 +258,7 @@ namespace myLimo.Controllers
                     IEnumerable<spGetGridPdtByBizResult> list = objService.
                         GetGridPdtByBizMenu(catId, ViewBag.bizId, ViewBag.lg, false);
 
-                    Session[s] = list.Where(x => x.category != "slider").ToList();
+                    Session[s] = list.Where(x => x.category != "slider" && x.category!="gallery").ToList();
                     CheckListGridPdtByBiz(s, list);
                 }
                 ViewBag.MenuCatModel = Session[s];
@@ -331,7 +381,23 @@ namespace myLimo.Controllers
             ViewBag.Slider = Session[s];
         }
 
-        
+        public void setViewBagGalleryModel(int bizId, int lg)
+        {
+            string s = "Gallery_" + bizId + "_" + lg ;
+            if (Session[s] == null)
+            {
+                mylog(s + " is NULL !!!!!!!!!!!!!!!");
+                int catId = objService.GetRootCatPdtByBiz(bizId);
+               
+                IEnumerable<spGetGridPdtByBizResult> list =
+                    objService.GetGridPdtByBiz(catId, bizId, lg)
+                        .Where(x => x.category == "gallery").ToList();
+                CheckListGridPdtByBiz(s, list);
+                Session[s] = list;
+            }
+            ViewBag.Gallery = Session[s];
+        }
+
         public void CheckListGridPdtByBiz(string modelname, IEnumerable<spGetGridPdtByBizResult> list)
         {
             if (list == null)
@@ -427,6 +493,19 @@ namespace myLimo.Controllers
                 //Trace.Write(s);
                 writeToLogfile(s);
             }
+        }
+
+        public string getAspPath(int bizId)
+        {
+            string host = System.Web.HttpContext.Current.Request.Url.Host;
+
+            string path;
+            if (host.Contains("localhost"))
+                path = @"http://localhost:61530/";
+            else
+                path = @"http://yelotag.com/asp/";
+
+            return path+@"upload/biz"+bizId+"/";
         }
 
         public string getLogPath()

@@ -14,7 +14,7 @@ namespace myLimo.Controllers
         //72751/14318-pixtor
         //73294/14327-kazablan local - 79472/14549 remote
         //public ActionResult Index(int bizId = 79357, int lg = 0, int catId = 0, int subId = 0, int id = 14536)
-        public ActionResult Index(int bizId = 73294, int lg = 0, int catId = 0, int subId = 0, int id = 14327)
+        public ActionResult Index(int bizId = 73294, int lg = 1, int catId = 0, int subId = 0, int id = 14327)
         //public ActionResult Index(int bizId = 79472, int lg = 1, int catId = 0, int subId = 0, int id = 14549)
         {
             setViewBagVariables("Home", bizId, lg, catId, subId, id);
@@ -22,6 +22,7 @@ namespace myLimo.Controllers
             setViewBagMenuCatModel(bizId, lg);
             setViewBagPageDataModel(id, lg);
             setViewBagSliderModel(bizId, lg, catId);
+            setViewBagGalleryModel(bizId, lg);
 
             return View();
 
