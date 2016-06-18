@@ -23,7 +23,7 @@ namespace myLimo.Controllers
             setViewBagPageDataModel(id, lg);
             setViewBagSliderModel(bizId, lg, catId);
             setViewBagGalleryModel(bizId, lg);
-
+            
             return View();
 
             //var article = new Article { Name = "Album " };

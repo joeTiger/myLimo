@@ -469,7 +469,8 @@ $(document).ready(function(e) {
 		var $itemPrice = $(this).parent().parent().find('.price').text();
 		var $itemQnty = $(this).parent().find('#quantity').val();
 		var $cartTotalItems = parseInt($('.cart-btn a span').text()) +1;
-		$addedToCartMessage.find('p').text('"' + $itemName + '"' + '  ' + 'was successfully added to your cart.');
+		var $cartTotalPrice = parseFloat($('.cart-btn a b').text());
+		
 		$('.cart-dropdown table').append(
 			'<tr class="item"><td><div class="delete"></div><a href="#">' + $itemName + 
 			'<td><input type="text" value="' + $itemQnty +
@@ -477,6 +478,66 @@ $(document).ready(function(e) {
 		);
 		$('.cart-btn a span').text($cartTotalItems);
 		$addedToCartMessage.addClass('visible');
+
+	    //var $mydata = '{"s":"' + $itemName + '"}';
+
+		var $bizId = $("#hiddenBizId").data("value");
+		var $tmpUn = $("#hiddenTmpUN").data("value");
+		var $eltId = $("#hiddenEltId").data("value");
+
+	    //var $mydata = '{"bizId":"' + $bizId + '", "name":"' + 'Logo'+'"}';
+
+		//var $mydata = '{' +
+        //                '"bizId":"' + $bizId + '"' + ','+ 
+	    //                '"name":"' + 'Logo' + '"' +
+	    //              '}';
+		var $totalPrice = parseFloat($itemPrice) * $itemQnty;
+		//alert('$totalPrice=' + $totalPrice);
+		//alert('$cartTotalPrice=' + $cartTotalPrice);
+
+		$cartTotalPrice += parseFloat($totalPrice);
+      
+		//alert('$cartTotalPrice=' + $cartTotalPrice);
+
+		$('.cart-btn a b').text($cartTotalPrice);
+
+		var $mydata = '{' +
+                        '"bizId":"'      + $bizId       + '"' + ',' +
+	                    '"username":"'   + $tmpUn       + '"' + ',' +
+                        '"eltId":"'      + $eltId       + '"' + ',' +
+                        '"name":"'       + $itemName    + '"' + ',' +
+                        '"quantity":"'   + $itemQnty    + '"' + ',' +
+                        '"unitPrice":"'  + $itemPrice   + '"' + ',' +
+                        '"totalPrice":"' + $totalPrice  + '"' +
+                      '}';
+
+	    //CheckoutInsert(int bizId, string username, int eltId, string name, 
+		//int quantity,  decimal unitPrice, decimal totalPrice
+
+	  
+
+		$.ajax({
+		    type: "POST",
+		    url: "/admin/Service2.svc/CheckoutInsert",
+		    data: $mydata,
+		    contentType: "application/json; charset=utf-8",
+		    dataType: "json",
+		    success: function (data) {
+		        var res = parseInt(data.d);
+		        if (res > 0) {
+		            $addedToCartMessage.find('p').text('"' + $itemName + '"' + '  ' + res + 'was successfully added here .');
+		        }
+		        else
+		            $addedToCartMessage.find('p').text('"' + $itemName + '"' + '  ' + res + 'was NOT added !!!');
+		        //$addedToCartMessage.find('p').text(data.d);
+		       //$addedToCartMessage.find('#hiddenAddFlag').text(data.d);
+		    },
+		    error: function (xhr, ajaxOptions, thrownError) {
+		        alert('$mydata='+$mydata+ ' ERROR:'+xhr.status);
+		        //alert(thrownError);
+		    }
+		});
+		
 	});
 	
 	/*Promo Labels Popovers

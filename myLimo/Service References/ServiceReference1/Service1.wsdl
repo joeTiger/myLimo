@@ -9,6 +9,12 @@
       <xsd:import schemaLocation="http://localhost:2245/admin/Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="Service1_GetEltById_InputMessage">
+    <wsdl:part name="parameters" element="GetEltById" />
+  </wsdl:message>
+  <wsdl:message name="Service1_GetEltById_OutputMessage">
+    <wsdl:part name="parameters" element="GetEltByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="Service1_SaveElt_InputMessage">
     <wsdl:part name="parameters" element="SaveElt" />
   </wsdl:message>
@@ -230,6 +236,12 @@
   </wsdl:message>
   <wsdl:message name="Service1_sendEmailHtml_OutputMessage">
     <wsdl:part name="parameters" element="sendEmailHtmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageUpdateMenuName_InputMessage">
+    <wsdl:part name="parameters" element="EltPageUpdateMenuName" />
+  </wsdl:message>
+  <wsdl:message name="Service1_EltPageUpdateMenuName_OutputMessage">
+    <wsdl:part name="parameters" element="EltPageUpdateMenuNameResponse" />
   </wsdl:message>
   <wsdl:message name="Service1_InsertForum_InputMessage">
     <wsdl:part name="parameters" element="InsertForum" />
@@ -663,17 +675,17 @@
   <wsdl:message name="Service1_GetEltIdByUserName_OutputMessage">
     <wsdl:part name="parameters" element="GetEltIdByUserNameResponse" />
   </wsdl:message>
-  <wsdl:message name="Service1_GetEltById_InputMessage">
-    <wsdl:part name="parameters" element="GetEltById" />
-  </wsdl:message>
-  <wsdl:message name="Service1_GetEltById_OutputMessage">
-    <wsdl:part name="parameters" element="GetEltByIdResponse" />
-  </wsdl:message>
   <wsdl:message name="Service1_DoWork_InputMessage">
     <wsdl:part name="parameters" element="DoWork" />
   </wsdl:message>
   <wsdl:message name="Service1_DoWork_OutputMessage">
     <wsdl:part name="parameters" element="DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DoTest_InputMessage">
+    <wsdl:part name="parameters" element="DoTest" />
+  </wsdl:message>
+  <wsdl:message name="Service1_DoTest_OutputMessage">
+    <wsdl:part name="parameters" element="DoTestResponse" />
   </wsdl:message>
   <wsdl:message name="Service1_loadImagePdtMethod_InputMessage">
     <wsdl:part name="parameters" element="loadImagePdtMethod" />
@@ -1155,13 +1167,11 @@
   <wsdl:message name="Service1_UpdateCatPdt_OutputMessage">
     <wsdl:part name="parameters" element="UpdateCatPdtResponse" />
   </wsdl:message>
-  <wsdl:message name="Service1_EltPageUpdateMenuName_InputMessage">
-    <wsdl:part name="parameters" element="EltPageUpdateMenuName" />
-  </wsdl:message>
-  <wsdl:message name="Service1_EltPageUpdateMenuName_OutputMessage">
-    <wsdl:part name="parameters" element="EltPageUpdateMenuNameResponse" />
-  </wsdl:message>
   <wsdl:portType name="Service1">
+    <wsdl:operation name="GetEltById">
+      <wsdl:input wsaw:Action="urn:Service1/GetEltById" message="Service1_GetEltById_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/GetEltByIdResponse" message="Service1_GetEltById_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SaveElt">
       <wsdl:input wsaw:Action="urn:Service1/SaveElt" message="Service1_SaveElt_InputMessage" />
       <wsdl:output wsaw:Action="urn:Service1/SaveEltResponse" message="Service1_SaveElt_OutputMessage" />
@@ -1309,6 +1319,10 @@
     <wsdl:operation name="sendEmailHtml">
       <wsdl:input wsaw:Action="urn:Service1/sendEmailHtml" message="Service1_sendEmailHtml_InputMessage" />
       <wsdl:output wsaw:Action="urn:Service1/sendEmailHtmlResponse" message="Service1_sendEmailHtml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EltPageUpdateMenuName">
+      <wsdl:input wsaw:Action="urn:Service1/EltPageUpdateMenuName" message="Service1_EltPageUpdateMenuName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/EltPageUpdateMenuNameResponse" message="Service1_EltPageUpdateMenuName_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertForum">
       <wsdl:input wsaw:Action="urn:Service1/InsertForum" message="Service1_InsertForum_InputMessage" />
@@ -1598,13 +1612,13 @@
       <wsdl:input wsaw:Action="urn:Service1/GetEltIdByUserName" message="Service1_GetEltIdByUserName_InputMessage" />
       <wsdl:output wsaw:Action="urn:Service1/GetEltIdByUserNameResponse" message="Service1_GetEltIdByUserName_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetEltById">
-      <wsdl:input wsaw:Action="urn:Service1/GetEltById" message="Service1_GetEltById_InputMessage" />
-      <wsdl:output wsaw:Action="urn:Service1/GetEltByIdResponse" message="Service1_GetEltById_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="DoWork">
       <wsdl:input wsaw:Action="urn:Service1/DoWork" message="Service1_DoWork_InputMessage" />
       <wsdl:output wsaw:Action="urn:Service1/DoWorkResponse" message="Service1_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoTest">
+      <wsdl:input wsaw:Action="urn:Service1/DoTest" message="Service1_DoTest_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service1/DoTestResponse" message="Service1_DoTest_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="loadImagePdtMethod">
       <wsdl:input wsaw:Action="urn:Service1/loadImagePdtMethod" message="Service1_loadImagePdtMethod_InputMessage" />
@@ -1925,10 +1939,6 @@
     <wsdl:operation name="UpdateCatPdt">
       <wsdl:input wsaw:Action="urn:Service1/UpdateCatPdt" message="Service1_UpdateCatPdt_InputMessage" />
       <wsdl:output wsaw:Action="urn:Service1/UpdateCatPdtResponse" message="Service1_UpdateCatPdt_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="EltPageUpdateMenuName">
-      <wsdl:input wsaw:Action="urn:Service1/EltPageUpdateMenuName" message="Service1_EltPageUpdateMenuName_InputMessage" />
-      <wsdl:output wsaw:Action="urn:Service1/EltPageUpdateMenuNameResponse" message="Service1_EltPageUpdateMenuName_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

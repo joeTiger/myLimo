@@ -15,6 +15,275 @@ namespace myLimo.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="spGetEltByIdResult", Namespace="http://schemas.datacontract.org/2004/07/BizRef.Web")]
+    [System.SerializableAttribute()]
+    public partial class spGetEltByIdResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> addIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> avRatingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> catDicoIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> lastUpdateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string refName1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string refName2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string refName3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string refUrl1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string refUrl2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string refUrl3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> smsCounterField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tagTmpField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string userNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> viewsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> addId {
+            get {
+                return this.addIdField;
+            }
+            set {
+                if ((this.addIdField.Equals(value) != true)) {
+                    this.addIdField = value;
+                    this.RaisePropertyChanged("addId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> avRating {
+            get {
+                return this.avRatingField;
+            }
+            set {
+                if ((this.avRatingField.Equals(value) != true)) {
+                    this.avRatingField = value;
+                    this.RaisePropertyChanged("avRating");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> catDicoId {
+            get {
+                return this.catDicoIdField;
+            }
+            set {
+                if ((this.catDicoIdField.Equals(value) != true)) {
+                    this.catDicoIdField = value;
+                    this.RaisePropertyChanged("catDicoId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> lastUpdate {
+            get {
+                return this.lastUpdateField;
+            }
+            set {
+                if ((this.lastUpdateField.Equals(value) != true)) {
+                    this.lastUpdateField = value;
+                    this.RaisePropertyChanged("lastUpdate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string refName1 {
+            get {
+                return this.refName1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.refName1Field, value) != true)) {
+                    this.refName1Field = value;
+                    this.RaisePropertyChanged("refName1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string refName2 {
+            get {
+                return this.refName2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.refName2Field, value) != true)) {
+                    this.refName2Field = value;
+                    this.RaisePropertyChanged("refName2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string refName3 {
+            get {
+                return this.refName3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.refName3Field, value) != true)) {
+                    this.refName3Field = value;
+                    this.RaisePropertyChanged("refName3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string refUrl1 {
+            get {
+                return this.refUrl1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.refUrl1Field, value) != true)) {
+                    this.refUrl1Field = value;
+                    this.RaisePropertyChanged("refUrl1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string refUrl2 {
+            get {
+                return this.refUrl2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.refUrl2Field, value) != true)) {
+                    this.refUrl2Field = value;
+                    this.RaisePropertyChanged("refUrl2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string refUrl3 {
+            get {
+                return this.refUrl3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.refUrl3Field, value) != true)) {
+                    this.refUrl3Field = value;
+                    this.RaisePropertyChanged("refUrl3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> smsCounter {
+            get {
+                return this.smsCounterField;
+            }
+            set {
+                if ((this.smsCounterField.Equals(value) != true)) {
+                    this.smsCounterField = value;
+                    this.RaisePropertyChanged("smsCounter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tagTmp {
+            get {
+                return this.tagTmpField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tagTmpField, value) != true)) {
+                    this.tagTmpField = value;
+                    this.RaisePropertyChanged("tagTmp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string userName {
+            get {
+                return this.userNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.userNameField, value) != true)) {
+                    this.userNameField = value;
+                    this.RaisePropertyChanged("userName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> views {
+            get {
+                return this.viewsField;
+            }
+            set {
+                if ((this.viewsField.Equals(value) != true)) {
+                    this.viewsField = value;
+                    this.RaisePropertyChanged("views");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Elt", Namespace="http://schemas.datacontract.org/2004/07/BizRef.Web")]
     [System.SerializableAttribute()]
     public partial class Elt : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -4638,275 +4907,6 @@ namespace myLimo.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="spGetEltByIdResult", Namespace="http://schemas.datacontract.org/2004/07/BizRef.Web")]
-    [System.SerializableAttribute()]
-    public partial class spGetEltByIdResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> addIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> avRatingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> catDicoIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> lastUpdateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string refName1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string refName2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string refName3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string refUrl1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string refUrl2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string refUrl3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> smsCounterField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string tagTmpField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string userNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> viewsField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> addId {
-            get {
-                return this.addIdField;
-            }
-            set {
-                if ((this.addIdField.Equals(value) != true)) {
-                    this.addIdField = value;
-                    this.RaisePropertyChanged("addId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> avRating {
-            get {
-                return this.avRatingField;
-            }
-            set {
-                if ((this.avRatingField.Equals(value) != true)) {
-                    this.avRatingField = value;
-                    this.RaisePropertyChanged("avRating");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> catDicoId {
-            get {
-                return this.catDicoIdField;
-            }
-            set {
-                if ((this.catDicoIdField.Equals(value) != true)) {
-                    this.catDicoIdField = value;
-                    this.RaisePropertyChanged("catDicoId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> lastUpdate {
-            get {
-                return this.lastUpdateField;
-            }
-            set {
-                if ((this.lastUpdateField.Equals(value) != true)) {
-                    this.lastUpdateField = value;
-                    this.RaisePropertyChanged("lastUpdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string refName1 {
-            get {
-                return this.refName1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.refName1Field, value) != true)) {
-                    this.refName1Field = value;
-                    this.RaisePropertyChanged("refName1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string refName2 {
-            get {
-                return this.refName2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.refName2Field, value) != true)) {
-                    this.refName2Field = value;
-                    this.RaisePropertyChanged("refName2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string refName3 {
-            get {
-                return this.refName3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.refName3Field, value) != true)) {
-                    this.refName3Field = value;
-                    this.RaisePropertyChanged("refName3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string refUrl1 {
-            get {
-                return this.refUrl1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.refUrl1Field, value) != true)) {
-                    this.refUrl1Field = value;
-                    this.RaisePropertyChanged("refUrl1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string refUrl2 {
-            get {
-                return this.refUrl2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.refUrl2Field, value) != true)) {
-                    this.refUrl2Field = value;
-                    this.RaisePropertyChanged("refUrl2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string refUrl3 {
-            get {
-                return this.refUrl3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.refUrl3Field, value) != true)) {
-                    this.refUrl3Field = value;
-                    this.RaisePropertyChanged("refUrl3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> smsCounter {
-            get {
-                return this.smsCounterField;
-            }
-            set {
-                if ((this.smsCounterField.Equals(value) != true)) {
-                    this.smsCounterField = value;
-                    this.RaisePropertyChanged("smsCounter");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string tagTmp {
-            get {
-                return this.tagTmpField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tagTmpField, value) != true)) {
-                    this.tagTmpField = value;
-                    this.RaisePropertyChanged("tagTmp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string userName {
-            get {
-                return this.userNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.userNameField, value) != true)) {
-                    this.userNameField = value;
-                    this.RaisePropertyChanged("userName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> views {
-            get {
-                return this.viewsField;
-            }
-            set {
-                if ((this.viewsField.Equals(value) != true)) {
-                    this.viewsField = value;
-                    this.RaisePropertyChanged("views");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="spSettingGetResult", Namespace="http://schemas.datacontract.org/2004/07/BizRef.Web")]
     [System.SerializableAttribute()]
     public partial class spSettingGetResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -7792,6 +7792,9 @@ namespace myLimo.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> bestField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> bizIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7834,6 +7837,9 @@ namespace myLimo.ServiceReference1 {
         private System.Nullable<int> nameIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> onsaleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int parIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7852,6 +7858,19 @@ namespace myLimo.ServiceReference1 {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> best {
+            get {
+                return this.bestField;
+            }
+            set {
+                if ((this.bestField.Equals(value) != true)) {
+                    this.bestField = value;
+                    this.RaisePropertyChanged("best");
+                }
             }
         }
         
@@ -8033,6 +8052,19 @@ namespace myLimo.ServiceReference1 {
                 if ((this.nameIdField.Equals(value) != true)) {
                     this.nameIdField = value;
                     this.RaisePropertyChanged("nameId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> onsale {
+            get {
+                return this.onsaleField;
+            }
+            set {
+                if ((this.onsaleField.Equals(value) != true)) {
+                    this.onsaleField = value;
+                    this.RaisePropertyChanged("onsale");
                 }
             }
         }
@@ -9305,6 +9337,12 @@ namespace myLimo.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(Namespace="", ConfigurationName="ServiceReference1.Service1")]
     public interface Service1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/GetEltById", ReplyAction="urn:Service1/GetEltByIdResponse")]
+        myLimo.ServiceReference1.spGetEltByIdResult GetEltById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/GetEltById", ReplyAction="urn:Service1/GetEltByIdResponse")]
+        System.Threading.Tasks.Task<myLimo.ServiceReference1.spGetEltByIdResult> GetEltByIdAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/SaveElt", ReplyAction="urn:Service1/SaveEltResponse")]
         myLimo.ServiceReference1.Elt SaveElt(myLimo.ServiceReference1.Elt elt);
         
@@ -9528,6 +9566,12 @@ namespace myLimo.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/sendEmailHtml", ReplyAction="urn:Service1/sendEmailHtmlResponse")]
         System.Threading.Tasks.Task<string> sendEmailHtmlAsync(string to, string cc, string subject, string body);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/EltPageUpdateMenuName", ReplyAction="urn:Service1/EltPageUpdateMenuNameResponse")]
+        int EltPageUpdateMenuName(int eltPageId, string name, int lg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/EltPageUpdateMenuName", ReplyAction="urn:Service1/EltPageUpdateMenuNameResponse")]
+        System.Threading.Tasks.Task<int> EltPageUpdateMenuNameAsync(int eltPageId, string name, int lg);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/InsertForum", ReplyAction="urn:Service1/InsertForumResponse")]
         void InsertForum(int bizId, int typeEltPage);
@@ -10047,17 +10091,17 @@ namespace myLimo.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/GetEltIdByUserName", ReplyAction="urn:Service1/GetEltIdByUserNameResponse")]
         System.Threading.Tasks.Task<int> GetEltIdByUserNameAsync(string s);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/GetEltById", ReplyAction="urn:Service1/GetEltByIdResponse")]
-        myLimo.ServiceReference1.spGetEltByIdResult GetEltById(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/GetEltById", ReplyAction="urn:Service1/GetEltByIdResponse")]
-        System.Threading.Tasks.Task<myLimo.ServiceReference1.spGetEltByIdResult> GetEltByIdAsync(int id);
-        
         [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/DoWork", ReplyAction="urn:Service1/DoWorkResponse")]
         string DoWork();
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/DoWork", ReplyAction="urn:Service1/DoWorkResponse")]
         System.Threading.Tasks.Task<string> DoWorkAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/DoTest", ReplyAction="urn:Service1/DoTestResponse")]
+        string DoTest(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/DoTest", ReplyAction="urn:Service1/DoTestResponse")]
+        System.Threading.Tasks.Task<string> DoTestAsync(string userName);
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/loadImagePdtMethod", ReplyAction="urn:Service1/loadImagePdtMethodResponse")]
         string loadImagePdtMethod(string s, string bizId);
@@ -10538,12 +10582,6 @@ namespace myLimo.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/UpdateCatPdt", ReplyAction="urn:Service1/UpdateCatPdtResponse")]
         System.Threading.Tasks.Task<int> UpdateCatPdtAsync(int bizId, int catId, int parCatId, string newCatName, int lg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/EltPageUpdateMenuName", ReplyAction="urn:Service1/EltPageUpdateMenuNameResponse")]
-        int EltPageUpdateMenuName(int eltPageId, string name, int lg);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Service1/EltPageUpdateMenuName", ReplyAction="urn:Service1/EltPageUpdateMenuNameResponse")]
-        System.Threading.Tasks.Task<int> EltPageUpdateMenuNameAsync(int eltPageId, string name, int lg);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -10823,6 +10861,14 @@ namespace myLimo.ServiceReference1 {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public myLimo.ServiceReference1.spGetEltByIdResult GetEltById(int id) {
+            return base.Channel.GetEltById(id);
+        }
+        
+        public System.Threading.Tasks.Task<myLimo.ServiceReference1.spGetEltByIdResult> GetEltByIdAsync(int id) {
+            return base.Channel.GetEltByIdAsync(id);
         }
         
         public myLimo.ServiceReference1.Elt SaveElt(myLimo.ServiceReference1.Elt elt) {
@@ -11139,6 +11185,14 @@ namespace myLimo.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string> sendEmailHtmlAsync(string to, string cc, string subject, string body) {
             return base.Channel.sendEmailHtmlAsync(to, cc, subject, body);
+        }
+        
+        public int EltPageUpdateMenuName(int eltPageId, string name, int lg) {
+            return base.Channel.EltPageUpdateMenuName(eltPageId, name, lg);
+        }
+        
+        public System.Threading.Tasks.Task<int> EltPageUpdateMenuNameAsync(int eltPageId, string name, int lg) {
+            return base.Channel.EltPageUpdateMenuNameAsync(eltPageId, name, lg);
         }
         
         public void InsertForum(int bizId, int typeEltPage) {
@@ -11842,20 +11896,20 @@ namespace myLimo.ServiceReference1 {
             return base.Channel.GetEltIdByUserNameAsync(s);
         }
         
-        public myLimo.ServiceReference1.spGetEltByIdResult GetEltById(int id) {
-            return base.Channel.GetEltById(id);
-        }
-        
-        public System.Threading.Tasks.Task<myLimo.ServiceReference1.spGetEltByIdResult> GetEltByIdAsync(int id) {
-            return base.Channel.GetEltByIdAsync(id);
-        }
-        
         public string DoWork() {
             return base.Channel.DoWork();
         }
         
         public System.Threading.Tasks.Task<string> DoWorkAsync() {
             return base.Channel.DoWorkAsync();
+        }
+        
+        public string DoTest(string userName) {
+            return base.Channel.DoTest(userName);
+        }
+        
+        public System.Threading.Tasks.Task<string> DoTestAsync(string userName) {
+            return base.Channel.DoTestAsync(userName);
         }
         
         public string loadImagePdtMethod(string s, string bizId) {
@@ -12496,14 +12550,6 @@ namespace myLimo.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int> UpdateCatPdtAsync(int bizId, int catId, int parCatId, string newCatName, int lg) {
             return base.Channel.UpdateCatPdtAsync(bizId, catId, parCatId, newCatName, lg);
-        }
-        
-        public int EltPageUpdateMenuName(int eltPageId, string name, int lg) {
-            return base.Channel.EltPageUpdateMenuName(eltPageId, name, lg);
-        }
-        
-        public System.Threading.Tasks.Task<int> EltPageUpdateMenuNameAsync(int eltPageId, string name, int lg) {
-            return base.Channel.EltPageUpdateMenuNameAsync(eltPageId, name, lg);
         }
     }
 }

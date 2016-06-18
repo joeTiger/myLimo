@@ -3,6 +3,7 @@ using myLimo.ServiceReference1;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -32,6 +33,7 @@ namespace myLimo.Controllers
             ViewBag.id = id;
             ViewBag.Dir = (lg == 1) ? "rtl" : "ltr";
             ViewBag.Lang = (lg == 1) ? "he" : "en";
+            ViewBag.tmpUN = getTempUserName(bizId);
 
             string s = @"firstPageId_" + bizId;
             if (Session[s] == null)
@@ -44,9 +46,12 @@ namespace myLimo.Controllers
 
             setViewBagSettingModel(bizId, lg);
             setViewBagSettingLgModel(bizId, lg);
-            setViewBagSettingLogo(bizId, lg);
+            setViewBagSettingLogo(bizId);
+            setViewBagSettingCulture(bizId);
             setViewBagByBizId(bizId);
 
+            mylog("setViewBagCartListModel...");
+            setViewBagCartListModel(bizId, lg);
 
             mylog("ViewBag.controllerName   =" + ViewBag.controllerName);
             mylog("ViewBag.bizId            =" + ViewBag.bizId);
@@ -58,7 +63,34 @@ namespace myLimo.Controllers
             mylog("ViewBag.Lang             =" + ViewBag.Lang);
             mylog("ViewBag.firstPageId      =" + ViewBag.firstPageId);
             mylog("ViewBag.FirstLgName      =" + ViewBag.FirstLgName);
-            mylog("ViewBag.FirstLgName      =" + ViewBag.SettingLogo);
+            mylog("ViewBag.SettingLogo      =" + ViewBag.SettingLogo);
+            mylog("ViewBag.SettingCulture   =" + ViewBag.SettingCulture);
+            mylog("ViewBag.tmpUN            =" + ViewBag.tmpUN);
+        }
+
+        private void setViewBagSettingCulture(int bizId)
+        {
+            string s = "SettingCulture_" + bizId;
+            if (Session[s] == null)
+            {
+                mylog(s + " is NULL !!!!!!!!!!!!!!!");
+                string specificCulture = getSettingCulture();
+                Session[s] = CultureInfo.CreateSpecificCulture(specificCulture);
+            }
+            ViewBag.SettingCulture = Session[s];
+        }
+
+        private string getSettingCulture()
+        {
+            try
+            {
+                return ((IEnumerable<spSettingGetResult>)ViewBag.MenuSettingModel).ToList().
+                 Where(x => x.name == "SpecificCulture").First().value;
+            }
+            catch (Exception)
+            {
+                return "he-IL";//default
+            }
         }
 
         private void setViewBagByBizId(int bizId)
@@ -118,6 +150,52 @@ namespace myLimo.Controllers
             }
         }
 
+        public void setViewBagCartListModel(int bizId, int lg)
+        {
+            string s = "CartList_" + bizId + "_" + lg;
+
+            int cartTotalItems = (ViewBag.cartTotalItems != null) ?
+                ViewBag.cartTotalItems:0;
+
+            mylog(s);
+            //if (Session[s] == null)
+            //{
+                //mylog(s + " is NULL !!!!!!!!!!!!!!!");
+            ViewBag.totalPrice = Convert.ToDecimal("0.00");
+            mylog("ViewBag.totalPrice====" + ViewBag.totalPrice);
+
+            string tempUserName = getTempUserName(bizId);
+                IEnumerable<spGetCheckoutResult> list =
+                    objService.GetCheckout(lg, bizId, tempUserName);
+                if (cartTotalItems != list.Count())
+                {
+                    foreach (spGetCheckoutResult elt in list)
+                    {
+                        ViewBag.totalPrice += Convert.ToDecimal(elt.totalPrice);
+                    }
+                    mylog("ViewBag.totalPrice=" + ViewBag.totalPrice);
+            }
+                ViewBag.cartTotalItems = list.Count();
+                CheckListCartList(s, list);
+                Session[s] = list;
+            //}
+            ViewBag.CartList = Session[s];
+        }
+        private void CheckListCartList(string s, IEnumerable<spGetCheckoutResult> list)
+        {
+            if (list == null)
+            {
+                mylog(s + " list IS NULL ???????????????");
+            }
+            mylog(s + " list.count=" + list.Count());
+            foreach (spGetCheckoutResult elt in list)
+            {
+                object instance = elt;
+                displayInstance(instance);
+            }
+            if (list.Count() == 0) mylog("No entries ...for "+s);
+
+        }
         public void setViewBagSettingModel(int bizId, int lg)
         {
             if (ViewBag.MenuSettingModel == null)
@@ -134,7 +212,7 @@ namespace myLimo.Controllers
             }
         }
 
-        public void setViewBagSettingLogo(int bizId, int lg)
+        public void setViewBagSettingLogo(int bizId)
         {
             string s = "MenuSettingLogo_" + bizId;
             if (Session[s] == null)
@@ -426,7 +504,7 @@ namespace myLimo.Controllers
                 //string type = descriptor.GetType().ToString();mylog(type);
                 s += name + "=" + trunc(value) + ";";
             }
-            mylog(s);
+            //mylog(s);
         }
 
         private string trunc(object value)
@@ -450,7 +528,18 @@ namespace myLimo.Controllers
             //    ((IEnumerable<spGetTreeEltPageResult>) Session["MenuModel"]).ToList().Count);
         }
 
+        public string getTempUserName(int bizId)
+        {
+            string s = "TempUserName_" + bizId;
+            if (Session[s] == null)
+            {
+                Random randNum = new Random();
+                int value = randNum.Next(0, 1000000);
+                Session[s] = value.ToString();
+            }
 
+            return Session[s].ToString();
+        }
         
 
         private void writeToLogfile(string s)

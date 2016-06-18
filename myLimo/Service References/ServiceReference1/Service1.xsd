@@ -2,31 +2,45 @@
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:2245/admin/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BizRef.Web" />
   <xs:import schemaLocation="http://localhost:2245/admin/Service1.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetEltById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEltByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltByIdResult" nillable="true" type="q1:spGetEltByIdResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="SaveElt">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="elt" nillable="true" type="q1:Elt" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="elt" nillable="true" type="q2:Elt" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveEltResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveEltResult" nillable="true" type="q2:Elt" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveEltResult" nillable="true" type="q3:Elt" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveCat">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="c" nillable="true" type="q3:Cat" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="c" nillable="true" type="q4:Cat" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveCatResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveCatResult" nillable="true" type="q4:Cat" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveCatResult" nillable="true" type="q5:Cat" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,28 +63,28 @@
   <xs:element name="SaveAdd">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="a" nillable="true" type="q5:Add" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="a" nillable="true" type="q6:Add" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveAddResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveAddResult" nillable="true" type="q6:Add" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveAddResult" nillable="true" type="q7:Add" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveEltCat">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="eltCat" nillable="true" type="q7:EltCat" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="eltCat" nillable="true" type="q8:EltCat" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SaveEltCatResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveEltCatResult" nillable="true" type="q8:EltCat" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveEltCatResult" nillable="true" type="q9:EltCat" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -142,7 +156,7 @@
   <xs:element name="SaveDico">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="d" nillable="true" type="q9:Dico" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="d" nillable="true" type="q10:Dico" />
         <xs:element minOccurs="0" name="err" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -150,7 +164,7 @@
   <xs:element name="SaveDicoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveDicoResult" nillable="true" type="q10:Dico" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="SaveDicoResult" nillable="true" type="q11:Dico" />
         <xs:element minOccurs="0" name="err" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -165,7 +179,7 @@
   <xs:element name="GetDicoByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoByIdResult" nillable="true" type="q11:spGetDicoByIdResult" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoByIdResult" nillable="true" type="q12:spGetDicoByIdResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -438,7 +452,7 @@
   <xs:element name="GetForumByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumByIdResult" nillable="true" type="q12:ArrayOfspGetForumByIdResult" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumByIdResult" nillable="true" type="q13:ArrayOfspGetForumByIdResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -452,7 +466,7 @@
   <xs:element name="GetForumByEltIdParOnlyResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumByEltIdParOnlyResult" nillable="true" type="q13:ArrayOfspGetForumByEltIdParOnlyResult" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumByEltIdParOnlyResult" nillable="true" type="q14:ArrayOfspGetForumByEltIdParOnlyResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -466,7 +480,7 @@
   <xs:element name="GetForumByEltIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumByEltIdResult" nillable="true" type="q14:ArrayOfspGetForumByEltIdResult" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumByEltIdResult" nillable="true" type="q15:ArrayOfspGetForumByEltIdResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -481,7 +495,7 @@
   <xs:element name="GetForumBySearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumBySearchResult" nillable="true" type="q15:ArrayOfspGetForumBySearchResult" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetForumBySearchResult" nillable="true" type="q16:ArrayOfspGetForumBySearchResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -588,6 +602,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="EltPageUpdateMenuName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eltPageId" type="xs:int" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EltPageUpdateMenuNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EltPageUpdateMenuNameResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="InsertForum">
     <xs:complexType>
       <xs:sequence>
@@ -632,7 +662,7 @@
   <xs:element name="GetCatByBizIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatByBizIdResult" nillable="true" type="q16:ArrayOfspGetCatByBizIdResult" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatByBizIdResult" nillable="true" type="q17:ArrayOfspGetCatByBizIdResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -690,7 +720,7 @@
   <xs:element name="GetCatViewByCatIdAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatViewByCatIdAllResult" nillable="true" type="q17:ArrayOfspGetCatViewByCatIdAllResult" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatViewByCatIdAllResult" nillable="true" type="q18:ArrayOfspGetCatViewByCatIdAllResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -705,7 +735,7 @@
   <xs:element name="GetCatViewByCatIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatViewByCatIdResult" nillable="true" type="q18:ArrayOfspGetCatViewByCatIdResult" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatViewByCatIdResult" nillable="true" type="q19:ArrayOfspGetCatViewByCatIdResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -931,7 +961,7 @@
   <xs:element name="GetAddViewByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetAddViewByIdResult" nillable="true" type="q19:spGetAddViewByIdResult" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetAddViewByIdResult" nillable="true" type="q20:spGetAddViewByIdResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -989,7 +1019,7 @@
   <xs:element name="GetAddByParResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAddByParResult" nillable="true" type="q20:ArrayOfstring" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAddByParResult" nillable="true" type="q21:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1003,7 +1033,7 @@
   <xs:element name="GetAddByParIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetAddByParIdResult" nillable="true" type="q21:ArrayOfspGetAddByParResult" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetAddByParIdResult" nillable="true" type="q22:ArrayOfspGetAddByParResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1130,7 +1160,7 @@
   <xs:element name="GetBizByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetBizByNameResult" nillable="true" type="q22:ArrayOfspGetBizByNameResult" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetBizByNameResult" nillable="true" type="q23:ArrayOfspGetBizByNameResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1148,7 +1178,7 @@
   <xs:element name="GetBizByNameAddTelMobResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetBizByNameAddTelMobResult" nillable="true" type="q23:ArrayOfspGetBizByNameAddTelMobResult" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetBizByNameAddTelMobResult" nillable="true" type="q24:ArrayOfspGetBizByNameAddTelMobResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1211,7 +1241,7 @@
   <xs:element name="GetEltCatViewBizResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltCatViewBizResult" nillable="true" type="q24:ArrayOfspGetEltCatViewBizResult" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltCatViewBizResult" nillable="true" type="q25:ArrayOfspGetEltCatViewBizResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1226,7 +1256,7 @@
   <xs:element name="GetEltCatViewBizByEltIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltCatViewBizByEltIdResult" nillable="true" type="q25:spGetEltCatViewBizByEltIdResult" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltCatViewBizByEltIdResult" nillable="true" type="q26:spGetEltCatViewBizByEltIdResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1240,7 +1270,7 @@
   <xs:element name="GetBizByEltIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetBizByEltIdResult" nillable="true" type="q26:spGetBizByEltIdResult" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetBizByEltIdResult" nillable="true" type="q27:spGetBizByEltIdResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1564,7 +1594,7 @@
   <xs:element name="GetCatByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatByNameResult" nillable="true" type="q27:CatView" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatByNameResult" nillable="true" type="q28:CatView" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1578,7 +1608,7 @@
   <xs:element name="GetCatViewByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatViewByIdResult" nillable="true" type="q28:spGetCatViewByIdResult" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetCatViewByIdResult" nillable="true" type="q29:spGetCatViewByIdResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1608,7 +1638,7 @@
   <xs:element name="GetDicoByNameLgResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoByNameLgResult" nillable="true" type="q29:ArrayOfspGetDicoByNameLgResult" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoByNameLgResult" nillable="true" type="q30:ArrayOfspGetDicoByNameLgResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1623,7 +1653,7 @@
   <xs:element name="GetDicoByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoByNameResult" nillable="true" type="q30:Dico" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoByNameResult" nillable="true" type="q31:Dico" />
         <xs:element minOccurs="0" name="err" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
@@ -1704,7 +1734,7 @@
   <xs:element name="GetAddViewByNameByParResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetAddViewByNameByParResult" nillable="true" type="q31:AddView" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetAddViewByNameByParResult" nillable="true" type="q32:AddView" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1716,7 +1746,7 @@
   <xs:element name="GetDicoEmptiesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoEmptiesResult" nillable="true" type="q32:ArrayOfspGetDicoEmptiesResult" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicoEmptiesResult" nillable="true" type="q33:ArrayOfspGetDicoEmptiesResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1728,7 +1758,7 @@
   <xs:element name="GetDicosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicosResult" nillable="true" type="q33:ArrayOfDico" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetDicosResult" nillable="true" type="q34:ArrayOfDico" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1742,7 +1772,7 @@
   <xs:element name="GetEltByUserNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltByUserNameResult" nillable="true" type="q34:ArrayOfspGetEltByUserNameResult" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltByUserNameResult" nillable="true" type="q35:ArrayOfspGetEltByUserNameResult" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1760,20 +1790,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetEltById">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="id" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetEltByIdResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/BizRef.Web" minOccurs="0" name="GetEltByIdResult" nillable="true" type="q35:spGetEltByIdResult" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="DoWork">
     <xs:complexType>
       <xs:sequence />
@@ -1783,6 +1799,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="DoWorkResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoTest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoTestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DoTestResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -2985,22 +3015,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="UpdateCatPdtResult" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="EltPageUpdateMenuName">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="eltPageId" type="xs:int" />
-        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="lg" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="EltPageUpdateMenuNameResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="EltPageUpdateMenuNameResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

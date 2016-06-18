@@ -13,6 +13,15 @@
   <wsdl:binding name="CustomBinding_Service1" type="Service1">
     <wsp:PolicyReference URI="#CustomBinding_Service1_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEltById">
+      <soap12:operation soapAction="urn:Service1/GetEltById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SaveElt">
       <soap12:operation soapAction="urn:Service1/SaveElt" style="document" />
       <wsdl:input>
@@ -339,6 +348,15 @@
     </wsdl:operation>
     <wsdl:operation name="sendEmailHtml">
       <soap12:operation soapAction="urn:Service1/sendEmailHtml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EltPageUpdateMenuName">
+      <soap12:operation soapAction="urn:Service1/EltPageUpdateMenuName" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -994,8 +1012,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetEltById">
-      <soap12:operation soapAction="urn:Service1/GetEltById" style="document" />
+    <wsdl:operation name="DoWork">
+      <soap12:operation soapAction="urn:Service1/DoWork" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1003,8 +1021,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DoWork">
-      <soap12:operation soapAction="urn:Service1/DoWork" style="document" />
+    <wsdl:operation name="DoTest">
+      <soap12:operation soapAction="urn:Service1/DoTest" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -1725,15 +1743,6 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateCatPdt">
       <soap12:operation soapAction="urn:Service1/UpdateCatPdt" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EltPageUpdateMenuName">
-      <soap12:operation soapAction="urn:Service1/EltPageUpdateMenuName" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -170,6 +170,8 @@
     <Compile Include="Controllers\OtherController.cs" />
     <Compile Include="Controllers\PortfolioNoFilterController.cs" />
     <Compile Include="Controllers\PortfolioController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\SingleItemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -559,6 +561,8 @@
     <Content Include="Views\SingleItem\Index.cshtml" />
     <Content Include="Views\PortfolioNoFilter\Index.cshtml" />
     <Content Include="Views\Page\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\Checkout\Index.cshtml" />
     <None Include="Service References\ServiceReference1\Service1.wsdl" />
     <None Include="Service References\ServiceReference1\Service1.xsd">
       <SubType>Designer</SubType>

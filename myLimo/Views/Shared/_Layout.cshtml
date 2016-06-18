@@ -171,7 +171,12 @@
                     @*<a class="btn-outlined-invert" href="wishlist.html"><i class="icon-heart"></i> <span><b>W</b>ishlist</span></a>*@
 
                     <div class="cart-btn">
-                        <a class="btn btn-outlined-invert" href="shopping-cart.html"><i class="icon-shopping-cart-content"></i><span>3</span><b>36 5654</b></a>
+                        <a class="btn btn-outlined-invert" href='@Url.Action("Index","ShoppingCart",
+                                            new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId=0, subId=0, id= 0})'>
+                        <i class="icon-shopping-cart-content"></i>
+                        <span>@ViewBag.cartTotalItems</span>
+                        <b>@ViewBag.TotalPrice.ToString("C2", @ViewBag.SettingCulture)</b>
+                        </a>
 
                         <!--Cart Dropdown-->
                         <div class="cart-dropdown">
@@ -183,29 +188,34 @@
                                         <th>Quantity</th>
                                         <th>Price</th>
                                     </tr>
-                                    <tr class="item">
-                                        <td><div class="delete"></div><a href="#">Good Joo-Joo Surfb</a></td>
-                                        <td><input type="text" value="1"></td>
-                                        <td class="price">89 005 $</td>
-                                    </tr>
-                                    <tr class="item">
+                                    @foreach (var e in ViewBag.CartList)
+                                    {
+                                        <tr class="item">
+                                            <td><div class="delete"></div><a href="#">@e.name</a></td>
+                                            <td><input type="text" value=@e.quantity></td>
+                                            <td class="price">@e.totalPrice</td>
+                                        </tr>
+                                    }
+                                    @*<tr class="item">
                                         <td><div class="delete"></div><a href="#">Good Joo-Joo Item</a></td>
                                         <td><input type="text" value="2"></td>
                                         <td class="price">4 300 $</td>
-                                    </tr>
-                                    <tr class="item">
-                                        <td><div class="delete"></div><a href="#">Good Joo-Joo</a></td>
-                                        <td><input type="text" value="5"></td>
-                                        <td class="price">84 $</td>
-                                    </tr>
+                                    </tr>*@
+                                    
                                 </table>
                             </div>
                             <div class="footer group">
                                 <div class="buttons">
-                                    <a class="btn btn-outlined-invert" href="checkout.html"><i class="icon-download"></i>Checkout</a>
-                                    <a class="btn btn-outlined-invert" href="shopping-cart.html"><i class="icon-shopping-cart-content"></i>To cart</a>
+                                    <a class="btn btn-outlined-invert" 
+                                       href='@Url.Action("Index","Checkout",
+                                            new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId=0, subId=0, id=0 })'>
+                                    <i class="icon-download"></i>Checkout</a>
+                                    <a class="btn btn-outlined-invert" 
+                                       href='@Url.Action("Index","ShoppingCart",
+                                            new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId=0, subId=0, id=0 })'>
+                                    <i class="icon-shopping-cart-content"></i>To cart</a>
                                 </div>
-                                <div class="total">93 389 $</div>
+                                <div class="total">@ViewBag.totalPrice.ToString("C2", @ViewBag.SettingCulture)</div>
                             </div>
                         </div><!--Cart Dropdown Close-->
                     </div>
@@ -278,7 +288,6 @@
                 </div>
             </div>
         </footer><!--Footer Close-->
-
 
     </div>
     <!-- /.container -->
