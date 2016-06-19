@@ -1,4 +1,4 @@
-/*
+﻿/*
  *Limo HTML5 E-Commerce Template v1.4
  *Copyright 2015 8Guild.com
  *All scripts for Limo HTML5 E-Commerce Template
@@ -468,8 +468,13 @@ $(document).ready(function(e) {
 		var $itemName = $(this).parent().parent().find('h1').text();
 		var $itemPrice = $(this).parent().parent().find('.price').text();
 		var $itemQnty = $(this).parent().find('#quantity').val();
-		var $cartTotalItems = parseInt($('.cart-btn a span').text()) +1;
-		var $cartTotalPrice = parseFloat($('.cart-btn a b').text());
+		var $cartTotalItems = parseInt($('.cart-btn a span').text()) + 1;
+		var $str = $('.cart-btn a b').text();
+		alert('$str=' + $str);
+		$str = $str.replace(/₪|$|€/g, '');
+		alert('$str=' + $str);
+		var $cartTotalPrice = parseFloat($str).toFixed(2);
+		alert('$cartTotalPrice=' + $cartTotalPrice);
 		
 		$('.cart-dropdown table').append(
 			'<tr class="item"><td><div class="delete"></div><a href="#">' + $itemName + 
@@ -496,12 +501,18 @@ $(document).ready(function(e) {
 		alert('$totalPrice=' + $totalPrice);
 		//alert('$cartTotalPrice=' + $cartTotalPrice);
 
+		alert('$cartTotalPrice=' + $cartTotalPrice);
+
 		$cartTotalPrice += parseFloat($totalPrice);
       
-		//alert('$cartTotalPrice=' + $cartTotalPrice);
+		alert('$cartTotalPrice=' + $cartTotalPrice);
 
-		$('.cart-btn a b').text($cartTotalPrice);
-		$('.cart-btn div div div').text($cartTotalPrice);
+		var $tot = $cartTotalPrice.toFixed(2);
+
+		alert('$tot=' + $tot);
+        
+		$('.cart-btn a b').text($tot);
+		//$('.cart-btn div div div').text($cartTotalPrice);
 
 		var $mydata = '{' +
                         '"bizId":"'      + $bizId       + '"' + ',' +

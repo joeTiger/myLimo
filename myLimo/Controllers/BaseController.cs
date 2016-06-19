@@ -535,7 +535,7 @@ namespace myLimo.Controllers
             {
                 Random randNum = new Random();
                 int value = randNum.Next(0, 1000000);
-                Session[s] = value.ToString();
+                Session[s] = "507422";// value.ToString();
             }
 
             return Session[s].ToString();

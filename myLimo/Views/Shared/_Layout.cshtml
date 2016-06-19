@@ -175,7 +175,7 @@
                                             new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId=0, subId=0, id= 0})'>
                         <i class="icon-shopping-cart-content"></i>
                         <span>@ViewBag.cartTotalItems</span>
-                        <b>@ViewBag.totalPrice</b>
+                        <b>@ViewBag.totalPrice.ToString("C2", @ViewBag.SettingCulture)</b>
                         </a>
 
                         <!--Cart Dropdown-->
@@ -203,6 +203,7 @@
                                     </tr>*@
                                     
                                 </table>
+
                             </div>
                             <div class="footer group">
                                 <div class="buttons">
@@ -215,7 +216,7 @@
                                             new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId=0, subId=0, id=0 })'>
                                     <i class="icon-shopping-cart-content"></i>To cart</a>
                                 </div>
-                                <div class="total">@ViewBag.totalPrice.ToString("C2", @ViewBag.SettingCulture)</div>
+                                @*<div class="total">@ViewBag.totalPrice</div>*@
                             </div>
                         </div><!--Cart Dropdown Close-->
                     </div>
