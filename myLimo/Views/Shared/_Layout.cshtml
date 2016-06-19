@@ -175,7 +175,7 @@
                                             new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId=0, subId=0, id= 0})'>
                         <i class="icon-shopping-cart-content"></i>
                         <span>@ViewBag.cartTotalItems</span>
-                        <b>@ViewBag.TotalPrice.ToString("C2", @ViewBag.SettingCulture)</b>
+                        <b>@ViewBag.totalPrice</b>
                         </a>
 
                         <!--Cart Dropdown-->
@@ -193,7 +193,7 @@
                                         <tr class="item">
                                             <td><div class="delete"></div><a href="#">@e.name</a></td>
                                             <td><input type="text" value=@e.quantity></td>
-                                            <td class="price">@e.totalPrice</td>
+                                            <td class="price">@e.totalPrice.ToString("C2", @ViewBag.SettingCulture)</td>
                                         </tr>
                                     }
                                     @*<tr class="item">

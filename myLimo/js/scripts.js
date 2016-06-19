@@ -484,6 +484,7 @@ $(document).ready(function(e) {
 		var $bizId = $("#hiddenBizId").data("value");
 		var $tmpUn = $("#hiddenTmpUN").data("value");
 		var $eltId = $("#hiddenEltId").data("value");
+		var $ItPri = $("#hiddenItPri").data("value");
 
 	    //var $mydata = '{"bizId":"' + $bizId + '", "name":"' + 'Logo'+'"}';
 
@@ -491,8 +492,8 @@ $(document).ready(function(e) {
         //                '"bizId":"' + $bizId + '"' + ','+ 
 	    //                '"name":"' + 'Logo' + '"' +
 	    //              '}';
-		var $totalPrice = parseFloat($itemPrice) * $itemQnty;
-		//alert('$totalPrice=' + $totalPrice);
+		var $totalPrice = parseFloat($ItPri) * $itemQnty;
+		alert('$totalPrice=' + $totalPrice);
 		//alert('$cartTotalPrice=' + $cartTotalPrice);
 
 		$cartTotalPrice += parseFloat($totalPrice);
@@ -500,6 +501,7 @@ $(document).ready(function(e) {
 		//alert('$cartTotalPrice=' + $cartTotalPrice);
 
 		$('.cart-btn a b').text($cartTotalPrice);
+		$('.cart-btn div div div').text($cartTotalPrice);
 
 		var $mydata = '{' +
                         '"bizId":"'      + $bizId       + '"' + ',' +
@@ -507,7 +509,7 @@ $(document).ready(function(e) {
                         '"eltId":"'      + $eltId       + '"' + ',' +
                         '"name":"'       + $itemName    + '"' + ',' +
                         '"quantity":"'   + $itemQnty    + '"' + ',' +
-                        '"unitPrice":"'  + $itemPrice   + '"' + ',' +
+                        '"unitPrice":"' + $ItPri    + '"' + ',' +
                         '"totalPrice":"' + $totalPrice  + '"' +
                       '}';
 
