@@ -463,19 +463,28 @@ $(document).ready(function(e) {
 	
 	/*Added To Cart Message + Action (For Demo Purpose)
 	**************************************************/
+	function removeCurrency(s){
+	    s = s.replace(/ |₪|$|€/g, '');
+	    s = s.replace(/,/g, '.');
+	    return s;
+	}
+	function getCurrentCurrency(s) {
+	    if (s.indexOf('₪') > -1)
+	        return '₪ ';
+	    else if (s.indexOf('$') > -1)
+	        return '$ ';
+	    else if (s.indexOf('€') > -1)
+	        return '€ ';
+	}
+
 	$addToCartBtn.click(function(){
 		$addedToCartMessage.removeClass('visible');
-		var $itemName = $(this).parent().parent().find('h1').text();
-		var $itemPrice = $(this).parent().parent().find('.price').text();
-		var $itemQnty = $(this).parent().find('#quantity').val();
+		var $itemName       = $(this).parent().parent().find('h1').text();
+		var $itemPrice      = $(this).parent().parent().find('.price').text();
+		var $itemQnty       = $(this).parent().find('#quantity').val();
 		var $cartTotalItems = parseInt($('.cart-btn a span').text()) + 1;
-		var $str = $('.cart-btn a b').text();
-		alert('$str=' + $str);
-		$str = $str.replace(/₪|$|€/g, '');
-		alert('$str=' + $str);
-		var $cartTotalPrice = parseFloat($str).toFixed(2);
-		alert('$cartTotalPrice=' + $cartTotalPrice);
-		
+		var $cartTotalPrice = $('.cart-btn a b').text();
+        
 		$('.cart-dropdown table').append(
 			'<tr class="item"><td><div class="delete"></div><a href="#">' + $itemName + 
 			'<td><input type="text" value="' + $itemQnty +
@@ -484,50 +493,32 @@ $(document).ready(function(e) {
 		$('.cart-btn a span').text($cartTotalItems);
 		$addedToCartMessage.addClass('visible');
 
-	    //var $mydata = '{"s":"' + $itemName + '"}';
-
+		var $currentCurrency    = getCurrentCurrency($cartTotalPrice);
+		$cartTotalPrice         = removeCurrency($cartTotalPrice);
+		
 		var $bizId = $("#hiddenBizId").data("value");
 		var $tmpUn = $("#hiddenTmpUN").data("value");
 		var $eltId = $("#hiddenEltId").data("value");
-		var $ItPri = $("#hiddenItPri").data("value");
+		var $itPri = $("#hiddenItPri").data("value");
 
-	    //var $mydata = '{"bizId":"' + $bizId + '", "name":"' + 'Logo'+'"}';
+		var $totalPrice     = parseFloat($itPri) * $itemQnty;
+		var $cartTotalPrice = parseFloat($cartTotalPrice) + $totalPrice;
 
-		//var $mydata = '{' +
-        //                '"bizId":"' + $bizId + '"' + ','+ 
-	    //                '"name":"' + 'Logo' + '"' +
-	    //              '}';
-		var $totalPrice = parseFloat($ItPri) * $itemQnty;
-		alert('$totalPrice=' + $totalPrice);
-		//alert('$cartTotalPrice=' + $cartTotalPrice);
-
-		alert('$cartTotalPrice=' + $cartTotalPrice);
-
-		$cartTotalPrice += parseFloat($totalPrice);
-      
-		alert('$cartTotalPrice=' + $cartTotalPrice);
-
-		var $tot = $cartTotalPrice.toFixed(2);
-
-		alert('$tot=' + $tot);
-        
-		$('.cart-btn a b').text($tot);
-		//$('.cart-btn div div div').text($cartTotalPrice);
-
+		$('.cart-btn a b').text($currentCurrency + $cartTotalPrice.toFixed(2));
+		$('.total').text($currentCurrency + $cartTotalPrice.toFixed(2));
+		
 		var $mydata = '{' +
                         '"bizId":"'      + $bizId       + '"' + ',' +
 	                    '"username":"'   + $tmpUn       + '"' + ',' +
                         '"eltId":"'      + $eltId       + '"' + ',' +
                         '"name":"'       + $itemName    + '"' + ',' +
                         '"quantity":"'   + $itemQnty    + '"' + ',' +
-                        '"unitPrice":"' + $ItPri    + '"' + ',' +
+                        '"unitPrice":"'  + $itPri       + '"' + ',' +
                         '"totalPrice":"' + $totalPrice  + '"' +
                       '}';
 
 	    //CheckoutInsert(int bizId, string username, int eltId, string name, 
 		//int quantity,  decimal unitPrice, decimal totalPrice
-
-	  
 
 		$.ajax({
 		    type: "POST",
@@ -542,11 +533,9 @@ $(document).ready(function(e) {
 		        }
 		        else
 		            $addedToCartMessage.find('p').text('"' + $itemName + '"' + '  ' + res + 'was NOT added !!!');
-		        //$addedToCartMessage.find('p').text(data.d);
-		       //$addedToCartMessage.find('#hiddenAddFlag').text(data.d);
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
-		        alert('$mydata='+$mydata+ ' ERROR:'+xhr.status);
+		        alert('$mydata='+$mydata+ ' ERROR:'+xhr.status );
 		        //alert(thrownError);
 		    }
 		});

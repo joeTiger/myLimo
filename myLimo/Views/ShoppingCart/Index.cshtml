@@ -13,7 +13,7 @@
                     new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId = 0, subId = 0, id = @ViewBag.firstPageId }, null)
         </li>
 
-        <li class="active">@ViewBag.controllerName</li>
+        <li class="active">@ViewBag.breadcrumb</li>
 
     </ol><!--Breadcrumbs Close-->
     <!--Shopping Cart-->
@@ -23,14 +23,14 @@
 
                 <!--Items List-->
                 <div class="col-lg-9 col-md-9">
-                    <h2 class="title">Shopping cart</h2>
+                    <h2 class="title">@ViewBag.breadcrumb</h2>
                     <table class="items-list" >
                         <tr >
                             @*<th>&nbsp;</th>*@
-                            <td>Product name</td>
-                            <td>Product price</td>
-                            <td>Quantity</td>
-                            <td>Total</td>
+                            <td>@ViewBag.ProductName</td>
+                            <td>@ViewBag.ProductPrice</td>
+                            <td>@ViewBag.Quantity</td>
+                            <td>@ViewBag.Total</td>
                         </tr>
                         @foreach (var e in ViewBag.CartList)
                         {
@@ -98,14 +98,14 @@
                                 </tr>
                             </table>
 
-                            <h3>Have a coupon?</h3>
+                            @*<h3>Have a coupon?</h3>
                             <div class="coupon">
                                 <div class="form-group">
                                     <label class="sr-only" for="coupon-code">Enter coupon code</label>
                                     <input type="text" class="form-control" id="coupon-code" name="coupon-code" placeholder="Enter coupon code">
                                 </div>
                                 <input type="submit" class="btn btn-primary btn-sm btn-block" name="apply-coupon" value="Apply coupon">
-                            </div>
+                            </div>*@
 
                             <input type="submit" class="btn btn-primary btn-sm btn-block" name="update-cart" value="Update shopping cart">
                             <input type="submit" class="btn btn-black btn-block" name="to-checkout" value="Proceed to checkout">

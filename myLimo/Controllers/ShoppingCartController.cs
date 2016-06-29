@@ -21,15 +21,60 @@ namespace myLimo.Controllers
             setViewBagMenuModel(bizId, lg);
             setViewBagMenuCatModel(bizId, lg);
             setViewBagCatPdtModel(bizId, lg, catId, subId);
-                       
+            ViewBag.breadcrumb = getBreadcrumbValue(lg);
+            ViewBag.ProductName = getProductName(lg);
+            ViewBag.ProductPrice = getProductPrice(lg);
+            ViewBag.Quantity = getQuantity(lg);
+            ViewBag.Total = getTotal(lg);
+
             return View();
         }
 
-        
+        private dynamic getTotal(int lg)
+        {
+                if (lg == 0) return "Total";
+            else if (lg == 1) return "סך הכל";
+            else if (lg == 2) return "Total";
+            else if (lg == 3) return "Total";
+            else return "Total";
+        }
 
-        
+        private dynamic getQuantity(int lg)
+        {
+            
+                if (lg == 0) return "Quantity";
+            else if (lg == 1) return "כמות";
+            else if (lg == 2) return "Quantite";
+            else if (lg == 3) return "Quantity";
+            else return "Quantity";
+        }
 
+        private dynamic getProductPrice(int lg)
+        {
+            if (lg == 0) return "Product price";
+            else if (lg == 1) return "מחיר מוצר";
+            else if (lg == 2) return "Prix Unitaire";
+            else if (lg == 3) return "Product price";
+            else return "Product price";
+        }
 
+        private dynamic getProductName(int lg)
+        {            
+                 if (lg == 0) return "Product name";
+            else if (lg == 1) return "שם מוצר";
+            else if (lg == 2) return "Nom Produit";
+            else if (lg == 3) return "Product name";
+            else return "Product name";
+        }
+
+        private string getBreadcrumbValue(int lg)
+        {
+            if (lg == 0) return "Shopping cart";
+            else if (lg == 1) return "סל קניות";
+            else if (lg == 2) return "Panier Achat";
+            else if (lg == 3) return "Panier Achat";
+            else return "Shopping cart";
+        }
 
         private void setViewBagLocal(int lg)
         {

@@ -52,6 +52,7 @@ namespace myLimo.Controllers
 
             mylog("setViewBagCartListModel...");
             setViewBagCartListModel(bizId, lg);
+            setViewBagContactModel(bizId);
 
             mylog("ViewBag.controllerName   =" + ViewBag.controllerName);
             mylog("ViewBag.bizId            =" + ViewBag.bizId);
@@ -67,6 +68,8 @@ namespace myLimo.Controllers
             mylog("ViewBag.SettingCulture   =" + ViewBag.SettingCulture);
             mylog("ViewBag.tmpUN            =" + ViewBag.tmpUN);
         }
+
+        
 
         private void setViewBagSettingCulture(int bizId)
         {
@@ -321,6 +324,48 @@ namespace myLimo.Controllers
             if (list.Count() == 0) mylog("Error !!! no entries ...");
         }
 
+        public void CheckBiz(spGetBizByEltIdResult elt)
+        {
+            mylog("CheckBiz...");
+
+            object instance = elt;
+            displayInstance(instance);
+
+            if (elt == null) mylog("Error !!! elt is null ????");
+
+        }
+
+        private void setViewBagContactModel(int bizId)
+        {
+            if (ViewBag.ContactModel == null)
+            {
+                string s = "ContactModel_" + bizId ;
+                if (Session[s] == null)
+                {
+                    mylog(s + " is NULL !!!!!!!!!!!!!!!");
+                    IList<Contact> list = new List<Contact>();
+                    spGetBizByEltIdResult e = objService.GetBizByEltId(bizId);
+                    CheckBiz(e);
+                    spGetDicoByIdResult a = objService.GetDicoById((int)e.longAddId);
+                    spGetDicoByIdResult v = objService.GetDicoById((int)e.cityId);
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Contact c = new Contact { Tel = e.telDisplay, Mob = e.mobDisplay,
+                            Email = e.email , WWW=e.www2};
+                        if (i == 0) { c.Name = e.descEn; c.Address = a.name; c.City = v.name; }
+                        else if (i == 1) { c.Name = e.descHe; c.Address = a.nameHe; c.City = v.nameHe; }
+                        else if (i == 2) { c.Name = e.descFr; c.Address = a.nameFr; c.City = v.nameFr; }
+                        else if (i == 3) { c.Name = e.descRu; c.Address = a.nameRu; c.City = v.nameRu; }
+                        else if (i == 4) { c.Name = e.descCn; c.Address = a.nameCn; c.City = v.nameCn; }
+                        list.Add(c);
+                    }
+                    Session[s] = list;
+                    CheckListContact(s, list);
+                }
+                ViewBag.ContactModel = Session[s];
+            }
+        }
+
         public void setViewBagMenuCatModel(int bizId, int lg)
         {
             if (ViewBag.MenuCatModel == null)
@@ -493,6 +538,21 @@ namespace myLimo.Controllers
             //    ((IEnumerable<spGetTreeEltPageResult>) Session["MenuModel"]).ToList().Count);
         }
 
+        public void CheckListContact(string modelname, IEnumerable<Contact> list)
+        {
+            if (list == null)
+            {
+                mylog(modelname + " list IS NULL ???????????????");
+            }
+            mylog(modelname + " list.count=" + list.Count());
+            foreach (Contact elt in list)
+            {
+                object instance = elt;
+                displayInstance(instance);
+            }
+            if (list.Count() == 0) mylog("Error !!! no entries ...");
+        }
+
         public void displayInstance(object instance)
         {
             string s = string.Empty;
@@ -504,7 +564,7 @@ namespace myLimo.Controllers
                 //string type = descriptor.GetType().ToString();mylog(type);
                 s += name + "=" + trunc(value) + ";";
             }
-            //mylog(s);
+            mylog(s);
         }
 
         private string trunc(object value)
