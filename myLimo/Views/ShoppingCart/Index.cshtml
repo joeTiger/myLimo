@@ -27,6 +27,7 @@
                     <table class="items-list" >
                         <tr >
                             @*<th>&nbsp;</th>*@
+                            <td>Reference</td>
                             <td>@ViewBag.ProductName</td>
                             <td>@ViewBag.ProductPrice</td>
                             <td>@ViewBag.Quantity</td>
@@ -36,6 +37,7 @@
                         {
                             <tr class="item">
                                 @*<td class="thumb"><a href="shop-single-item-v1.html"><img src="img/catalog/shopping-cart-thumb.jpg" alt="Lorem ipsum" /></a></td>*@
+                                <td class="reference">@e.eltId</td>
                                 <td class="name"><a href="shop-single-item-v1.html">@e.name</a></td>
                                 <td class="price">@e.unitPrice.ToString("C2", @ViewBag.SettingCulture)</td>
                                 <td class="qnt-count">
@@ -45,6 +47,7 @@
                                 </td>
                                 <td class="total">@e.totalPrice.ToString("C2", @ViewBag.SettingCulture)</td>
                                 <td class="delete"><i class="icon-delete"></i></td>
+                               
                             </tr>
                         }
 
@@ -86,7 +89,7 @@
                             <table>
                                 <tr>
                                     <td>Cart subtotal</td>
-                                    <td class="total align-r">2715,00 $</td>
+                                    <td class="total align-r">@ViewBag.totalPrice.ToString("C2", @ViewBag.SettingCulture)</td>
                                 </tr>
                                 <tr class="devider">
                                     <td>Shipping</td>
@@ -94,7 +97,7 @@
                                 </tr>
                                 <tr>
                                     <td>Order total</td>
-                                    <td class="total align-r">2715,00 $</td>
+                                    <td class="total align-r">@ViewBag.totalPrice.ToString("C2", @ViewBag.SettingCulture)</td>
                                 </tr>
                             </table>
 
@@ -208,5 +211,5 @@
             </div>
         </div>
     </section><!--Catalog Grid Close-->
-
+    <input type="hidden" id="hiddenBizId" data-value="@ViewBag.bizId" />
 </div><!--Page Content Close-->

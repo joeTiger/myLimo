@@ -103,7 +103,8 @@ $(document).ready(function(e) {
 	/*Shopping Cart Dropdown 
 	*******************************************/
 	//Deleting Items
-	$(document).on('click', '.cart-dropdown .delete', function(){
+	$(document).on('click', '.cart-dropdown .delete', function () {
+	    alert('.cart-dropdown .delete');
 		var $target = $(this).parent().parent();
 		var $positions = $('.cart-dropdown .item');
 		var $positionQty = parseInt($('.cart-btn a span').text());
@@ -112,26 +113,69 @@ $(document).ready(function(e) {
 				$positionQty = $positionQty -1;
 				$('.cart-btn a span').text($positionQty);
 				if($positions.length === 1) {
-					$('.cart-dropdown .body').html('<h3>Cart is empty!</h3>');
+					$('.cart-dropdown .body').html('<h3>Cart is empty!!!</h3>');
 				}
 			});
 		});
+		
 	});
 	
 	/*Shopping Cart Page
 	*******************************************/
+
+	function getEltId(s) {
+	    //alert('s=' + s);
+        s = s.replace(/ /g, '');//remove white space
+	    var arr = s.split('\n');
+	    //alert('arr=' + arr);
+        for (var i = 0; i < arr.length; i++) {
+	        if (arr[i].length > 0) {
+	            s = arr[i]; break;
+	        }
+        }
+        return s;
+	}
+
 	//Deleting Items
-	$(document).on('click', '.shopping-cart .delete i', function(){
-		var $target = $(this).parent().parent();
+	$(document).on('click', '.shopping-cart .delete i', function () {
+	    
+    	var $target = $(this).parent().parent();
 		var $positions = $('.shopping-cart .item');
-		$target.hide(300, function(){
+
+		//var $name = $('.shopping-cart .items-list .name').text();
+		
+		var $bizId = $("#hiddenBizId").data("value");
+		var $eltId = getEltId( $target.text());
+		//alert('$eltId===' + $eltId + "$bizId===" + $bizId);
+
+		var $mydata = '{' +
+                      '"eltId":"' + $eltId + '"' + ',' +
+                      '"bizId":"' + $bizId + '"' +
+                      '}';
+		$.ajax({
+		    type: "POST",
+		    url: "/admin/Service2.svc/CheckoutDeleteByEltId",
+		    data: $mydata,
+		    contentType: "application/json; charset=utf-8",
+		    dataType: "json",
+		    success: function (data) {
+		        //alert('ok');
+		    },
+		    error: function (xhr, ajaxOptions, thrownError) {
+		        alert('$mydata=' + $mydata + ' ERROR:' + xhr.status);
+		        //alert(thrownError);
+		    }
+		});
+
+		$target.hide(300, function () {
 			$.when($target.remove()).then( function(){
 				if($positions.length === 1) {
 					$('.shopping-cart .items-list').remove();
-					$('.shopping-cart .title').text('Shopping cart is empty!');
+					$('.shopping-cart .title').text('Shopping cart is empty! FRED');
 				}
 			});
 		});
+		
 	});
 	
 	/*Wishlist Deleting Items
@@ -142,7 +186,7 @@ $(document).ready(function(e) {
 			$.when($target.remove()).then( function(){
 				if($positions.length === 1) {
 					$('.wishlist .items-list').remove();
-					$('.wishlist .title').text('Wishlist is empty!');
+					$('.wishlist .title').text('Wishlist is empty! frederico');
 				}
 			});
 		});
@@ -458,7 +502,6 @@ $(document).ready(function(e) {
 			}
 		}
 		$button.parent().find("input").val(newVal);
-		
 	});
 	
 	/*Added To Cart Message + Action (For Demo Purpose)
@@ -468,6 +511,7 @@ $(document).ready(function(e) {
 	    s = s.replace(/,/g, '.');
 	    return s;
 	}
+
 	function getCurrentCurrency(s) {
 	    if (s.indexOf('₪') > -1)
 	        return '₪ ';
@@ -539,7 +583,6 @@ $(document).ready(function(e) {
 		        //alert(thrownError);
 		    }
 		});
-		
 	});
 	
 	/*Promo Labels Popovers

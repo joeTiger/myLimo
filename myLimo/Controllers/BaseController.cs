@@ -34,6 +34,7 @@ namespace myLimo.Controllers
             ViewBag.Dir = (lg == 1) ? "rtl" : "ltr";
             ViewBag.Lang = (lg == 1) ? "he" : "en";
             ViewBag.tmpUN = getTempUserName(bizId);
+            ViewBag.aspPath         = getAspPath(bizId);
 
             string s = @"firstPageId_" + bizId;
             if (Session[s] == null)
@@ -50,8 +51,8 @@ namespace myLimo.Controllers
             setViewBagSettingCulture(bizId);
             setViewBagByBizId(bizId);
 
-            mylog("setViewBagCartListModel...");
-            setViewBagCartListModel(bizId, lg);
+            //mylog("setViewBagCartListModel...");
+            //setViewBagCartListModel(bizId, lg);
             setViewBagContactModel(bizId);
 
             mylog("ViewBag.controllerName   =" + ViewBag.controllerName);
@@ -67,9 +68,8 @@ namespace myLimo.Controllers
             mylog("ViewBag.SettingLogo      =" + ViewBag.SettingLogo);
             mylog("ViewBag.SettingCulture   =" + ViewBag.SettingCulture);
             mylog("ViewBag.tmpUN            =" + ViewBag.tmpUN);
+            mylog("ViewBag.aspPath          =" + ViewBag.aspPath);
         }
-
-        
 
         private void setViewBagSettingCulture(int bizId)
         {
@@ -153,7 +153,7 @@ namespace myLimo.Controllers
             }
         }
 
-        public void setViewBagCartListModel(int bizId, int lg)
+        public void setViewBagCartListModel(int bizId, int lg, bool update)
         {
             string s = "CartList_" + bizId + "_" + lg;
 
@@ -161,15 +161,17 @@ namespace myLimo.Controllers
                 ViewBag.cartTotalItems:0;
 
             mylog(s);
-            //if (Session[s] == null)
-            //{
+            if (update)
+            {
                 //mylog(s + " is NULL !!!!!!!!!!!!!!!");
-            ViewBag.totalPrice = Convert.ToDecimal("0.00");
-            mylog("ViewBag.totalPrice====" + ViewBag.totalPrice);
+                ViewBag.totalPrice = Convert.ToDecimal("0.00");
+                mylog("ViewBag.totalPrice====" + ViewBag.totalPrice);
 
-            string tempUserName = getTempUserName(bizId);
+                string tempUserName = getTempUserName(bizId);
+
                 IEnumerable<spGetCheckoutResult> list =
                     objService.GetCheckout(lg, bizId, tempUserName);
+
                 if (cartTotalItems != list.Count())
                 {
                     foreach (spGetCheckoutResult elt in list)
@@ -177,13 +179,14 @@ namespace myLimo.Controllers
                         ViewBag.totalPrice += Convert.ToDecimal(elt.totalPrice);
                     }
                     mylog("ViewBag.totalPrice=" + ViewBag.totalPrice);
-            }
+                }
                 ViewBag.cartTotalItems = list.Count();
                 CheckListCartList(s, list);
                 Session[s] = list;
-            //}
+            }
             ViewBag.CartList = Session[s];
         }
+
         private void CheckListCartList(string s, IEnumerable<spGetCheckoutResult> list)
         {
             if (list == null)

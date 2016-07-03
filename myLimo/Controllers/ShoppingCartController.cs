@@ -21,6 +21,8 @@ namespace myLimo.Controllers
             setViewBagMenuModel(bizId, lg);
             setViewBagMenuCatModel(bizId, lg);
             setViewBagCatPdtModel(bizId, lg, catId, subId);
+            setViewBagCartListModel(bizId, lg, true);
+
             ViewBag.breadcrumb = getBreadcrumbValue(lg);
             ViewBag.ProductName = getProductName(lg);
             ViewBag.ProductPrice = getProductPrice(lg);

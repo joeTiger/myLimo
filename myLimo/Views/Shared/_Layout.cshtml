@@ -146,14 +146,14 @@
                         {
                             @*<li><a href="shop-filters-left-3cols.html">@e.category</a></li>*@
                             <li>
-                            <h5>
+                            <h6>
                                 @Html.ActionLink((string)e.category,
                                     "Index",
                                     (string)@ViewBag.PortfolioController,
                                     new {   bizId   = @ViewBag.bizId,
                                             lg      = @ViewBag.lg,
                                             catId   = @e.catId }, null)
-                            </h5>
+                            </h6>
                             </li>
                         }
                         @*<li><a href="shop-filters-left-3cols.html">Shoulder Bag</a></li>*@

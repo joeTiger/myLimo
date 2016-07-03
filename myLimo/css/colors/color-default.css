@@ -293,6 +293,11 @@ a:hover {
 .cart-message {
   background: #c7b07b;
 }
+.shopping-cart table td.reference a:hover,
+.wishlist table td.reference a:hover {
+  border-bottom-color: #607d8b;
+}
+
 .shopping-cart table td.name a:hover,
 .wishlist table td.name a:hover {
   border-bottom-color: #607d8b;
