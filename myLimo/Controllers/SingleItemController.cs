@@ -8,7 +8,7 @@ namespace myLimo.Controllers
     public class SingleItemController : BaseController
     {
         ServiceReference1.Service1Client objService = new Service1Client();
-        //ServiceReference2.Service2Client objService2 = new Service2Client();
+  //      ServiceReference2.Service2Client objService2 = new Service2Client();
 
 
         //public ActionResult Index(int bizId=72751, int lg=0, int catId=1306, int subId=1498, int id = 0)/*73212*/
@@ -27,9 +27,11 @@ namespace myLimo.Controllers
 
         private void checkDoTest()
         {
-            string s = objService.DoTest("fredo"); mylog(s);
-            s = objService.DoWork();mylog(s);
-            //s = objService2.DoWork(); mylog(s);
+            //string s = objService.DoTest("fredo"); mylog(s);
+            //s = objService.DoWork();mylog(s);
+            //string s = objService2.DoWork(); mylog(s);
+            //objService.CheckoutDeleteByEltId(id, bizId);
+            //objService.CheckoutInsert(bizId, "test", id, "name", 4, (decimal)10, (decimal)40);
         }
 
         private void setViewBagLocal(int lg)

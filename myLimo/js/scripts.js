@@ -48,6 +48,59 @@ $(document).ready(function(e) {
 	var $panelToggle = $('.panel-toggle');
 	var $accordionToggle = $('.accordion .panel-heading a');
 	
+	$('#place-order').click(function () {
+
+	    var $fn = $('#co-first-name').val();
+	    var $ln = $('#co-last-name').val();
+	    var $ad = $('#co-str-adress').val();
+	    var $em = $('#co-email').val();
+	    var $ph = $('#co_phone').val();
+	    var $or = $('#order-notes').val();
+
+	    if (!$fn || $fn.length < 3 || !$em || !$ph) {
+	        alert($fn + ' is empty or too short');
+	        return;
+	    }
+	    
+	    var $bizId = $("#hiddenBizId").data("value");
+	    var $tmpUn = $("#hiddenTmpUN").data("value");
+	    var $SelLg = $("#hiddenSelLg").data("value");
+
+	    //alert('$tmpUn=' + $tmpUn + ' $bizId=' + $bizId +
+        //    '$fn='+ $fn + '$ln='+ $ln + '$ad='+ $ad + 
+        //    '$em=' + $em + '$ph=' + $ph + '$or=' + $or);
+
+	    var $mydata = '{' +
+                     '"bizId":"' + $bizId + '"' + ',' +
+                     '"tmpUn":"' + $tmpUn + '"' + ',' +
+                     '"SelLg":"' + $SelLg + '"' + ',' +
+                     '"fn":"' + $fn + '"' + ',' +
+                     '"ln":"' + $ln + '"' + ',' +
+                     '"ad":"' + $ad + '"' + ',' +
+                     '"em":"' + $em + '"' + ',' +
+                     '"ph":"' + $ph + '"' + ',' +
+                     '"or":"' + $or + '"' + 
+                     '}';
+	    $.ajax({
+	        type: "POST",
+	        url: "/admin/Service2.svc/SendEmail",
+	        data: $mydata,
+	        contentType: "application/json; charset=utf-8",
+	        dataType: "json",
+	        success: function (data) {
+	            alert('email sent !!!');
+	        },
+	        error: function (xhr, ajaxOptions, thrownError) {
+	            if (xhr.status == 0)
+	                alert('email sent !!!');
+                else
+	            alert('$mydata=' + $mydata + ' ERROR:' + xhr.status);
+	            //alert(thrownError);
+	        }
+	    });
+
+	});
+
 	/*Search Form Toggle
 	*******************************************/
 	$searchBtn.click(function(){
@@ -104,7 +157,6 @@ $(document).ready(function(e) {
 	*******************************************/
 	//Deleting Items
 	$(document).on('click', '.cart-dropdown .delete', function () {
-	    alert('.cart-dropdown .delete');
 		var $target = $(this).parent().parent();
 		var $positions = $('.cart-dropdown .item');
 		var $positionQty = parseInt($('.cart-btn a span').text());
@@ -113,11 +165,10 @@ $(document).ready(function(e) {
 				$positionQty = $positionQty -1;
 				$('.cart-btn a span').text($positionQty);
 				if($positions.length === 1) {
-					$('.cart-dropdown .body').html('<h3>Cart is empty!!!</h3>');
+					$('.cart-dropdown .body').html('<h3>Cart is empty!</h3>');
 				}
 			});
 		});
-		
 	});
 	
 	/*Shopping Cart Page
@@ -137,9 +188,9 @@ $(document).ready(function(e) {
 	}
 
 	//Deleting Items
-	$(document).on('click', '.shopping-cart .delete i', function () {
+	$(document).on('click', '.shopping-cart .delete i', function(){
 	    
-    	var $target = $(this).parent().parent();
+		var $target = $(this).parent().parent();
 		var $positions = $('.shopping-cart .item');
 
 		//var $name = $('.shopping-cart .items-list .name').text();
@@ -148,24 +199,24 @@ $(document).ready(function(e) {
 		var $eltId = getEltId( $target.text());
 		//alert('$eltId===' + $eltId + "$bizId===" + $bizId);
 
-		var $mydata = '{' +
+	    var $mydata = '{' +
                       '"eltId":"' + $eltId + '"' + ',' +
                       '"bizId":"' + $bizId + '"' +
                       '}';
-		$.ajax({
-		    type: "POST",
-		    url: "/admin/Service2.svc/CheckoutDeleteByEltId",
-		    data: $mydata,
-		    contentType: "application/json; charset=utf-8",
-		    dataType: "json",
-		    success: function (data) {
-		        //alert('ok');
-		    },
-		    error: function (xhr, ajaxOptions, thrownError) {
-		        alert('$mydata=' + $mydata + ' ERROR:' + xhr.status);
-		        //alert(thrownError);
-		    }
-		});
+	    $.ajax({
+	        type: "POST",
+	        url: "/admin/Service2.svc/CheckoutDeleteByEltId",
+	        data: $mydata,
+	        contentType: "application/json; charset=utf-8",
+	        dataType: "json",
+	        success: function (data) {
+	            //alert('ok');
+	        },
+	        error: function (xhr, ajaxOptions, thrownError) {
+	            alert('$mydata=' + $mydata + ' ERROR:' + xhr.status);
+	            //alert(thrownError);
+	        }
+	    });
 
 		$target.hide(300, function () {
 			$.when($target.remove()).then( function(){
@@ -176,6 +227,7 @@ $(document).ready(function(e) {
 			});
 		});
 		
+		//window.location.reload(true);
 	});
 	
 	/*Wishlist Deleting Items
@@ -186,7 +238,7 @@ $(document).ready(function(e) {
 			$.when($target.remove()).then( function(){
 				if($positions.length === 1) {
 					$('.wishlist .items-list').remove();
-					$('.wishlist .title').text('Wishlist is empty! frederico');
+					$('.wishlist .title').text('Wishlist is empty!');
 				}
 			});
 		});
@@ -573,16 +625,19 @@ $(document).ready(function(e) {
 		    success: function (data) {
 		        var res = parseInt(data.d);
 		        if (res > 0) {
-		            $addedToCartMessage.find('p').text('"' + $itemName + '"' + '  ' + res + 'was successfully added here .');
+		            $addedToCartMessage.find('p').text('"-------' + $itemName + '-----"' + res);
 		        }
 		        else
 		            $addedToCartMessage.find('p').text('"' + $itemName + '"' + '  ' + res + 'was NOT added !!!');
 		    },
 		    error: function (xhr, ajaxOptions, thrownError) {
-		        alert('$mydata='+$mydata+ ' ERROR:'+xhr.status );
+		        alert('-------mydata='+$mydata+ ' ERROR:'+xhr.status);
 		        //alert(thrownError);
 		    }
 		});
+
+		//window.location.reload(true);
+
 	});
 	
 	/*Promo Labels Popovers

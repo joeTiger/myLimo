@@ -17,6 +17,7 @@ namespace myLimo.Controllers
         public ActionResult Index(int bizId = 73294, int lg = 1, int catId = 1509, int subId = 0, int id = 73356)
         {
             setViewBagLocal(lg);
+            setViewBagCartCheckout(lg);
             setViewBagVariables("ShoppingCart", bizId, lg, catId, subId, id);
             setViewBagMenuModel(bizId, lg);
             setViewBagMenuCatModel(bizId, lg);

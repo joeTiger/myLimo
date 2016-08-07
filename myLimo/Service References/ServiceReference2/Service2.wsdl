@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://yelotag.com/admin/Service2.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://yelotag.com/admin/Service2.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Service2_DoWork_InputMessage">
+    <wsdl:part name="parameters" element="DoWork" />
+  </wsdl:message>
+  <wsdl:message name="Service2_DoWork_OutputMessage">
+    <wsdl:part name="parameters" element="DoWorkResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service2_DoTest_InputMessage">
+    <wsdl:part name="parameters" element="DoTest" />
+  </wsdl:message>
+  <wsdl:message name="Service2_DoTest_OutputMessage">
+    <wsdl:part name="parameters" element="DoTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service2_SettingGetByName_InputMessage">
+    <wsdl:part name="parameters" element="SettingGetByName" />
+  </wsdl:message>
+  <wsdl:message name="Service2_SettingGetByName_OutputMessage">
+    <wsdl:part name="parameters" element="SettingGetByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service2_CheckoutInsert_InputMessage">
+    <wsdl:part name="parameters" element="CheckoutInsert" />
+  </wsdl:message>
+  <wsdl:message name="Service2_CheckoutInsert_OutputMessage">
+    <wsdl:part name="parameters" element="CheckoutInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service2_CheckoutDeleteByEltId_InputMessage">
+    <wsdl:part name="parameters" element="CheckoutDeleteByEltId" />
+  </wsdl:message>
+  <wsdl:message name="Service2_CheckoutDeleteByEltId_OutputMessage">
+    <wsdl:part name="parameters" element="CheckoutDeleteByEltIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service2">
+    <wsdl:operation name="DoWork">
+      <wsdl:input wsaw:Action="urn:Service2/DoWork" message="Service2_DoWork_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service2/DoWorkResponse" message="Service2_DoWork_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoTest">
+      <wsdl:input wsaw:Action="urn:Service2/DoTest" message="Service2_DoTest_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service2/DoTestResponse" message="Service2_DoTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SettingGetByName">
+      <wsdl:input wsaw:Action="urn:Service2/SettingGetByName" message="Service2_SettingGetByName_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service2/SettingGetByNameResponse" message="Service2_SettingGetByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckoutInsert">
+      <wsdl:input wsaw:Action="urn:Service2/CheckoutInsert" message="Service2_CheckoutInsert_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service2/CheckoutInsertResponse" message="Service2_CheckoutInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckoutDeleteByEltId">
+      <wsdl:input wsaw:Action="urn:Service2/CheckoutDeleteByEltId" message="Service2_CheckoutDeleteByEltId_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Service2/CheckoutDeleteByEltIdResponse" message="Service2_CheckoutDeleteByEltId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

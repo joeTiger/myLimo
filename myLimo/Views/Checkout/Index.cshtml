@@ -96,36 +96,36 @@
                         <div class="checkbox form-group">
                             <label><span>Ship to a different adress?</span> <input type="checkbox" name="ship-to-dif-adress"></label>
                         </div>*@
-                        <h3>Order notes</h3>
+                        <h3>@ViewBag.OrderNotes</h3>
                         <div class="form-group">
-                            <label class="sr-only" for="order-notes">Order notes</label>
-                            <textarea class="form-control" name="order-notes" id="order-notes" rows="4" placeholder="Order notes"></textarea>
+                            <label class="sr-only" for="order-notes">test</label>
+                            <textarea class="form-control" name="order-notes" id="order-notes" rows="4" placeholder=@ViewBag.OrderNotes></textarea>
                         </div>
                     </div>
 
                     <!--Right Column-->
                     <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-4">
-                        <h3>Your order</h3>
+                        <h3>@ViewBag.YourOrder</h3>
                         <table>
-                            <tr><th>Product</th></tr>
+                            @*<tr><th>Product</th></tr>*@
                             <tr>
-                                <td class="name border">Bag<span>x1</span></td>
+                                <td class="name border">@ViewBag.breadcrumb</td>
                                 <td class="price border">@ViewBag.totalPrice.ToString("C2", @ViewBag.SettingCulture)</td>
                             </tr>
                             <tr>
-                                <td class="th">Cart subtotal</td>
+                                <td class="th">@ViewBag.CartSubtotal</td>
                                 <td class="price">@ViewBag.totalPrice.ToString("C2", @ViewBag.SettingCulture)</td>
                             </tr>
                             <tr>
-                                <td class="th border">Shipping</td>
-                                <td class="align-r border">Free shipping</td>
+                                <td class="th border">@ViewBag.Shipping</td>
+                                <td class="align-r border">@ViewBag.FreeShipping</td>
                             </tr>
                             <tr>
-                                <td class="th">Order total</td>
+                                <td class="th">@ViewBag.OrderTotal</td>
                                 <td class="price">@ViewBag.totalPrice.ToString("C2", @ViewBag.SettingCulture)</td>
                             </tr>
                         </table>
-                        <div class="payment-method">
+                        @*<div class="payment-method">
                             <div class="radio light">
                                 <label><input type="radio" name="payment" id="payment01" checked> Direct Bank Transfer</label>
                             </div>
@@ -136,11 +136,16 @@
                             <div class="radio light">
                                 <label><input type="radio" name="payment" id="payment03"> PayPal <span class="pp-label"></span></label>
                             </div>
-                        </div>
-                        <input class="btn btn-black btn-block" type="submit" name="place-order" value="Place order">
+                        </div>*@
+                        <input class="btn btn-black btn-block" type="submit" id="place-order" name="place-order" value=@ViewBag.PlaceOrder>
                     </div>
                 </form>
             </div>
         </div>
     </section><!--Checkout Close-->
+
+    <input type="hidden" id="hiddenBizId" data-value="@ViewBag.bizId" />
+    <input type="hidden" id="hiddenTmpUN" data-value="@ViewBag.tmpUN" />
+    <input type="hidden" id="hiddenSelLg" data-value="@ViewBag.lg" />
+
 </div><!--Page Content Close-->

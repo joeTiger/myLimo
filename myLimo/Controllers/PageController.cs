@@ -18,6 +18,7 @@ namespace myLimo.Controllers
             setViewBagMenuCatModel(bizId, lg);
             setViewBagPageDataModel(id, lg);
             setViewBagSliderModel(bizId, lg, catId);
+            setViewBagCartListModel(bizId, lg, true);
 
             return View();
         }

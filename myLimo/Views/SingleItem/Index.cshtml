@@ -34,8 +34,9 @@
     <!--Shopping Cart Message-->
     <section class="cart-message">
         <i class="fa fa-check-square"></i>
-        <p class="p-style3">"Nikon" was successfully added byfred</p>
-        <a class="btn-outlined-invert btn-black btn-sm" href="shopping-cart.html">View cart</a>
+        <p class="p-style3">Successfully added !!!</p>
+        <a class="btn-outlined-invert btn-black btn-sm" href='@Url.Action("Index","ShoppingCart",
+                                            new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId=0, subId=0, id=0 })'>View cart</a>
     </section><!--Shopping Cart Message Close-->
     <!--Catalog Single Item-->
     <section class="catalog-single">
@@ -86,7 +87,7 @@
                     <div class="buttons group">
                         <div class="qnt-count">
                             <a class="incr-btn" href="#">-</a>
-                            <input id="quantity" class="form-control" type="text" value="2">
+                            <input id="quantity" class="form-control" type="text" value=@Model.minOrder>
                             <a class="incr-btn" href="#">+</a>
                         </div>
                         <a class="btn btn-primary btn-sm" id="addItemToCart" href='#'>

@@ -25,15 +25,15 @@ namespace myLimo.Controllers
 
         public void setViewBagVariables(string cn, int bizId, int lg, int catId, int subId, int id)
         {
-            ViewBag.controllerName = cn;
-            ViewBag.bizId = bizId;
-            ViewBag.lg = lg;
-            ViewBag.catId = catId;
-            ViewBag.subId = subId;
-            ViewBag.id = id;
-            ViewBag.Dir = (lg == 1) ? "rtl" : "ltr";
-            ViewBag.Lang = (lg == 1) ? "he" : "en";
-            ViewBag.tmpUN = getTempUserName(bizId);
+            ViewBag.controllerName  = cn;
+            ViewBag.bizId           = bizId;
+            ViewBag.lg              = lg;
+            ViewBag.catId           = catId;
+            ViewBag.subId           = subId;
+            ViewBag.id              = id;
+            ViewBag.Dir             = (lg == 1) ? "rtl" : "ltr";
+            ViewBag.Lang            = (lg == 1) ? "he" : "en";
+            ViewBag.tmpUN           = getTempUserName(bizId);
             ViewBag.aspPath         = getAspPath(bizId);
 
             string s = @"firstPageId_" + bizId;
@@ -103,16 +103,17 @@ namespace myLimo.Controllers
                 ViewBag.PortfolioController = "Portfolio";
                 ViewBag.colorScheme = "~/css/colors/color-scheme5.css";
             }
-            //kazablan //79625 doubonbalon //79630 AhiTahi //79587 shomshom
+            //kazablan //79625 doubonbalon //79630 AhiTahi 
+            //79587 shomshom //64220 pitpit
             else if (bizId == 75318 || bizId == 79472 || 
-                bizId == 73294 || bizId== 79625 )
+                bizId == 73294 || bizId== 79625 || bizId==64220 )
             {
                 //ViewBag.colorScheme = "~/css/colors/color-scheme3.css";
                 //gray
                 ViewBag.PortfolioController = "PortfolioNoFilter";
                 ViewBag.colorScheme = "~/css/colors/color-default.css";
             }
-            //#e91e63 color-schme3
+            //#e91e63 color-scheme3
             else if ( bizId == 79630 || bizId == 79587)
             {
                 //red
@@ -146,7 +147,8 @@ namespace myLimo.Controllers
                     //id, parId, typeEltPage, name, data, lastUpdate, pos
                     //Session["MenuModel"] = objService.GetTreeEltPage(bizId, 0, lg);
                     IEnumerable<spGetTreeEltPageResult> list = objService.GetTreeEltPage(ViewBag.bizId, 0, ViewBag.lg);
-                    Session[s] = list.Where(x=>x.typeEltPage==0).ToList();
+                    //fh ??????
+                    Session[s] = list.Where(x=>x.typeEltPage==0 && x.parId==0).ToList();
                     CheckListTreeEltPage(list);
                 }
                 ViewBag.MenuModel = Session[s];
@@ -604,6 +606,94 @@ namespace myLimo.Controllers
             return Session[s].ToString();
         }
         
+        public void setViewBagCartCheckout(int lg)
+        {
+            switch (lg)
+            {   case 0:
+                    ViewBag.tellAFriend     = "tell friends";
+                    ViewBag.FreeDelivery    = "Free Delivery";
+                    ViewBag.SafeBuy         = "Safe Buy";
+                    ViewBag.breadcrumb      = "Checkout";
+                    ViewBag.BillingAdress   = "Billing adress";
+                    ViewBag.FirstName       = "First Name";
+                    ViewBag.LastName        = "Last Name";
+                    ViewBag.Adress          = "Adress";
+                    ViewBag.Email           = "Email";
+                    ViewBag.Phone           = "Phone";
+                    ViewBag.OrderNotes      = "Order notes";
+                    ViewBag.YourOrder       = "Your order";
+                    ViewBag.CartSubtotal    = "Cart subtotal";
+                    ViewBag.Shipping        = "Shipping";
+                    ViewBag.FreeShipping    = "Free shipping";
+                    ViewBag.OrderTotal      = "Order total";
+                    ViewBag.PlaceOrder      = "Place order";
+                    ViewBag.ProceedCheckout = "Proceed to checkout";
+                    ViewBag.Reference       = "Reference";
+                    break;
+                case 1:
+                    ViewBag.tellAFriend     = "תגיד לחברים...";
+                    ViewBag.FreeDelivery    = "משלוח חינם";
+                    ViewBag.SafeBuy         = "קניה בטוחה";
+                    ViewBag.breadcrumb      = "סל קניות";
+                    ViewBag.BillingAdress   = "פרטי משלוח";
+                    ViewBag.FirstName       = "שם פרטי";
+                    ViewBag.LastName        = "משפחה";
+                    ViewBag.Adress          = "כתובת";
+                    ViewBag.Email           = "אי-מייל";
+                    ViewBag.Phone           = "טלפון";
+                    ViewBag.OrderNotes      = "הערות";
+                    ViewBag.YourOrder       = "ההזמנה שלך";
+                    ViewBag.CartSubtotal    = "סכום ביניים";
+                    ViewBag.Shipping        = "משלוח";
+                    ViewBag.FreeShipping    = "משלוח חינם";
+                    ViewBag.OrderTotal      = "סך הכל";
+                    ViewBag.PlaceOrder      = "הזמנה";
+                    ViewBag.ProceedCheckout = "פרטי משלוח";
+                    ViewBag.Reference       = "מספר";
+                    break;
+                case 2:
+                    ViewBag.tellAFriend     = "Informer un ami...";
+                    ViewBag.FreeDelivery    = "Livraison gratuite";
+                    ViewBag.SafeBuy         = "Paiement securisé";
+                    ViewBag.breadcrumb      = "Validation Paiment";
+                    ViewBag.BillingAdress   = "Adresse de Livraison";
+                    ViewBag.FirstName       = "Prénom";
+                    ViewBag.LastName        = "Nom";
+                    ViewBag.Adress          = "Adresse";
+                    ViewBag.Email           = "Email";
+                    ViewBag.Phone           = "Téléphone";
+                    ViewBag.OrderNotes      = "Commentaire";
+                    ViewBag.YourOrder       = "Votre Commande";
+                    ViewBag.CartSubtotal    = "Sous-Total";
+                    ViewBag.Shipping        = "Livraison";
+                    ViewBag.FreeShipping    = "Livraison Gratuite";
+                    ViewBag.OrderTotal      = "Total";
+                    ViewBag.PlaceOrder      = "Passer la commande";
+                    ViewBag.ProceedCheckout = "Passer à la caisse";
+                    ViewBag.Reference       = "Reference";
+                    break;
+                default:
+                    ViewBag.tellAFriend     = "tell friends";
+                    ViewBag.FreeDelivery    = "Free Delivery";
+                    ViewBag.SafeBuy         = "Safe Buy";
+                    ViewBag.breadcrumb      = "Checkout";
+                    ViewBag.BillingAdress   = "Billing adress";
+                    ViewBag.FirstName       = "First Name";
+                    ViewBag.LastName        = "Last Name";
+                    ViewBag.Adress          = "Adress";
+                    ViewBag.Email           = "Email";
+                    ViewBag.Phone           = "Phone";
+                    ViewBag.OrderNotes      = "Order notes";
+                    ViewBag.YourOrder       = "Your order";
+                    ViewBag.CartSubtotal    = "Cart subtotal";
+                    ViewBag.Shipping        = "Shipping";
+                    ViewBag.FreeShipping    = "Free shipping";
+                    ViewBag.OrderTotal      = "Order total";
+                    ViewBag.PlaceOrder      = "Place order";
+                    ViewBag.Reference       = "Reference";
+                    break;
+            }
+        }
 
         private void writeToLogfile(string s)
         {

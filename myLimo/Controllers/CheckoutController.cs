@@ -16,7 +16,7 @@ namespace myLimo.Controllers
         //public ActionResult Index(int bizId=72751, int lg=0, int catId=1306, int subId=1498, int id = 0)/*73212*/
         public ActionResult Index(int bizId = 73294, int lg = 1, int catId = 1509, int subId = 0, int id = 73356)
         {
-            setViewBagLocal(lg);
+            setViewBagCartCheckout(lg);
             setViewBagVariables("Checkout", bizId, lg, catId, subId, id);
             setViewBagMenuModel(bizId, lg);
             setViewBagMenuCatModel(bizId, lg);
@@ -26,59 +26,7 @@ namespace myLimo.Controllers
             return View(GetPdt(lg, id));
         }
 
-        private void setViewBagLocal(int lg)
-        {
-            switch (lg)
-            {   case 0:
-                    ViewBag.tellAFriend     = "tell friends";
-                    ViewBag.FreeDelivery    = "Free Delivery";
-                    ViewBag.SafeBuy         = "Safe Buy";
-                    ViewBag.breadcrumb      = "Checkout";
-                    ViewBag.BillingAdress   = "Billing adress";
-                    ViewBag.FirstName       = "First Name";
-                    ViewBag.LastName        = "Last Name";
-                    ViewBag.Adress          = "Adress";
-                    ViewBag.Email           = "Email";
-                    ViewBag.Phone           = "Phone";
-                    break;
-                case 1:
-                    ViewBag.tellAFriend     = "תגיד לחברים...";
-                    ViewBag.FreeDelivery    = "משלוח חינם";
-                    ViewBag.SafeBuy         = "קניה בטוחה";
-                    ViewBag.breadcrumb      = "סל קניות";
-                    ViewBag.BillingAdress   = "פרטי משלוח";
-                    ViewBag.FirstName       = "שם פרטי";
-                    ViewBag.LastName        = "משפחה";
-                    ViewBag.Adress          = "כתובת";
-                    ViewBag.Email           = "אי-מייל";
-                    ViewBag.Phone           = "טלפון";
-                    break;
-                case 2:
-                    ViewBag.tellAFriend     = "Informer un ami...";
-                    ViewBag.FreeDelivery    = "Livraison gratuite";
-                    ViewBag.SafeBuy         = "Payement securise";
-                    ViewBag.breadcrumb      = "Validation Payment";
-                    ViewBag.BillingAdress   = "Adresse de Livraison";
-                    ViewBag.FirstName       = "Prenom";
-                    ViewBag.LastName        = "Nom";
-                     ViewBag.Adress          = "Adresse";
-                    ViewBag.Email           = "Email";
-                    ViewBag.Phone           = "Telephone";
-                    break;
-                default:
-                    ViewBag.tellAFriend     = "tell friends";
-                    ViewBag.FreeDelivery    = "Free Delivery";
-                    ViewBag.SafeBuy         = "Safe Buy";
-                    ViewBag.breadcrumb      = "Checkout";
-                    ViewBag.BillingAdress   = "Billing adress";
-                    ViewBag.FirstName       = "First Name";
-                    ViewBag.LastName        = "Last Name";
-                    ViewBag.Adress          = "Adress";
-                    ViewBag.Email           = "Email";
-                    ViewBag.Phone           = "Phone";
-                    break;
-            }
-        }
+        
 
         public spGetPdtByIdResult GetPdt(int lg, int id)
         {
