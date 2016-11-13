@@ -625,7 +625,7 @@ $(document).ready(function(e) {
 		    success: function (data) {
 		        var res = parseInt(data.d);
 		        if (res > 0) {
-		            $addedToCartMessage.find('p').text('"-------' + $itemName + '-----"' + res);
+		            $addedToCartMessage.find('p').text('"--------' + $itemName + '-----"' + res);
 		        }
 		        else
 		            $addedToCartMessage.find('p').text('"' + $itemName + '"' + '  ' + res + 'was NOT added !!!');
