@@ -84,6 +84,8 @@
                     <h1>@Model.name</h1>
                     @*<div class="old-price">815,00 $</div>*@
                     <div class="price">@Model.price.ToString("C2", @ViewBag.SettingCulture)</div>
+                    @if (ViewBag.bizId != 80093)
+                    {
                     <div class="buttons group">
                         <div class="qnt-count">
                             <a class="incr-btn" href="#">-</a>
@@ -94,7 +96,10 @@
                         <i class="icon-shopping-cart"></i>Add to cart</a>
                         @*<a class="btn btn-black btn-sm" href="#"><i class="icon-heart"></i>Add to wishlist</a>*@
                     </div>
+                    }
                     <p class="p-style2">@Html.Raw(@Model.descPdt)</p>
+                    @if (ViewBag.bizId != 80093)
+                    {
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-5">
                             
@@ -105,20 +110,13 @@
                                 <a href="#"><i class="fa fa-facebook-square"></i></a>
                             </div>
                         </div>
-                        @*<div class="col-lg-8 col-md-8 col-sm-7">
-                            <h3>Tags</h3>
-                            <div class="tags">
-                                <a href="#">Backpack</a>,
-                                <a href="#">Chanel</a>,
-                                <a href="#">Wristlet</a>
-                            </div>
-                        </div>*@
                     </div>
                     <div class="promo-labels">
                         <div data-content="This is a place for the unique commercial offer. Make it known."><span><i class="fa fa-truck"></i>@ViewBag.FreeDelivery</span></div>
                         @*<div data-content="This is a place for the unique commercial offer. Make it known."><i class="fa fa-space-shuttle"></i>Deliver even on Mars</div>*@
                         <div data-content="This is a place for the unique commercial offer. Make it known."><i class="fa fa-shield"></i>@ViewBag.SafeBuy</div>
                     </div>
+                    }
                 </div>
             </div>
         </div>

@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+
+ <!--Page Content-->
+<div class="page-content">
+
+    <!--Breadcrumbs-->
+    <ol class="breadcrumb">
+        <li>
+            @Html.ActionLink((string)ViewBag.MenuModel[0].name, "Index", "Home",
+                    new { bizId = @ViewBag.bizId, lg = @ViewBag.lg, catId = 0, subId = 0, id = @ViewBag.firstPageId }, null)
+        </li>
+
+        <li class="active">@ViewBag.breadcrumb</li>
+
+    </ol><!--Breadcrumbs Close-->
+  
+    <!--Checkout-->
+    <section class="checkout">
+        <div class="container">
+
+            <!--Expandable Panels-->
+            @*removed*@
+
+            <!--Checkout Form-->
+            <div class="row">
+                <form id="checkout-form" method="post">
+
+                    <!--Left Column-->
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                <label for="co-first-name">@ViewBag.FirstName</label>
+                                <input type="text" class="form-control" id="co-first-name" name="co-first-name" placeholder="@ViewBag.FirstName" >
+                            </div>
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                <label for="co-last-name">@ViewBag.LastName</label>
+                                <input type="text" class="form-control" id="co-last-name" name="co-last-name" placeholder="@ViewBag.LastName" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="co-str-adress">@ViewBag.Adress</label>
+                            <input type="text" class="form-control" id="co-str-adress" name="co-str-adress" placeholder="@ViewBag.Adress" >
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                <label for="co-email">@ViewBag.Email *</label>
+                                <input type="email" class="form-control" id="co-email" name="co-email" placeholder="@ViewBag.Email" required>
+                            </div>
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                                <label for="co_phone">@ViewBag.Phone</label>
+                                <input type="text" class="form-control" id="co_phone" name="co_phone" placeholder="@ViewBag.Phone" >
+                            </div>
+                        </div>
+                        @*<div class="checkbox form-group">
+                            <label><input type="checkbox" name="create-account"> Create an account?</label>
+                        </div>
+                        <div class="checkbox form-group">
+                            <label><span>Ship to a different adress?</span> <input type="checkbox" name="ship-to-dif-adress"></label>
+                        </div>*@
+                        <h3>@ViewBag.OrderNotes</h3>
+                        <div class="form-group">
+                            <label class="sr-only" for="order-notes">test</label>
+                            <textarea class="form-control" name="order-notes" id="order-notes" rows="4" placeholder=@ViewBag.OrderNotes></textarea>
+                        </div>
+                    </div>
+
+                    <!--Right Column-->
+                    
+                    <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-4">
+                        <h3>@ViewBag.MyTitle</h3>
+                        <input class="btn btn-black btn-block" type="submit" id="place-order" name="place-order" value=@ViewBag.PlaceOrder>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section><!--Checkout Close-->
+
+    <input type="hidden" id="hiddenBizId" data-value="@ViewBag.bizId" />
+    <input type="hidden" id="hiddenTmpUN" data-value="@ViewBag.tmpUN" />
+    <input type="hidden" id="hiddenSelLg" data-value="@ViewBag.lg" />
+
+</div><!--Page Content Close-->

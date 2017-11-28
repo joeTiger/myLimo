@@ -18,7 +18,7 @@ namespace myLimo.Controllers
         protected override void Initialize(System.Web.Routing.RequestContext requestContext)
         {
 
-            //Initialize...test...
+            //Initialize...test
             base.Initialize(requestContext);
         }
 
@@ -34,7 +34,8 @@ namespace myLimo.Controllers
             ViewBag.Dir             = (lg == 1) ? "rtl" : "ltr";
             ViewBag.Lang            = (lg == 1) ? "he" : "en";
             ViewBag.tmpUN           = getTempUserName(bizId);
-            ViewBag.aspPath         = getAspPath(bizId);
+            ViewBag.aspPath         = getAspPath(bizId);//http://yelotag.com/asp/upload/bizXXXX
+            ViewBag.titleOnglet     = getTitle(bizId);
 
             string s = @"firstPageId_" + bizId;
             if (Session[s] == null)
@@ -55,6 +56,8 @@ namespace myLimo.Controllers
             //setViewBagCartListModel(bizId, lg);
             setViewBagContactModel(bizId);
 
+            setViewBagTitles(lg);
+
             mylog("ViewBag.controllerName   =" + ViewBag.controllerName);
             mylog("ViewBag.bizId            =" + ViewBag.bizId);
             mylog("ViewBag.lg               =" + ViewBag.lg);
@@ -69,6 +72,32 @@ namespace myLimo.Controllers
             mylog("ViewBag.SettingCulture   =" + ViewBag.SettingCulture);
             mylog("ViewBag.tmpUN            =" + ViewBag.tmpUN);
             mylog("ViewBag.aspPath          =" + ViewBag.aspPath);
+        }
+
+        private string getTitle(int bizId)
+        {
+            if (bizId == 80093)
+            { return "ims-feuerstein"; }
+            else return string.Empty;
+        }
+
+        private void setViewBagTitles(int lg)
+        {
+            if (lg == 0)
+            {
+                ViewBag.browseCategories = "Browse Categories";
+                ViewBag.productGallery = "Product Gallery";
+            }
+            else if (lg == 1)
+            {
+                ViewBag.browseCategories = "קטגוריות";
+                ViewBag.productGallery = "גלריה";
+            }
+            else
+            {
+                ViewBag.browseCategories = "Catalogue";
+                ViewBag.productGallery = "Gallerie";
+            }
         }
 
         private void setViewBagSettingCulture(int bizId)
@@ -106,18 +135,30 @@ namespace myLimo.Controllers
             //kazablan //79625 doubonbalon //79630 AhiTahi 
             //79587 shomshom //64220 pitpit
             else if (bizId == 75318 || bizId == 79472 || 
-                bizId == 73294 || bizId== 79625 || bizId==64220 )
+                bizId == 73294 || bizId== 79625 || bizId==64220 || bizId== 80005)
             {
                 //ViewBag.colorScheme = "~/css/colors/color-scheme3.css";
                 //gray
-                ViewBag.PortfolioController = "PortfolioNoFilter";
                 ViewBag.colorScheme = "~/css/colors/color-default.css";
+                ViewBag.PortfolioController = "PortfolioNoFilter";
             }
             //#e91e63 color-scheme3
             else if ( bizId == 79630 || bizId == 79587)
             {
                 //red
                 ViewBag.colorScheme = "~/css/colors/color-scheme3.css";
+                ViewBag.PortfolioController = "PortfolioNoFilter";
+            }
+            //#e91e63 color-scheme3
+            else if (bizId == 80093) //ims
+            {
+                //blue
+                ViewBag.colorScheme = "~/css/colors/color-scheme6.css";
+                ViewBag.PortfolioController = "PortfolioNoFilter";
+            }
+            else
+            {
+                ViewBag.colorScheme = "~/css/colors/color-default.css";
                 ViewBag.PortfolioController = "PortfolioNoFilter";
             }
 
@@ -147,8 +188,11 @@ namespace myLimo.Controllers
                     //id, parId, typeEltPage, name, data, lastUpdate, pos
                     //Session["MenuModel"] = objService.GetTreeEltPage(bizId, 0, lg);
                     IEnumerable<spGetTreeEltPageResult> list = objService.GetTreeEltPage(ViewBag.bizId, 0, ViewBag.lg);
-                    //fh ??????
-                    Session[s] = list.Where(x=>x.typeEltPage==0 && x.parId==0).ToList();
+//
+                    Session[s] = list.Where(
+                        (x=>(x.typeEltPage==0 || x.typeEltPage == 3) && x.parId == 0))
+                        .OrderBy(x=>x.typeEltPage)
+                        .ToList();
                     CheckListTreeEltPage(list);
                 }
                 ViewBag.MenuModel = Session[s];
@@ -519,7 +563,7 @@ namespace myLimo.Controllers
                
                 IEnumerable<spGetGridPdtByBizResult> list =
                     objService.GetGridPdtByBiz(catId, bizId, lg)
-                        .Where(x => x.category == "gallery").ToList();
+                        .Where(x => x.category.ToUpper() == "GALLERY").ToList();
                 CheckListGridPdtByBiz(s, list);
                 Session[s] = list;
             }
@@ -600,12 +644,102 @@ namespace myLimo.Controllers
             {
                 Random randNum = new Random();
                 int value = randNum.Next(0, 1000000);
-                Session[s] = "507422";// value.ToString();
+                Session[s] = value.ToString();
             }
 
             return Session[s].ToString();
         }
         
+        public void setViewBagContact(int lg)
+        {
+            switch (lg)
+            {
+                case 0:
+                    ViewBag.tellAFriend = "tell friends";
+                    ViewBag.FreeDelivery = "Free Delivery";
+                    ViewBag.SafeBuy = "Safe Buy";
+                    ViewBag.breadcrumb = "Checkout";
+                    ViewBag.BillingAdress = "Billing adress";
+                    ViewBag.FirstName = "First Name";
+                    ViewBag.LastName = "Last Name";
+                    ViewBag.Adress = "Adress";
+                    ViewBag.Email = "Email";
+                    ViewBag.Phone = "Phone";
+                    ViewBag.OrderNotes = "Order notes";
+                    ViewBag.MyTitle = "Laissez-nous vos coordonnees, nous vous contacterons des possible";
+                    ViewBag.CartSubtotal = "Cart subtotal";
+                    ViewBag.Shipping = "Shipping";
+                    ViewBag.FreeShipping = "Free shipping";
+                    ViewBag.OrderTotal = "Order total";
+                    ViewBag.PlaceOrder = "Place order";
+                    ViewBag.ProceedCheckout = "Proceed to checkout";
+                    ViewBag.Reference = "Reference";
+                    break;
+                case 1:
+                    ViewBag.tellAFriend = "תגיד לחברים...";
+                    ViewBag.FreeDelivery = "משלוח חינם";
+                    ViewBag.SafeBuy = "קניה בטוחה";
+                    ViewBag.breadcrumb = "סל קניות";
+                    ViewBag.BillingAdress = "פרטי משלוח";
+                    ViewBag.FirstName = "שם פרטי";
+                    ViewBag.LastName = "משפחה";
+                    ViewBag.Adress = "כתובת";
+                    ViewBag.Email = "אי-מייל";
+                    ViewBag.Phone = "טלפון";
+                    ViewBag.OrderNotes = "הערות";
+                    ViewBag.MyTitle = "ההזמנה שלך";
+                    ViewBag.CartSubtotal = "סכום ביניים";
+                    ViewBag.Shipping = "משלוח";
+                    ViewBag.FreeShipping = "משלוח חינם";
+                    ViewBag.OrderTotal = "סך הכל";
+                    ViewBag.PlaceOrder = "הזמנה";
+                    ViewBag.ProceedCheckout = "פרטי משלוח";
+                    ViewBag.Reference = "מספר";
+                    break;
+                case 2:
+                    ViewBag.tellAFriend = "Informer un ami...";
+                    ViewBag.FreeDelivery = "Livraison gratuite";
+                    ViewBag.SafeBuy = "Paiement securisé";
+                    ViewBag.breadcrumb = "Contact";
+                    ViewBag.BillingAdress = "Adresse de Livraison";
+                    ViewBag.FirstName = "Prénom";
+                    ViewBag.LastName = "Nom";
+                    ViewBag.Adress = "Adresse";
+                    ViewBag.Email = "Email";
+                    ViewBag.Phone = "Téléphone";
+                    ViewBag.OrderNotes = "Commentaire";
+                    ViewBag.MyTitle = "Laissez-nous vos coordonnées.., nous vous contacterons des que possible";
+                    ViewBag.CartSubtotal = "Sous-Total";
+                    ViewBag.Shipping = "Livraison";
+                    ViewBag.FreeShipping = "Livraison Gratuite";
+                    ViewBag.OrderTotal = "Total";
+                    ViewBag.PlaceOrder = "Envoi";
+                    ViewBag.ProceedCheckout = "Passer à la caisse";
+                    ViewBag.Reference = "Reference";
+                    break;
+                default:
+                    ViewBag.tellAFriend = "tell friends";
+                    ViewBag.FreeDelivery = "Free Delivery";
+                    ViewBag.SafeBuy = "Safe Buy";
+                    ViewBag.breadcrumb = "Checkout";
+                    ViewBag.BillingAdress = "Billing adress";
+                    ViewBag.FirstName = "First Name";
+                    ViewBag.LastName = "Last Name";
+                    ViewBag.Adress = "Adress";
+                    ViewBag.Email = "Email";
+                    ViewBag.Phone = "Phone";
+                    ViewBag.OrderNotes = "Order notes";
+                    ViewBag.MyTitle = "Your order";
+                    ViewBag.CartSubtotal = "Cart subtotal";
+                    ViewBag.Shipping = "Shipping";
+                    ViewBag.FreeShipping = "Free shipping";
+                    ViewBag.OrderTotal = "Order total";
+                    ViewBag.PlaceOrder = "Place order";
+                    ViewBag.Reference = "Reference";
+                    break;
+            }
+        }
+
         public void setViewBagCartCheckout(int lg)
         {
             switch (lg)
